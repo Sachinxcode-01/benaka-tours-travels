@@ -1,0 +1,75 @@
+@layer utilities {
+  /* Text Gradients */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #f1d58a 0%, #d4af37 50%, #aa7c11 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-silver {
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Glassmorphism Surface */
+  .glass-card {
+    background: rgba(22, 25, 34, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-hover:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.12);
+    transform: translateY(-2px);
+  }
+
+  /* Radial Ambient Background Glows */
+  .bg-radial-gold {
+    background: radial-gradient(
+      circle at 50% 0%,
+      rgba(212, 175, 55, 0.12) 0%,
+      rgba(11, 13, 18, 0) 70%
+    );
+  }
+
+  .bg-radial-navy {
+    background: radial-gradient(
+      circle at 80% 20%,
+      rgba(30, 41, 59, 0.3) 0%,
+      rgba(7, 8, 11, 0) 60%
+    );
+  }
+
+  /* Custom Dark Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #07080b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1f2430;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d4af37;
+  }
+
+  /* Text Selection Highlight */
+  ::selection {
+    background-color: rgba(212, 175, 55, 0.3);
+    color: #f1d58a;
+  }
+}

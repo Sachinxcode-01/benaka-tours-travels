@@ -1,0 +1,47 @@
+:root {
+  /* Color Palette - Obsidian & Midnight Navy */
+  --bg-obsidian-deep: #07080b;
+  --bg-obsidian-base: #0b0d12;
+  --bg-navy-midnight: #0f1117;
+  --bg-surface-glass: rgba(18, 22, 31, 0.75);
+  --bg-surface-card: #161922;
+  --bg-surface-hover: #1f2430;
+
+  /* Accent Palette - Liquid Gold & Champagne */
+  --color-gold-liquid: #d4af37;
+  --color-gold-champagne: #f1d58a;
+  --color-gold-deep: #aa7c11;
+  --color-gold-glow: rgba(212, 175, 55, 0.15);
+  --color-gold-border: rgba(212, 175, 55, 0.25);
+
+  /* Text Hierarchy */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-gold: #f1d58a;
+
+  /* Status Colors */
+  --color-emerald-available: #10b981;
+  --color-rose-booked: #f43f5e;
+  --color-amber-warning: #f59e0b;
+  --color-sky-info: #38bdf8;
+
+  /* Elevation Shadows & Sheen */
+  --shadow-gold-glow: 0 0 25px rgba(212, 175, 55, 0.12);
+  --shadow-card-elevated: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
+  --shadow-modal-deep: 0 24px 48px -12px rgba(0, 0, 0, 0.85);
+
+  /* Touch & Layout Constraints */
+  --touch-target-min: 44px;
+  --header-height: 4rem;
+  --mobile-bar-height: 4.25rem;
+
+  /* Z-Index Hierarchy */
+  --z-background: -10;
+  --z-base: 0;
+  --z-header: 40;
+  --z-mobile-bar: 45;
+  --z-drawer: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+}
