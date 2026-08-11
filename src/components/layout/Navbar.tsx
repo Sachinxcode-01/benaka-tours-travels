@@ -34,7 +34,16 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     if (location.pathname !== "/") return;
 
-    const sectionIds = ["home", "services", "fleet", "why-us", "destinations", "reviews", "faq", "contact"];
+    const sectionIds = [
+      "home",
+      "services",
+      "fleet",
+      "why-us",
+      "destinations",
+      "reviews",
+      "faq",
+      "contact",
+    ];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -43,7 +52,7 @@ export const Navbar: React.FC = () => {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     sectionIds.forEach((id) => {
@@ -56,7 +65,7 @@ export const Navbar: React.FC = () => {
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    item: NavItem
+    item: NavItem,
   ) => {
     setIsDrawerOpen(false);
 

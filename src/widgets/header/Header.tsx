@@ -40,7 +40,16 @@ export const Header: React.FC = () => {
   useEffect(() => {
     if (location.pathname !== "/") return;
 
-    const sectionIds = ["home", "services", "fleet", "why-us", "destinations", "reviews", "faq", "contact"];
+    const sectionIds = [
+      "home",
+      "services",
+      "fleet",
+      "why-us",
+      "destinations",
+      "reviews",
+      "faq",
+      "contact",
+    ];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -49,7 +58,7 @@ export const Header: React.FC = () => {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     sectionIds.forEach((id) => {
@@ -86,7 +95,7 @@ export const Header: React.FC = () => {
   // Cross-page or local smooth scroll navigation handler
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
-    item: NavItem
+    item: NavItem,
   ) => {
     setIsMobileMenuOpen(false);
 
@@ -262,7 +271,11 @@ export const Header: React.FC = () => {
                   <Menu className="h-6 w-6" />
                 )
               }
-              aria-label={isMobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
+              aria-label={
+                isMobileMenuOpen
+                  ? "Close Navigation Menu"
+                  : "Open Navigation Menu"
+              }
               variant="ghost"
               size="md"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

@@ -14,7 +14,8 @@ import { BUSINESS_INFO } from "@entities/business";
 import { createTelUrl } from "@shared/services/phone.service";
 import { createWhatsAppInquiryUrl } from "@shared/services/whatsapp.service";
 
-type CategoryFilter = "all" | "booking" | "vehicles" | "drivers" | "pricing" | "travel";
+type CategoryFilter =
+  "all" | "booking" | "vehicles" | "drivers" | "pricing" | "travel";
 
 const CATEGORIES: { id: CategoryFilter; label: string }[] = [
   { id: "all", label: "All Questions" },
@@ -73,7 +74,10 @@ export const FAQPreviewSection: React.FC = () => {
 
   const transitionConfig = prefersReducedMotion
     ? { duration: 0 }
-    : { duration: 0.3, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] };
+    : {
+        duration: 0.3,
+        ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+      };
 
   return (
     <section
@@ -113,11 +117,14 @@ export const FAQPreviewSection: React.FC = () => {
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
             Questions Before Your Journey? <br className="hidden sm:block" />
-            <span className="text-gradient-gold">We&apos;ve Got You Covered.</span>
+            <span className="text-gradient-gold">
+              We&apos;ve Got You Covered.
+            </span>
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Everything you need to know about booking, vehicles, chauffeurs and travel with Benaka Tours & Travels.
+            Everything you need to know about booking, vehicles, chauffeurs and
+            travel with Benaka Tours & Travels.
           </p>
         </div>
 
@@ -135,7 +142,8 @@ export const FAQPreviewSection: React.FC = () => {
                 </span>
               </div>
               <p className="text-xs text-slate-300 mt-1">
-                Self-drive car rentals are strictly NOT provided. Every rental includes a certified, experienced driver.
+                Self-drive car rentals are strictly NOT provided. Every rental
+                includes a certified, experienced driver.
               </p>
             </div>
           </div>
@@ -213,7 +221,9 @@ export const FAQPreviewSection: React.FC = () => {
                 >
                   <span
                     className={`font-bold text-base sm:text-lg transition-colors ${
-                      isOpen ? "text-[#D4AF37]" : "text-slate-100 group-hover:text-amber-300"
+                      isOpen
+                        ? "text-[#D4AF37]"
+                        : "text-slate-100 group-hover:text-amber-300"
                     }`}
                   >
                     {item.question}
@@ -268,7 +278,8 @@ export const FAQPreviewSection: React.FC = () => {
               Still Have Questions?
             </h3>
             <p className="text-sm text-slate-300">
-              Talk directly with Benaka Tours & Travels. We&apos;re available 24/7 for custom trip queries and instant quotes.
+              Talk directly with Benaka Tours & Travels. We&apos;re available
+              24/7 for custom trip queries and instant quotes.
             </p>
           </div>
 

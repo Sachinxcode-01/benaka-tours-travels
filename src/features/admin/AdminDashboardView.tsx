@@ -242,8 +242,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                     fuel: "Petrol / CNG / Diesel",
                     status: "Available",
                     notes: "",
-                    image:
-                      "/assets/vehicles/placeholders/swift dszire.jpg",
+                    image: "/assets/vehicles/placeholders/swift dszire.jpg",
                     features: ["AC", "Music System"],
                     recommendedFor: ["Local", "Outstation"],
                     chauffeurIncluded: true,

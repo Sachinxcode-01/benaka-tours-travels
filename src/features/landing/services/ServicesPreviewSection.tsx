@@ -38,7 +38,10 @@ interface ServiceCardProps {
   onOpenBooking: (service: ServiceItem) => void;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ service, onOpenBooking }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  service,
+  onOpenBooking,
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -136,7 +139,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onOpenBooking }) => 
 
 export const ServicesPreviewSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
+  const [selectedService, setSelectedService] = useState<ServiceItem | null>(
+    null,
+  );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -166,7 +171,11 @@ export const ServicesPreviewSection: React.FC = () => {
   };
 
   return (
-    <section id="services" ref={containerRef} className="py-20 bg-[#07080B] text-white relative">
+    <section
+      id="services"
+      ref={containerRef}
+      className="py-20 bg-[#07080B] text-white relative"
+    >
       <div className="max-w-7xl mx-auto px-4 space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">
@@ -177,7 +186,8 @@ export const ServicesPreviewSection: React.FC = () => {
             100% Chauffeur-Driven Travel Services
           </h2>
           <p className="text-sm text-slate-300">
-            From local doorstep pick-ups in Gadag to multi-day inter-state tours across Karnataka, Goa & Maharashtra.
+            From local doorstep pick-ups in Gadag to multi-day inter-state tours
+            across Karnataka, Goa & Maharashtra.
           </p>
         </div>
 

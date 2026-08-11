@@ -22,7 +22,9 @@ describe("ServicesSection", () => {
     render(<ServicesSection />);
     const dzireMatches = screen.getAllByText(/Swift Dzire \/ Hyundai Aura/i);
     expect(dzireMatches.length).toBeGreaterThan(0);
-    const innovaMatches = screen.getAllByText(/Toyota Innova Crysta \/ Ertiga/i);
+    const innovaMatches = screen.getAllByText(
+      /Toyota Innova Crysta \/ Ertiga/i,
+    );
     expect(innovaMatches.length).toBeGreaterThan(0);
   });
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import {
   Sparkles,
   ShieldCheck,
@@ -24,51 +24,56 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onExploreFleet,
   onQuickSearch,
 }) => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] flex flex-col justify-between pt-8 pb-16 overflow-hidden"
+      className="hero relative min-h-[100svh] w-full flex flex-col justify-between pt-8 pb-16 overflow-hidden bg-[#040507] isolation-isolate"
     >
-      {/* Premium Cinematic Hero Background Layer System */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
-        {/* Real Benaka Vehicle Background Image */}
-        <motion.div
-          initial={{ scale: 1.04, opacity: 0.9 }}
-          animate={{ scale: 1.0, opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute inset-0 w-full h-full bg-cover bg-no-repeat bg-[position:65%_center] md:bg-[position:58%_center] lg:bg-[position:center_right] filter brightness-[0.55] contrast-125"
-          style={{
-            backgroundImage: `url("/assets/vehicles/placeholders/benekavehicles.png")`,
-          }}
-        />
+      {/* Real Benaka Vehicle Fleet Background Layer */}
+      <motion.div
+        initial={
+          shouldReduceMotion
+            ? { scale: 1, opacity: 1 }
+            : { scale: 1.04, opacity: 0.82 }
+        }
+        animate={{ scale: 1.0, opacity: 1 }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+        className="hero-background absolute inset-0 z-[-3] bg-no-repeat bg-cover bg-[position:center_right] max-[1024px]:bg-[position:62%_center] max-[768px]:bg-[position:68%_center] max-[430px]:bg-[position:72%_center] pointer-events-none select-none"
+        style={{
+          backgroundImage: `url("/assets/vehicles/placeholders/benekavehicles.png")`,
+        }}
+      />
 
-        {/* Horizontal Cinematic Dark Readability Overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(5, 6, 8, 0.95) 0%, rgba(5, 6, 8, 0.78) 38%, rgba(5, 6, 8, 0.38) 65%, rgba(5, 6, 8, 0.22) 100%)",
-          }}
-        />
+      {/* Dual Cinematic Gradient Overlay for Maximum Text Contrast */}
+      <div
+        className="hero-overlay absolute inset-0 z-[-2] pointer-events-none"
+        style={{
+          background: `
+            linear-gradient(
+              90deg,
+              rgba(4, 5, 7, 0.98) 0%,
+              rgba(4, 5, 7, 0.93) 26%,
+              rgba(4, 5, 7, 0.72) 48%,
+              rgba(4, 5, 7, 0.32) 72%,
+              rgba(4, 5, 7, 0.12) 100%
+            ),
+            linear-gradient(
+              180deg,
+              rgba(4, 5, 7, 0.08) 0%,
+              rgba(4, 5, 7, 0.08) 58%,
+              rgba(4, 5, 7, 0.92) 100%
+            )
+          `,
+        }}
+      />
 
-        {/* Vertical Bottom Seamless Fade Overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, transparent 55%, rgba(5, 6, 8, 0.95) 100%)",
-          }}
-        />
-
-        {/* Subtle Gold Radial Spotlight Accent */}
-        <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#D4AF37]/12 blur-3xl" />
-
-        {/* Existing Road Line Decorative Pattern */}
-        <div className="absolute inset-0 road-lines-bg opacity-25" />
-      </div>
+      {/* Gold Radial Spotlight Accent */}
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#D4AF37]/12 blur-3xl pointer-events-none z-[-1]" />
 
       {/* Hero Content Layer */}
-      <div className="max-w-7xl mx-auto px-4 relative z-10 my-auto text-center space-y-8">
+      <div className="hero-content max-w-7xl mx-auto px-4 relative z-10 my-auto text-center space-y-8">
         {/* Animated Gold Badge */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
@@ -197,7 +202,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Scroll Down Indicator */}
-      <div className="relative z-10 text-center pt-8">
+      <div className="hero-content relative z-10 text-center pt-8">
         <a
           href="#fleet"
           className="inline-flex flex-col items-center text-xs text-slate-400 hover:text-[#D4AF37] transition-colors"

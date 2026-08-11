@@ -17,18 +17,33 @@ import {
   Users,
   Clock,
 } from "lucide-react";
-import { TESTIMONIALS_DATA, type Testimonial } from "../../../data/testimonials";
+import {
+  TESTIMONIALS_DATA,
+  type Testimonial,
+} from "../../../data/testimonials";
 import { BUSINESS_INFO } from "@entities/business";
 import { createTelUrl } from "@shared/services/phone.service";
 import { createWhatsAppInquiryUrl } from "@shared/services/whatsapp.service";
 import { BookingWizardModal } from "@features/booking/BookingWizardModal";
 
 const TRUST_METRICS = [
-  { icon: Star, value: `${BUSINESS_INFO.metrics.averageRatingDisplay} ★`, label: "Average Rating" },
-  { icon: ShieldCheck, value: BUSINESS_INFO.metrics.totalReviewsDisplay, label: "Verified Reviews" },
+  {
+    icon: Star,
+    value: `${BUSINESS_INFO.metrics.averageRatingDisplay} ★`,
+    label: "Average Rating",
+  },
+  {
+    icon: ShieldCheck,
+    value: BUSINESS_INFO.metrics.totalReviewsDisplay,
+    label: "Verified Reviews",
+  },
   { icon: Users, value: "500+", label: "Happy Clients" },
   { icon: Clock, value: "24/7", label: "Doorstep Pickup" },
-  { icon: Award, value: `Since ${BUSINESS_INFO.establishedYear}`, label: "Trusted Excellence" },
+  {
+    icon: Award,
+    value: `Since ${BUSINESS_INFO.establishedYear}`,
+    label: "Trusted Excellence",
+  },
 ];
 
 export const ReviewsSection: React.FC = () => {
@@ -44,7 +59,7 @@ export const ReviewsSection: React.FC = () => {
 
   const prevSlide = useCallback(() => {
     setCurrentIndex((prev) =>
-      prev === 0 ? TESTIMONIALS_DATA.length - 1 : prev - 1
+      prev === 0 ? TESTIMONIALS_DATA.length - 1 : prev - 1,
     );
   }, []);
 
@@ -65,7 +80,8 @@ export const ReviewsSection: React.FC = () => {
       }
     };
     document.addEventListener("visibilitychange", handleVisibilityChange);
-    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+    return () =>
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
   }, []);
 
   // Keyboard Navigation
@@ -95,9 +111,13 @@ export const ReviewsSection: React.FC = () => {
   const current: Testimonial = TESTIMONIALS_DATA[currentIndex];
 
   const slideVariants = {
-    initial: shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.95, x: 40 },
+    initial: shouldReduceMotion
+      ? { opacity: 0 }
+      : { opacity: 0, scale: 0.95, x: 40 },
     animate: { opacity: 1, scale: 1, x: 0 },
-    exit: shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.95, x: -40 },
+    exit: shouldReduceMotion
+      ? { opacity: 0 }
+      : { opacity: 0, scale: 0.95, x: -40 },
   };
 
   return (
@@ -146,7 +166,8 @@ export const ReviewsSection: React.FC = () => {
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Real experiences from families, newlyweds, and corporate clients who travelled with Benaka Tours & Travels.
+            Real experiences from families, newlyweds, and corporate clients who
+            travelled with Benaka Tours & Travels.
           </p>
         </div>
 
@@ -273,7 +294,11 @@ export const ReviewsSection: React.FC = () => {
                 className="w-10 h-10 rounded-xl bg-[#121620] border border-white/10 text-amber-400 hover:border-[#D4AF37] flex items-center justify-center transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                 title={isPaused ? "Resume Autoplay" : "Pause Autoplay"}
               >
-                {isPaused ? <Play className="w-4 h-4 fill-current" /> : <Pause className="w-4 h-4 fill-current" />}
+                {isPaused ? (
+                  <Play className="w-4 h-4 fill-current" />
+                ) : (
+                  <Pause className="w-4 h-4 fill-current" />
+                )}
               </button>
             </div>
 

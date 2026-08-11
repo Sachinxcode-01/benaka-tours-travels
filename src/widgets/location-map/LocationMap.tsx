@@ -1,6 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
-import { MapPin, Navigation, Phone, MessageCircle, Clock, ExternalLink } from "lucide-react";
-import { Map, MapMarker, MarkerContent, MarkerPopup, type MapRef } from "../../components/ui/map";
+import {
+  MapPin,
+  Navigation,
+  Phone,
+  MessageCircle,
+  Clock,
+  ExternalLink,
+} from "lucide-react";
+import {
+  Map,
+  MapMarker,
+  MarkerContent,
+  MarkerPopup,
+  type MapRef,
+} from "../../components/ui/map";
 import { MapStyleSelector, type MapStyleKey } from "./MapStyleSelector";
 import { BUSINESS_INFO } from "@entities/business";
 import { createTelUrl } from "@shared/services/phone.service";
@@ -15,13 +28,16 @@ export const BENAKA_LOCATION = {
 const mapStyles: Record<MapStyleKey, string | undefined> = {
   default: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
   openstreetmap: "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
-  openstreetmap3d: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+  openstreetmap3d:
+    "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
 };
 
 export const LocationMap: React.FC = () => {
   const mapRef = useRef<MapRef>(null);
   const [style, setStyle] = useState<MapStyleKey>("default");
-  const [activeTab, setActiveTab] = useState<"interactive" | "google">("google");
+  const [activeTab, setActiveTab] = useState<"interactive" | "google">(
+    "google",
+  );
 
   const selectedStyle = mapStyles[style];
   const is3D = style === "openstreetmap3d";

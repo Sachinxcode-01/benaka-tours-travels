@@ -19,6 +19,7 @@ import { Button } from "@shared/ui/button";
 
 export const HeroSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const brandTitleRef = useRef<HTMLHeadingElement>(null);
@@ -30,13 +31,28 @@ export const HeroSection: React.FC = () => {
     () => {
       if (!containerRef.current || typeof window === "undefined") return;
       try {
+        const mediaQuery = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        );
+        if (mediaQuery.matches) return;
+
         const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+        if (bgRef.current) {
+          tl.fromTo(
+            bgRef.current,
+            { opacity: 0.82, scale: 1.04 },
+            { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" },
+            0,
+          );
+        }
 
         if (badgeRef.current) {
           tl.fromTo(
             badgeRef.current,
             { opacity: 0, y: -15 },
             { opacity: 1, y: 0, duration: 0.4 },
+            "-=1.0",
           );
         }
         if (brandTitleRef.current) {
@@ -99,24 +115,54 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[92vh] flex flex-col justify-between pt-12 pb-16 overflow-hidden bg-[#07080B]"
+      id="home"
+      className="hero relative min-h-[100svh] w-full flex flex-col justify-between pt-12 pb-16 overflow-hidden bg-[#040507] isolation-isolate"
     >
-      {/* Background Graphic & Glows */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-radial-gold opacity-50 blur-3xl" />
-        <div className="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-radial-navy opacity-30 blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.03]" />
-      </div>
+      {/* Real Benaka Vehicle Fleet Background Layer */}
+      <div
+        ref={bgRef}
+        className="hero-background absolute inset-0 z-[-3] bg-no-repeat bg-cover bg-[position:center_right] max-[1024px]:bg-[position:62%_center] max-[768px]:bg-[position:68%_center] max-[430px]:bg-[position:72%_center] pointer-events-none select-none"
+        style={{
+          backgroundImage: `url("/assets/vehicles/placeholders/benekavehicles.png")`,
+        }}
+      />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 my-auto">
+      {/* Dual Cinematic Gradient Overlay for Maximum Text Contrast */}
+      <div
+        className="hero-overlay absolute inset-0 z-[-2] pointer-events-none"
+        style={{
+          background: `
+            linear-gradient(
+              90deg,
+              rgba(4, 5, 7, 0.98) 0%,
+              rgba(4, 5, 7, 0.93) 26%,
+              rgba(4, 5, 7, 0.72) 48%,
+              rgba(4, 5, 7, 0.32) 72%,
+              rgba(4, 5, 7, 0.12) 100%
+            ),
+            linear-gradient(
+              180deg,
+              rgba(4, 5, 7, 0.08) 0%,
+              rgba(4, 5, 7, 0.08) 58%,
+              rgba(4, 5, 7, 0.92) 100%
+            )
+          `,
+        }}
+      />
+
+      {/* Gold Radial Spotlight Accent */}
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#D4AF37]/12 blur-3xl pointer-events-none z-[-1]" />
+
+      {/* Hero Content Layer */}
+      <div className="hero-content relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 my-auto">
         {/* Badge & Headlines */}
         <div className="space-y-4 max-w-3xl">
           <div ref={badgeRef}>
             <Badge
               variant="gold"
-              className="text-xs uppercase tracking-widest px-3 py-1"
+              className="text-xs uppercase tracking-widest px-3.5 py-1.5 shadow-lg backdrop-blur-md"
             >
-              ✨ GADAG'S PREMIER RENTAL FLEET
+              ✨ GADAG&apos;S PREMIER RENTAL FLEET SINCE 2019
             </Badge>
           </div>
 
@@ -260,7 +306,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Animated Scroll Indicator */}
-      <div className="relative z-10 text-center pt-6">
+      <div className="hero-content relative z-10 text-center pt-6">
         <button
           onClick={handleScrollToInquiry}
           aria-label="Scroll down to quick inquiry form"

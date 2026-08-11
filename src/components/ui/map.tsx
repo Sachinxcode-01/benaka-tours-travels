@@ -16,7 +16,10 @@ interface MapContextType {
   map: maplibregl.Map | null;
   isLoaded: boolean;
 }
-const MapContext = createContext<MapContextType>({ map: null, isLoaded: false });
+const MapContext = createContext<MapContextType>({
+  map: null,
+  isLoaded: false,
+});
 
 export interface MapRef {
   easeTo: (options: maplibregl.EaseToOptions) => void;
@@ -37,20 +40,13 @@ interface MapProps {
 }
 
 export const Map = forwardRef<MapRef, MapProps>(
-  (
-    {
-      center,
-      zoom = 15,
-      pitch = 0,
-      styles,
-      className = "",
-      children,
-    },
-    ref
-  ) => {
+  ({ center, zoom = 15, pitch = 0, styles, className = "", children }, ref) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const mapInstanceRef = useRef<maplibregl.Map | null>(null);
-    const [mapState, setMapState] = useState<{ map: maplibregl.Map | null; isLoaded: boolean }>({
+    const [mapState, setMapState] = useState<{
+      map: maplibregl.Map | null;
+      isLoaded: boolean;
+    }>({
       map: null,
       isLoaded: false,
     });
@@ -69,7 +65,10 @@ export const Map = forwardRef<MapRef, MapProps>(
       if (!containerRef.current) return;
 
       // Skip WebGL initialization in headless jsdom unit test environment
-      if (typeof window === "undefined" || typeof window.Worker === "undefined") {
+      if (
+        typeof window === "undefined" ||
+        typeof window.Worker === "undefined"
+      ) {
         return;
       }
 
@@ -98,7 +97,7 @@ export const Map = forwardRef<MapRef, MapProps>(
               showCompass: true,
               showZoom: true,
             }),
-            "bottom-right"
+            "bottom-right",
           );
         }
 
@@ -148,7 +147,7 @@ export const Map = forwardRef<MapRef, MapProps>(
         </div>
       </MapContext.Provider>
     );
-  }
+  },
 );
 
 Map.displayName = "Map";
@@ -166,7 +165,10 @@ interface MarkerContextType {
   marker: maplibregl.Marker | null;
   element: HTMLDivElement | null;
 }
-const MarkerContext = createContext<MarkerContextType>({ marker: null, element: null });
+const MarkerContext = createContext<MarkerContextType>({
+  marker: null,
+  element: null,
+});
 
 export const MapMarker: React.FC<MapMarkerProps> = ({
   longitude,
@@ -176,10 +178,18 @@ export const MapMarker: React.FC<MapMarkerProps> = ({
   children,
 }) => {
   const { map } = useContext(MapContext);
-  const [markerState, setMarkerState] = useState<MarkerContextType>({ marker: null, element: null });
+  const [markerState, setMarkerState] = useState<MarkerContextType>({
+    marker: null,
+    element: null,
+  });
 
   useEffect(() => {
-    if (!map || typeof window === "undefined" || typeof window.Worker === "undefined") return;
+    if (
+      !map ||
+      typeof window === "undefined" ||
+      typeof window.Worker === "undefined"
+    )
+      return;
 
     try {
       const el = document.createElement("div");
@@ -219,23 +229,34 @@ export const MapMarker: React.FC<MapMarkerProps> = ({
   );
 };
 
-export const MarkerContent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const MarkerContent: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const { element } = useContext(MarkerContext);
   if (!element) return null;
   return createPortal(children, element);
 };
 
-export const MarkerPopup: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const MarkerPopup: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const { marker } = useContext(MarkerContext);
   const [popupContainer] = useState(() => document.createElement("div"));
 
   useEffect(() => {
-    if (!marker || typeof window === "undefined" || typeof window.Worker === "undefined") return;
+    if (
+      !marker ||
+      typeof window === "undefined" ||
+      typeof window.Worker === "undefined"
+    )
+      return;
     try {
       const PopupConstructor = maplibregl.Popup;
       if (!PopupConstructor) return;
 
-      const popup = new PopupConstructor({ offset: 25 }).setDOMContent(popupContainer);
+      const popup = new PopupConstructor({ offset: 25 }).setDOMContent(
+        popupContainer,
+      );
       marker.setPopup(popup);
     } catch {
       // Safe guard

@@ -81,7 +81,9 @@ export const LocationSection: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <Phone className="h-5 w-5 text-amber-400 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-white block font-semibold">Phone Support</strong>
+                      <strong className="text-white block font-semibold">
+                        Phone Support
+                      </strong>
                       <a
                         href={createTelUrl()}
                         className="text-amber-400 font-bold hover:underline"
@@ -94,7 +96,9 @@ export const LocationSection: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <Mail className="h-5 w-5 text-amber-400 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-white block font-semibold">Official Email</strong>
+                      <strong className="text-white block font-semibold">
+                        Official Email
+                      </strong>
                       <a
                         href={`mailto:${BUSINESS_INFO.contact.email}`}
                         className="text-amber-400 hover:underline"

@@ -20,7 +20,10 @@ export const ContactPage: React.FC = () => {
         </p>
       </Container>
 
-      <Container size="xl" className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <Container
+        size="xl"
+        className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+      >
         <div className="lg:col-span-5">
           <Card className="space-y-6">
             <h2 className="text-xl font-bold text-white border-b border-white/10 pb-3">
@@ -66,13 +69,17 @@ export const ContactPage: React.FC = () => {
                 <p className="text-xs text-neutral-500 uppercase font-semibold">
                   Physical Office Address
                 </p>
-                <p className="text-slate-200">{BUSINESS_INFO.contact.address}</p>
+                <p className="text-slate-200">
+                  {BUSINESS_INFO.contact.address}
+                </p>
               </div>
               <div>
                 <p className="text-xs text-neutral-500 uppercase font-semibold">
                   Operating Hours
                 </p>
-                <p className="text-emerald-400 font-bold">{BUSINESS_INFO.operatingHours}</p>
+                <p className="text-emerald-400 font-bold">
+                  {BUSINESS_INFO.operatingHours}
+                </p>
               </div>
             </div>
             <div className="pt-4 flex gap-3">
