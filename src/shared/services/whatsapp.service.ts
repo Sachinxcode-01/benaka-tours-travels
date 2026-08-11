@@ -59,9 +59,13 @@ Please confirm availability and estimated fare.`;
 }
 
 export function createWhatsAppInquiryUrl(
-  options: Partial<BookingRequest> & { customMessage?: string } = {},
+  options: (Partial<BookingRequest> & { customMessage?: string }) | string = {},
 ): string {
   const number = BUSINESS_INFO.contact.whatsappNumber;
+
+  if (typeof options === "string") {
+    return generateWhatsAppUrl(number, options);
+  }
 
   if (options.customMessage) {
     return generateWhatsAppUrl(number, options.customMessage);

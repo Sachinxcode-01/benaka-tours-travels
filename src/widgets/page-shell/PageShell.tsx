@@ -2,6 +2,7 @@ import React from "react";
 import { Header } from "../header";
 import { Footer } from "../footer";
 import { MobileActionBar } from "../mobile-action-bar";
+import { ChatLauncher } from "@features/chatbot";
 
 export interface PageShellProps {
   children: React.ReactNode;
@@ -21,6 +22,7 @@ export const PageShell: React.FC<PageShellProps> = ({ children }) => {
         <main className="flex-1 pb-20 md:pb-0">{children}</main>
         <Footer />
         <MobileActionBar />
+        <ChatLauncher />
       </div>
     </div>
   );
