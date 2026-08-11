@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Send, Calendar, MapPin, Users } from "lucide-react";
+import { Send, Calendar, MapPin, Users, User } from "lucide-react";
 import { createWhatsAppInquiryUrl } from "@shared/services/whatsapp.service";
 import { FLEET_VEHICLES } from "@entities/vehicle";
 import { GlassCard } from "@shared/ui/glass-card";
@@ -8,6 +8,7 @@ import { Select } from "@shared/ui/select";
 import { Button } from "@shared/ui/button";
 
 export const FloatingQuickInquiryForm: React.FC = () => {
+  const [customerName, setCustomerName] = useState("");
   const [pickupLocation, setPickupLocation] = useState("Gadag");
   const [destination, setDestination] = useState("");
   const [pickupDate, setPickupDate] = useState("");
@@ -21,6 +22,7 @@ export const FloatingQuickInquiryForm: React.FC = () => {
     );
 
     const whatsappUrl = createWhatsAppInquiryUrl({
+      customerName: customerName || undefined,
       pickupLocation,
       destination: destination || "Outstation / Local Journey",
       pickupDate,
@@ -55,8 +57,8 @@ export const FloatingQuickInquiryForm: React.FC = () => {
               <span>⚡ Quick Rental Quote & Inquiry</span>
             </h3>
             <p className="text-xs text-slate-400 mt-1">
-              Select your trip details to instantly generate a WhatsApp booking
-              quote. 100% Chauffeur-Driven.
+              Select your trip details to instantly generate a professional
+              WhatsApp booking quote. 100% Chauffeur-Driven.
             </p>
           </div>
           <span className="text-[11px] font-semibold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full">
@@ -68,6 +70,14 @@ export const FloatingQuickInquiryForm: React.FC = () => {
           onSubmit={handleSubmit}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
+          <Input
+            label="Customer / Client Name"
+            value={customerName}
+            onChange={(e) => setCustomerName(e.target.value)}
+            placeholder="e.g. Sachin Kumar"
+            leftIcon={<User className="h-4 w-4 text-amber-400" />}
+          />
+
           <Input
             label="Pickup Location"
             value={pickupLocation}
@@ -111,7 +121,7 @@ export const FloatingQuickInquiryForm: React.FC = () => {
             options={categoryOptions}
           />
 
-          <div className="flex items-end">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-3 pt-2">
             <Button
               type="submit"
               variant="primary"

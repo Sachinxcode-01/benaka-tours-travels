@@ -191,13 +191,20 @@ export const Footer: React.FC = () => {
       {/* Bottom Bar & Back to Top */}
       <div className="border-t border-neutral-900 py-6 px-4">
         <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>
-            © {new Date().getFullYear()} {BUSINESS_INFO.name}. All rights
+          <p className="text-center text-sm text-white/60 sm:text-base">
+            © {new Date().getFullYear()} Benaka Tours & Travels. All rights
             reserved.
+            <span className="mx-2 hidden sm:inline">·</span>
+            <span className="block sm:inline">
+              Designed & Developed by{" "}
+              <span className="font-semibold text-[#D4AF37] transition-colors duration-300 hover:text-[#F1D58A]">
+                Sachin K [ Developer ]
+              </span>
+            </span>
           </p>
           <button
             onClick={handleScrollToTop}
-            className="inline-flex items-center gap-1.5 text-amber-400 hover:text-amber-300 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-amber-400 hover:text-amber-300 transition-colors cursor-pointer shrink-0"
           >
             <span>Back to Top</span>
             <ArrowUp className="h-4 w-4" />
