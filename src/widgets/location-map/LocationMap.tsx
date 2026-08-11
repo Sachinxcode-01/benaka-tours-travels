@@ -21,7 +21,7 @@ const mapStyles: Record<MapStyleKey, string | undefined> = {
 export const LocationMap: React.FC = () => {
   const mapRef = useRef<MapRef>(null);
   const [style, setStyle] = useState<MapStyleKey>("default");
-  const [activeTab, setActiveTab] = useState<"interactive" | "google">("interactive");
+  const [activeTab, setActiveTab] = useState<"interactive" | "google">("google");
 
   const selectedStyle = mapStyles[style];
   const is3D = style === "openstreetmap3d";
