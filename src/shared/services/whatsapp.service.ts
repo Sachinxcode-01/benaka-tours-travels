@@ -24,38 +24,59 @@ export function generateBookingWhatsAppMessage(
   booking: Partial<BookingRequest>,
 ): string {
   const tripTypeStr = booking.tripType
-    ? `${booking.tripType}${booking.journeyType ? ` (${booking.journeyType})` : ""}`
+    ? `${booking.tripType.charAt(0).toUpperCase()}${booking.tripType.slice(1)}`
     : "Chauffeur Rental";
+
+  const journeyTypeStr =
+    booking.journeyType === "round-trip" ? "Round Trip" : "One-Way";
 
   const pickupDateTime =
     booking.pickupDate && booking.pickupTime
       ? `${booking.pickupDate} at ${booking.pickupTime}`
       : booking.pickupDate || "Not specified";
 
-  const returnDateTime = booking.returnDate
-    ? booking.returnDate
-    : booking.journeyType === "round-trip"
-      ? "Not specified"
-      : "N/A (One-way)";
+  const returnInfo =
+    booking.journeyType === "round-trip"
+      ? booking.returnDate || "Not specified"
+      : "N/A (One-Way)";
 
-  return `Hello Benaka Tours & Travels,
+  const lines: string[] = [
+    "Hello Benaka Tours & Travels 👋",
+    "",
+    "I would like to request a chauffeur-driven vehicle quotation.",
+    "",
+    `👤 Name: ${booking.customerName || "Guest"}`,
+    `📞 Mobile: ${booking.customerPhone || "To be provided"}`,
+    "",
+    `📍 Pickup: ${booking.pickupLocation || "N/A"}`,
+    `🏁 Destination: ${booking.destination || "N/A"}`,
+    `🔁 Trip Type: ${tripTypeStr} (${journeyTypeStr})`,
+    `📅 Travel Date & Time: ${pickupDateTime}`,
+  ];
 
-I would like to request a chauffeur-driven vehicle quotation.
+  if (booking.journeyType === "round-trip") {
+    lines.push(`📅 Return Date: ${returnInfo}`);
+  }
 
-Name: ${booking.customerName || "N/A"}
-Mobile: ${booking.customerPhone || "N/A"}
-Pickup: ${booking.pickupLocation || "N/A"}
-Destination: ${booking.destination || "N/A"}
-Trip type: ${tripTypeStr}
-Pickup date and time: ${pickupDateTime}
-Return date and time: ${returnDateTime}
-Passengers: ${booking.passengers ?? 1}
-Luggage: ${booking.luggage ?? 0}
-Selected vehicle: ${booking.vehicleName || "Chauffeur Rental Vehicle"}
-Trip purpose: ${booking.tripPurpose || "Personal"}
-Additional requirements: ${booking.additionalNotes || "None"}
+  lines.push(
+    `👥 Passengers: ${booking.passengers ?? 1}`,
+    `🧳 Luggage Bags: ${booking.luggage ?? 0}`,
+    `🚘 Preferred Vehicle: ${booking.vehicleName || "Open to suggestion"}`,
+    `🎯 Trip Purpose: ${booking.tripPurpose || "Personal"}`,
+  );
 
-Please confirm availability and estimated fare.`;
+  if (booking.additionalNotes) {
+    lines.push(`📝 Additional Requirements: ${booking.additionalNotes}`);
+  }
+
+  lines.push(
+    "",
+    "Please confirm vehicle availability and provide an estimated fare for the above trip.",
+    "",
+    "Thank you 🙏",
+  );
+
+  return lines.join("\n");
 }
 
 export function createWhatsAppInquiryUrl(

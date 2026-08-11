@@ -506,6 +506,69 @@ export class ResponseBuilder {
     };
   }
 
+  public static buildTripPlannerNavigationResponse(): ChatMessage {
+    return {
+      id: `msg-${Date.now()}`,
+      sender: "bot",
+      text: "🗺️ **Smart Trip Planner**\n\nUse our interactive Trip Planner to enter your route, passenger count, travel dates, and luggage requirements. Our recommendation engine will suggest the best chauffeur-driven vehicles for your trip.",
+      timestamp: Date.now(),
+      quickReplies: [
+        { id: "qr-tp-nav", label: "🚗 View Vehicles", payload: PAYLOAD_VIEW_FLEET },
+        { id: "qr-tp-wa", label: "💬 WhatsApp Quote", payload: PAYLOAD_WHATSAPP_CONTACT },
+      ],
+      actions: [
+        {
+          id: "act-tp-launch",
+          label: "Open Smart Trip Planner",
+          type: "whatsapp",
+          url: "/trip-planner",
+        },
+      ],
+    };
+  }
+
+  public static buildVehicleComparisonNavResponse(): ChatMessage {
+    return {
+      id: `msg-${Date.now()}`,
+      sender: "bot",
+      text: "⚖️ **Vehicle Comparison Tool**\n\nCompare up to 3 vehicles side by side on seating capacity, category, fuel type, features, and best-use recommendations.",
+      timestamp: Date.now(),
+      quickReplies: [
+        { id: "qr-vc-fl", label: "🚗 View Fleet", payload: PAYLOAD_VIEW_FLEET },
+        { id: "qr-vc-tp", label: "🗺️ Trip Planner", payload: PAYLOAD_PLAN_TRIP },
+      ],
+      actions: [
+        {
+          id: "act-vc-launch",
+          label: "Open Vehicle Comparison",
+          type: "whatsapp",
+          url: "/compare",
+        },
+      ],
+    };
+  }
+
+  public static buildMyTripsNavResponse(): ChatMessage {
+    return {
+      id: `msg-${Date.now()}`,
+      sender: "bot",
+      text: "📋 **My Saved Trips**\n\nView your recent and saved trip requests, re-book previously planned routes, or generate new WhatsApp quotes.",
+      timestamp: Date.now(),
+      quickReplies: [
+        { id: "qr-mt-tp", label: "🗺️ Plan New Trip", payload: PAYLOAD_PLAN_TRIP },
+        { id: "qr-mt-fl", label: "🚗 View Fleet", payload: PAYLOAD_VIEW_FLEET },
+      ],
+      actions: [
+        {
+          id: "act-mt-launch",
+          label: "Open My Saved Trips",
+          type: "whatsapp",
+          url: "/saved-trips",
+        },
+      ],
+    };
+  }
+
   public static buildFallbackResponse(): ChatMessage {
     return {
       id: `msg-${Date.now()}`,
@@ -538,3 +601,4 @@ export class ResponseBuilder {
     };
   }
 }
+

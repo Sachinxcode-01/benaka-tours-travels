@@ -1,0 +1,243 @@
+{
+  "nav": {
+    "home": "Home",
+    "fleet": "Fleet",
+    "services": "Services",
+    "whyUs": "Why Us",
+    "destinations": "Destinations",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "tripPlanner": "Plan Trip",
+    "compare": "Compare",
+    "myTrips": "My Trips",
+    "admin": "Admin"
+  },
+  "hero": {
+    "badge": "Gadag's Premier Chauffeur Fleet",
+    "title": "Premium Chauffeur-Driven Travel",
+    "subtitle": "Professional drivers. 12 vehicles. Gadag to Goa and beyond.",
+    "cta": {
+      "explore": "Explore Fleet",
+      "planTrip": "Plan a Trip",
+      "whatsApp": "WhatsApp"
+    }
+  },
+  "services": {
+    "title": "100% Chauffeur-Driven Travel Services",
+    "subtitle": "From local doorstep pick-ups in Gadag to multi-day inter-state tours across Karnataka, Goa & Maharashtra.",
+    "badge": "Tailored Rental Solutions",
+    "requestQuote": "Request Quote",
+    "whatsApp": "WhatsApp"
+  },
+  "fleet": {
+    "title": "Curated Premium Chauffeur Fleet",
+    "subtitle": "Explore our 12 meticulously maintained vehicles — Sedans, MUVs, SUVs, Minibuses & 25-Seater Coaches.",
+    "badge": "EXOTIC FLEET INVENTORY",
+    "filters": {
+      "all": "All",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "muv": "MUV",
+      "minibus": "Minibus",
+      "bus": "Bus"
+    },
+    "seats": "Seats",
+    "category": "Category",
+    "fuel": "Fuel",
+    "availability": {
+      "available": "Available",
+      "booked": "Booked",
+      "maintenance": "Maintenance",
+      "inactive": "Inactive"
+    },
+    "chauffeurIncluded": "Chauffeur Included",
+    "recommendedFor": "Recommended For",
+    "features": "Features",
+    "bookNow": "Book Now",
+    "viewDetails": "View Details",
+    "compare": "Compare",
+    "addToCompare": "Add to Compare",
+    "removeFromCompare": "Remove"
+  },
+  "tripPlanner": {
+    "title": "Smart Trip Planner",
+    "subtitle": "Tell us about your trip and we'll recommend the best vehicle for you.",
+    "steps": {
+      "tripDetails": "Trip Details",
+      "vehicleSelect": "Choose Vehicle",
+      "review": "Review Trip",
+      "whatsApp": "Send Enquiry"
+    },
+    "fields": {
+      "pickup": "Pickup Location",
+      "destination": "Destination",
+      "tripType": "Trip Type",
+      "journeyType": "Journey Type",
+      "pickupDate": "Pickup Date",
+      "pickupTime": "Pickup Time",
+      "returnDate": "Return Date",
+      "returnTime": "Return Time",
+      "passengers": "Passengers",
+      "luggage": "Luggage Bags",
+      "tripPurpose": "Trip Purpose",
+      "vehicleCategory": "Preferred Vehicle Category"
+    },
+    "tripType": {
+      "outstation": "Outstation",
+      "local": "Local",
+      "airport": "Airport Transfer"
+    },
+    "journeyType": {
+      "oneWay": "One-Way",
+      "roundTrip": "Round Trip"
+    },
+    "purpose": {
+      "personal": "Personal",
+      "corporate": "Corporate",
+      "family": "Family",
+      "wedding": "Wedding",
+      "groupTour": "Group Tour",
+      "other": "Other"
+    },
+    "recommendations": {
+      "title": "Recommended Vehicles",
+      "subtitle": "Based on your trip requirements",
+      "noResults": "No vehicles available for your requirements. Please contact us directly.",
+      "reason": "Why Recommended",
+      "selectVehicle": "Select This Vehicle",
+      "compare": "Compare"
+    },
+    "review": {
+      "title": "Trip Summary",
+      "fareNote": "Fare will be calculated by Benaka Tours & Travels based on your route, duration, vehicle and travel requirements.",
+      "editTrip": "Edit Trip"
+    },
+    "actions": {
+      "next": "Next",
+      "back": "Back",
+      "requestQuote": "Request Final Quote",
+      "sendWhatsApp": "Send via WhatsApp",
+      "copyDetails": "Copy Details",
+      "call": "Call Now",
+      "saveTrip": "Save Trip",
+      "editTrip": "Edit Trip"
+    },
+    "validation": {
+      "pickupRequired": "Pickup location is required",
+      "destinationRequired": "Destination is required",
+      "dateRequired": "Travel date is required",
+      "passengersMin": "At least 1 passenger required",
+      "passengersMax": "Maximum 25 passengers per vehicle",
+      "timeRequired": "Pickup time is required"
+    }
+  },
+  "comparison": {
+    "title": "Vehicle Comparison",
+    "subtitle": "Compare up to 3 vehicles side by side",
+    "addVehicle": "Add Vehicle to Compare",
+    "clearAll": "Clear All",
+    "compareNow": "Compare Now",
+    "table": {
+      "vehicle": "Vehicle",
+      "category": "Category",
+      "seats": "Seating Capacity",
+      "fuel": "Fuel Type",
+      "features": "Key Features",
+      "availability": "Availability",
+      "chauffeur": "Chauffeur Included",
+      "recommendedFor": "Best For",
+      "action": "Select Vehicle"
+    },
+    "badges": {
+      "bestFamily": "Best for Family",
+      "bestPremium": "Best for Premium Comfort",
+      "bestGroup": "Best for Larger Group"
+    },
+    "bar": {
+      "comparing": "Comparing",
+      "vehicles": "vehicles",
+      "viewComparison": "View Comparison",
+      "maxReached": "Maximum 3 vehicles. Remove one to add another."
+    },
+    "empty": "No vehicles selected for comparison. Browse the fleet and click Compare to add vehicles.",
+    "selectThisVehicle": "Select This Vehicle",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "savedTrips": {
+    "title": "My Trips",
+    "recentTrips": "Recent Trips",
+    "savedTrips": "Saved Trips",
+    "noTrips": "No saved trips yet. Plan a trip to get started.",
+    "actions": {
+      "bookAgain": "Book Again",
+      "edit": "Edit",
+      "whatsApp": "WhatsApp",
+      "delete": "Delete",
+      "clearHistory": "Clear History",
+      "clearHistoryConfirm": "Are you sure you want to clear all saved trips? This cannot be undone.",
+      "cancel": "Cancel"
+    },
+    "labels": {
+      "passengers": "Passengers",
+      "vehicle": "Vehicle",
+      "date": "Date",
+      "tripType": "Trip Type"
+    }
+  },
+  "voice": {
+    "tapToSpeak": "Tap to Speak",
+    "listening": "Listening...",
+    "processing": "Processing...",
+    "success": "Got it!",
+    "denied": "Microphone access denied",
+    "unsupported": "Voice not supported in this browser",
+    "stop": "Stop",
+    "tryAgain": "Try Again",
+    "hint": "Try: \"I need a car tomorrow from Gadag to Hubballi for 5 people\""
+  },
+  "language": {
+    "label": "Language",
+    "en": "EN",
+    "kn": "ಕನ್ನಡ",
+    "hi": "हिंदी"
+  },
+  "btn": {
+    "bookNow": "Book Now",
+    "requestQuote": "Request Quote",
+    "whatsApp": "WhatsApp",
+    "call": "Call Now",
+    "compare": "Compare",
+    "saveTrip": "Save Trip",
+    "planTrip": "Plan a Trip",
+    "viewFleet": "View Fleet",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "noResults": "No results found",
+    "passengers": "Passengers",
+    "vehicle": "Vehicle",
+    "from": "From",
+    "to": "To",
+    "date": "Date",
+    "time": "Time",
+    "chauffeurIncluded": "Chauffeur Included",
+    "available": "Available",
+    "booked": "Booked"
+  },
+  "footer": {
+    "tagline": "Gadag's Premier Chauffeur-Driven Rental Fleet",
+    "rights": "© 2025 Benaka Tours & Travels. All Rights Reserved.",
+    "poweredBy": "Powered by Benaka"
+  }
+}

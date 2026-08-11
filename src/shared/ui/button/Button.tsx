@@ -1,4 +1,5 @@
 import React, { forwardRef } from "react";
+import { motion } from "motion/react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@shared/lib/cn";
 import { Spinner } from "../spinner/Spinner";
@@ -36,7 +37,7 @@ export const buttonVariants = cva(
 
 export interface ButtonProps
   extends
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart">,
     VariantProps<typeof buttonVariants> {
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
@@ -60,9 +61,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     return (
-      <button
+      <motion.button
         ref={ref}
         disabled={disabled || isLoading}
+        whileHover={disabled || isLoading ? undefined : { scale: 1.03 }}
+        whileTap={disabled || isLoading ? undefined : { scale: 0.97 }}
         className={cn(buttonVariants({ variant, size, fullWidth }), className)}
         {...props}
       >
@@ -78,9 +81,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         <span>{children}</span>
 
         {!isLoading && rightIcon ? (
-          <span className="ml-2 inline-flex items-center">{rightIcon}</span>
+          <span className="ml-2 inline-flex items-center transition-transform group-hover:translate-x-1">{rightIcon}</span>
         ) : null}
-      </button>
+      </motion.button>
     );
   },
 );

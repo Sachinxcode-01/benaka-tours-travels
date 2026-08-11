@@ -28,7 +28,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
       className={`flex flex-col ${isUser ? "items-end" : "items-start"} my-1.5 space-y-1`}
     >
       <div
-        className={`max-w-[85%] sm:max-w-[80%] rounded-2xl p-3.5 sm:p-4 text-xs sm:text-sm leading-relaxed shadow-lg relative ${
+        className={`max-w-[88%] md:max-w-[80%] rounded-2xl p-2.5 md:p-4 text-xs md:text-sm leading-relaxed shadow-lg relative ${
           isUser
             ? "bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] text-black font-semibold rounded-br-xs"
             : "bg-[#121620]/95 border border-white/10 text-slate-100 rounded-bl-xs backdrop-blur-md"

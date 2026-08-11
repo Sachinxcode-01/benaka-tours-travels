@@ -6,6 +6,8 @@ import { NAV_ITEMS, type NavItem } from "@shared/constants/navigation";
 import { CallButton } from "../common/CallButton";
 import { WhatsAppButton } from "../common/WhatsAppButton";
 import { Drawer } from "../common/Drawer";
+import { LanguageSelector } from "@shared/ui/language-selector/LanguageSelector";
+import { ComparisonBar } from "@features/vehicle-comparison";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -208,18 +210,22 @@ export const Navbar: React.FC = () => {
 
           {/* Action CTAs (Visible only on >= 1024px) */}
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageSelector compact />
             <CallButton size="sm" />
             <WhatsAppButton size="sm" label="WhatsApp" />
           </div>
 
           {/* Mobile Hamburger Trigger (Visible only on < 1024px) */}
-          <button
-            onClick={() => setIsDrawerOpen(true)}
-            aria-label="Open Navigation Menu"
-            className="lg:hidden p-2.5 rounded-xl bg-[#121620] border border-white/10 text-white hover:text-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] cursor-pointer"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <LanguageSelector compact />
+            <button
+              onClick={() => setIsDrawerOpen(true)}
+              aria-label="Open Navigation Menu"
+              className="p-2.5 rounded-xl bg-[#121620] border border-white/10 text-white hover:text-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] cursor-pointer"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
         </div>
 
         {/* Scroll Progress Bar */}
@@ -274,12 +280,16 @@ export const Navbar: React.FC = () => {
             );
           })}
 
-          <div className="pt-6 flex flex-col gap-3">
+          <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+            <LanguageSelector />
             <CallButton size="md" fullWidth />
             <WhatsAppButton size="md" fullWidth />
           </div>
         </div>
       </Drawer>
+
+      {/* Floating Comparison Bar */}
+      <ComparisonBar />
     </>
   );
 };

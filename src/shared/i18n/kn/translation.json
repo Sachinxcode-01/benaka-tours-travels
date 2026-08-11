@@ -1,0 +1,243 @@
+{
+  "nav": {
+    "home": "ಮುಖಪುಟ",
+    "fleet": "ವಾಹನಗಳು",
+    "services": "ಸೇವೆಗಳು",
+    "whyUs": "ನಮ್ಮ ಬಗ್ಗೆ",
+    "destinations": "ತಾಣಗಳು",
+    "reviews": "ಅಭಿಪ್ರಾಯಗಳು",
+    "faq": "ಪ್ರಶ್ನೆಗಳು",
+    "contact": "ಸಂಪರ್ಕ",
+    "tripPlanner": "ಪ್ರಯಾಣ ಯೋಜನೆ",
+    "compare": "ಹೋಲಿಸಿ",
+    "myTrips": "ನನ್ನ ಪ್ರಯಾಣಗಳು",
+    "admin": "ನಿರ್ವಹಣೆ"
+  },
+  "hero": {
+    "badge": "ಗದಗದ ಅತ್ಯುತ್ತಮ ಚಾಲಕ-ಸಹಿತ ವಾಹನ ಸೇವೆ",
+    "title": "ಉತ್ಕೃಷ್ಟ ಚಾಲಕ-ಸಹಿತ ಪ್ರಯಾಣ",
+    "subtitle": "ವೃತ್ತಿಪರ ಚಾಲಕರು. 12 ವಾಹನಗಳು. ಗದಗದಿಂದ ಗೋವಾ ಮತ್ತು ಮುಂದೆ.",
+    "cta": {
+      "explore": "ವಾಹನಗಳು ನೋಡಿ",
+      "planTrip": "ಪ್ರಯಾಣ ಯೋಜಿಸಿ",
+      "whatsApp": "WhatsApp"
+    }
+  },
+  "services": {
+    "title": "100% ಚಾಲಕ-ಸಹಿತ ಪ್ರಯಾಣ ಸೇವೆಗಳು",
+    "subtitle": "ಗದಗದಲ್ಲಿ ಮನೆ ಬಾಗಿಲಿನಿಂದ ಕರ್ನಾಟಕ, ಗೋವಾ ಮತ್ತು ಮಹಾರಾಷ್ಟ್ರಕ್ಕೆ.",
+    "badge": "ವಿಶೇಷ ಬಾಡಿಗೆ ಸೇವೆಗಳು",
+    "requestQuote": "ದರ ಕೇಳಿ",
+    "whatsApp": "WhatsApp"
+  },
+  "fleet": {
+    "title": "ಉತ್ಕೃಷ್ಟ ಚಾಲಕ-ಸಹಿತ ವಾಹನ ಸಂಗ್ರಹ",
+    "subtitle": "ನಮ್ಮ 12 ವಾಹನಗಳು — ಸೆಡಾನ್, MUV, SUV, ಮಿನಿಬಸ್ ಮತ್ತು 25-ಆಸನ ಬಸ್.",
+    "badge": "ವಾಹನ ಸಂಗ್ರಹ",
+    "filters": {
+      "all": "ಎಲ್ಲಾ",
+      "sedan": "ಸೆಡಾನ್",
+      "suv": "SUV",
+      "muv": "MUV",
+      "minibus": "ಮಿನಿಬಸ್",
+      "bus": "ಬಸ್"
+    },
+    "seats": "ಆಸನಗಳು",
+    "category": "ವರ್ಗ",
+    "fuel": "ಇಂಧನ",
+    "availability": {
+      "available": "ಲಭ್ಯ",
+      "booked": "ಬುಕ್ ಆಗಿದೆ",
+      "maintenance": "ನಿರ್ವಹಣೆ",
+      "inactive": "ಲಭ್ಯವಿಲ್ಲ"
+    },
+    "chauffeurIncluded": "ಚಾಲಕ ಸೇರಿದೆ",
+    "recommendedFor": "ಇದಕ್ಕೆ ಸೂಕ್ತ",
+    "features": "ವೈಶಿಷ್ಟ್ಯಗಳು",
+    "bookNow": "ಈಗ ಬುಕ್ ಮಾಡಿ",
+    "viewDetails": "ವಿವರ ನೋಡಿ",
+    "compare": "ಹೋಲಿಸಿ",
+    "addToCompare": "ಹೋಲಿಕೆಗೆ ಸೇರಿಸಿ",
+    "removeFromCompare": "ತೆಗೆ"
+  },
+  "tripPlanner": {
+    "title": "ಸ್ಮಾರ್ಟ್ ಪ್ರಯಾಣ ಯೋಜಕ",
+    "subtitle": "ನಿಮ್ಮ ಪ್ರಯಾಣದ ಬಗ್ಗೆ ತಿಳಿಸಿ, ನಾವು ಉತ್ತಮ ವಾಹನ ಸೂಚಿಸುತ್ತೇವೆ.",
+    "steps": {
+      "tripDetails": "ಪ್ರಯಾಣ ವಿವರ",
+      "vehicleSelect": "ವಾಹನ ಆಯ್ಕೆ",
+      "review": "ಪರಿಶೀಲನೆ",
+      "whatsApp": "ವಿಚಾರಣೆ ಕಳುಹಿಸಿ"
+    },
+    "fields": {
+      "pickup": "ಆರಂಭ ಸ್ಥಳ",
+      "destination": "ಗಮ್ಯಸ್ಥಾನ",
+      "tripType": "ಪ್ರಯಾಣ ವಿಧ",
+      "journeyType": "ಪ್ರಯಾಣ ಪ್ರಕಾರ",
+      "pickupDate": "ಹೊರಡುವ ದಿನಾಂಕ",
+      "pickupTime": "ಹೊರಡುವ ಸಮಯ",
+      "returnDate": "ವಾಪಸು ದಿನಾಂಕ",
+      "returnTime": "ವಾಪಸು ಸಮಯ",
+      "passengers": "ಪ್ರಯಾಣಿಕರು",
+      "luggage": "ಲಗೇಜ್ ಚೀಲಗಳು",
+      "tripPurpose": "ಪ್ರಯಾಣದ ಉದ್ದೇಶ",
+      "vehicleCategory": "ಆದ್ಯತೆಯ ವಾಹನ ವರ್ಗ"
+    },
+    "tripType": {
+      "outstation": "ಔಟ್‌ಸ್ಟೇಷನ್",
+      "local": "ಸ್ಥಳೀಯ",
+      "airport": "ವಿಮಾನ ನಿಲ್ದಾಣ ಸ್ಥಳಾಂತರ"
+    },
+    "journeyType": {
+      "oneWay": "ಏಕ ಮಾರ್ಗ",
+      "roundTrip": "ಹಿಂತಿರುಗುವ ಪ್ರಯಾಣ"
+    },
+    "purpose": {
+      "personal": "ವೈಯಕ್ತಿಕ",
+      "corporate": "ಕಾರ್ಪೊರೇಟ್",
+      "family": "ಕುಟುಂಬ",
+      "wedding": "ಮದುವೆ",
+      "groupTour": "ಗ್ರೂಪ್ ಟೂರ್",
+      "other": "ಇತರ"
+    },
+    "recommendations": {
+      "title": "ಶಿಫಾರಸು ಮಾಡಲಾದ ವಾಹನಗಳು",
+      "subtitle": "ನಿಮ್ಮ ಅವಶ್ಯಕತೆಯ ಆಧಾರದ ಮೇಲೆ",
+      "noResults": "ನಿಮ್ಮ ಅವಶ್ಯಕತೆಗಳಿಗೆ ಯಾವ ವಾಹನ ಲಭ್ಯವಿಲ್ಲ. ನೇರವಾಗಿ ಸಂಪರ್ಕಿಸಿ.",
+      "reason": "ಏಕೆ ಶಿಫಾರಸು",
+      "selectVehicle": "ಈ ವಾಹನ ಆಯ್ಕೆ",
+      "compare": "ಹೋಲಿಸಿ"
+    },
+    "review": {
+      "title": "ಪ್ರಯಾಣ ಸಾರಾಂಶ",
+      "fareNote": "ದರವನ್ನು Benaka Tours & Travels ನಿಮ್ಮ ಮಾರ್ಗ, ಅವಧಿ, ವಾಹನ ಮತ್ತು ಅವಶ್ಯಕತೆಗಳ ಆಧಾರದ ಮೇಲೆ ಲೆಕ್ಕಿಸುತ್ತದೆ.",
+      "editTrip": "ಪ್ರಯಾಣ ಬದಲಿಸಿ"
+    },
+    "actions": {
+      "next": "ಮುಂದೆ",
+      "back": "ಹಿಂದೆ",
+      "requestQuote": "ದರ ವಿಚಾರಿಸಿ",
+      "sendWhatsApp": "WhatsApp ಮೂಲಕ ಕಳುಹಿಸಿ",
+      "copyDetails": "ವಿವರ ನಕಲಿಸಿ",
+      "call": "ಈಗ ಕರೆ ಮಾಡಿ",
+      "saveTrip": "ಪ್ರಯಾಣ ಉಳಿಸಿ",
+      "editTrip": "ಪ್ರಯಾಣ ತಿದ್ದಿ"
+    },
+    "validation": {
+      "pickupRequired": "ಆರಂಭ ಸ್ಥಳ ಅಗತ್ಯ",
+      "destinationRequired": "ಗಮ್ಯಸ್ಥಾನ ಅಗತ್ಯ",
+      "dateRequired": "ದಿನಾಂಕ ಅಗತ್ಯ",
+      "passengersMin": "ಕನಿಷ್ಠ 1 ಪ್ರಯಾಣಿಕ ಅಗತ್ಯ",
+      "passengersMax": "ಗರಿಷ್ಠ 25 ಪ್ರಯಾಣಿಕರು",
+      "timeRequired": "ಸಮಯ ಅಗತ್ಯ"
+    }
+  },
+  "comparison": {
+    "title": "ವಾಹನ ಹೋಲಿಕೆ",
+    "subtitle": "ಗರಿಷ್ಠ 3 ವಾಹನಗಳನ್ನು ಅಕ್ಕಪಕ್ಕ ಹೋಲಿಸಿ",
+    "addVehicle": "ಹೋಲಿಕೆಗೆ ವಾಹನ ಸೇರಿಸಿ",
+    "clearAll": "ಎಲ್ಲ ತೆಗೆ",
+    "compareNow": "ಈಗ ಹೋಲಿಸಿ",
+    "table": {
+      "vehicle": "ವಾಹನ",
+      "category": "ವರ್ಗ",
+      "seats": "ಆಸನ ಸಾಮರ್ಥ್ಯ",
+      "fuel": "ಇಂಧನ ವಿಧ",
+      "features": "ಮುಖ್ಯ ವೈಶಿಷ್ಟ್ಯಗಳು",
+      "availability": "ಲಭ್ಯತೆ",
+      "chauffeur": "ಚಾಲಕ ಸೇರಿದೆ",
+      "recommendedFor": "ಇದಕ್ಕೆ ಸೂಕ್ತ",
+      "action": "ವಾಹನ ಆಯ್ಕೆ"
+    },
+    "badges": {
+      "bestFamily": "ಕುಟುಂಬಕ್ಕೆ ಉತ್ತಮ",
+      "bestPremium": "ಪ್ರೀಮಿಯಂ ಸೌಕರ್ಯಕ್ಕೆ ಉತ್ತಮ",
+      "bestGroup": "ದೊಡ್ಡ ಗ್ರೂಪ್‌ಗೆ ಉತ್ತಮ"
+    },
+    "bar": {
+      "comparing": "ಹೋಲಿಸಲಾಗುತ್ತಿದೆ",
+      "vehicles": "ವಾಹನಗಳು",
+      "viewComparison": "ಹೋಲಿಕೆ ನೋಡಿ",
+      "maxReached": "ಗರಿಷ್ಠ 3 ವಾಹನಗಳು. ಒಂದು ತೆಗೆದ ನಂತರ ಇನ್ನೊಂದು ಸೇರಿಸಿ."
+    },
+    "empty": "ಹೋಲಿಕೆಗೆ ಯಾವ ವಾಹನವೂ ಆಯ್ಕೆ ಆಗಿಲ್ಲ. ವಾಹನಗಳ ಪಟ್ಟಿ ನೋಡಿ ಹೋಲಿಕೆ ಕ್ಲಿಕ್ ಮಾಡಿ.",
+    "selectThisVehicle": "ಈ ವಾಹನ ಆಯ್ಕೆ",
+    "yes": "ಹೌದು",
+    "no": "ಇಲ್ಲ"
+  },
+  "savedTrips": {
+    "title": "ನನ್ನ ಪ್ರಯಾಣಗಳು",
+    "recentTrips": "ಇತ್ತೀಚಿನ ಪ್ರಯಾಣಗಳು",
+    "savedTrips": "ಉಳಿಸಿದ ಪ್ರಯಾಣಗಳು",
+    "noTrips": "ಇನ್ನೂ ಪ್ರಯಾಣ ಉಳಿಸಿಲ್ಲ. ಪ್ರಯಾಣ ಯೋಜಿಸಿ ಪ್ರಾರಂಭಿಸಿ.",
+    "actions": {
+      "bookAgain": "ಮತ್ತೆ ಬುಕ್ ಮಾಡಿ",
+      "edit": "ತಿದ್ದಿ",
+      "whatsApp": "WhatsApp",
+      "delete": "ಅಳಿಸಿ",
+      "clearHistory": "ಇತಿಹಾಸ ತೆಗೆ",
+      "clearHistoryConfirm": "ಎಲ್ಲಾ ಉಳಿಸಿದ ಪ್ರಯಾಣಗಳನ್ನು ತೆಗೆಯಲು ಖಚಿತವೇ?",
+      "cancel": "ರದ್ದು"
+    },
+    "labels": {
+      "passengers": "ಪ್ರಯಾಣಿಕರು",
+      "vehicle": "ವಾಹನ",
+      "date": "ದಿನಾಂಕ",
+      "tripType": "ಪ್ರಯಾಣ ವಿಧ"
+    }
+  },
+  "voice": {
+    "tapToSpeak": "ಮಾತನಾಡಿ",
+    "listening": "ಕೇಳುತ್ತಿದ್ದೇನೆ...",
+    "processing": "ಪ್ರಕ್ರಿಯೆ...",
+    "success": "ಸ್ವೀಕರಿಸಿದೆ!",
+    "denied": "ಮೈಕ್ರೋಫೋನ್ ಪ್ರವೇಶ ನಿರಾಕರಿಸಲಾಗಿದೆ",
+    "unsupported": "ಈ ಬ್ರೌಸರ್‌ನಲ್ಲಿ ಧ್ವನಿ ಬೆಂಬಲಿತವಲ್ಲ",
+    "stop": "ನಿಲ್ಲಿಸಿ",
+    "tryAgain": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "hint": "ಉದಾ: \"ನಾಳೆ ಗದಗದಿಂದ ಹುಬ್ಬಳ್ಳಿಗೆ 5 ಮಂದಿಗೆ ಕಾರು ಬೇಕು\""
+  },
+  "language": {
+    "label": "ಭಾಷೆ",
+    "en": "EN",
+    "kn": "ಕನ್ನಡ",
+    "hi": "हिंदी"
+  },
+  "btn": {
+    "bookNow": "ಈಗ ಬುಕ್ ಮಾಡಿ",
+    "requestQuote": "ದರ ಕೇಳಿ",
+    "whatsApp": "WhatsApp",
+    "call": "ಈಗ ಕರೆ ಮಾಡಿ",
+    "compare": "ಹೋಲಿಸಿ",
+    "saveTrip": "ಪ್ರಯಾಣ ಉಳಿಸಿ",
+    "planTrip": "ಪ್ರಯಾಣ ಯೋಜಿಸಿ",
+    "viewFleet": "ವಾಹನಗಳು ನೋಡಿ",
+    "close": "ಮುಚ್ಚಿ",
+    "back": "ಹಿಂದೆ",
+    "next": "ಮುಂದೆ",
+    "submit": "ಸಲ್ಲಿಸಿ",
+    "cancel": "ರದ್ದು",
+    "confirm": "ದೃಢಪಡಿಸಿ",
+    "copy": "ನಕಲಿಸಿ",
+    "copied": "ನಕಲಾಯಿತು!"
+  },
+  "common": {
+    "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+    "error": "ಏನೋ ತಪ್ಪಾಯಿತು",
+    "noResults": "ಯಾವ ಫಲಿತಾಂಶವೂ ಸಿಗಲಿಲ್ಲ",
+    "passengers": "ಪ್ರಯಾಣಿಕರು",
+    "vehicle": "ವಾಹನ",
+    "from": "ಇಂದ",
+    "to": "ಗೆ",
+    "date": "ದಿನಾಂಕ",
+    "time": "ಸಮಯ",
+    "chauffeurIncluded": "ಚಾಲಕ ಸೇರಿದೆ",
+    "available": "ಲಭ್ಯ",
+    "booked": "ಬುಕ್ ಆಗಿದೆ"
+  },
+  "footer": {
+    "tagline": "ಗದಗದ ಅತ್ಯುತ್ತಮ ಚಾಲಕ-ಸಹಿತ ವಾಹನ ಸೇವೆ",
+    "rights": "© 2025 Benaka Tours & Travels. ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
+    "poweredBy": "Benaka ನಿಂದ ಚಾಲಿತ"
+  }
+}

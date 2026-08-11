@@ -12,6 +12,9 @@ import {
   PAYLOAD_WHATSAPP_CONTACT,
   PAYLOAD_CALL_NOW,
   PAYLOAD_REQUEST_QUOTE,
+  PAYLOAD_TRIP_PLANNER,
+  PAYLOAD_COMPARE_VEHICLES,
+  PAYLOAD_MY_TRIPS,
 } from "../model/intents";
 
 export class ChatbotService {
@@ -199,7 +202,16 @@ export class ChatbotService {
 
       case PAYLOAD_REQUEST_QUOTE:
       case PAYLOAD_PLAN_TRIP:
-        botResponse = ResponseBuilder.buildTripPlanningResponse(newContext);
+      case PAYLOAD_TRIP_PLANNER:
+        botResponse = ResponseBuilder.buildTripPlannerNavigationResponse();
+        break;
+
+      case PAYLOAD_COMPARE_VEHICLES:
+        botResponse = ResponseBuilder.buildVehicleComparisonNavResponse();
+        break;
+
+      case PAYLOAD_MY_TRIPS:
+        botResponse = ResponseBuilder.buildMyTripsNavResponse();
         break;
 
       default:

@@ -1,0 +1,243 @@
+{
+  "nav": {
+    "home": "होम",
+    "fleet": "वाहन",
+    "services": "सेवाएँ",
+    "whyUs": "हमारे बारे में",
+    "destinations": "गंतव्य",
+    "reviews": "समीक्षाएँ",
+    "faq": "सवाल-जवाब",
+    "contact": "संपर्क",
+    "tripPlanner": "यात्रा योजना",
+    "compare": "तुलना",
+    "myTrips": "मेरी यात्राएँ",
+    "admin": "प्रशासन"
+  },
+  "hero": {
+    "badge": "गदग का प्रीमियर चालक-सहित वाहन सेवा",
+    "title": "प्रीमियम चालक-सहित यात्रा",
+    "subtitle": "पेशेवर चालक। 12 वाहन। गदग से गोवा और आगे।",
+    "cta": {
+      "explore": "वाहन देखें",
+      "planTrip": "यात्रा योजना बनाएँ",
+      "whatsApp": "WhatsApp"
+    }
+  },
+  "services": {
+    "title": "100% चालक-सहित यात्रा सेवाएँ",
+    "subtitle": "गदग में घर के दरवाजे से कर्नाटक, गोवा और महाराष्ट्र तक।",
+    "badge": "विशेष किराया सेवाएँ",
+    "requestQuote": "दर जानें",
+    "whatsApp": "WhatsApp"
+  },
+  "fleet": {
+    "title": "प्रीमियम चालक-सहित वाहन संग्रह",
+    "subtitle": "हमारे 12 वाहन — सेडान, MUV, SUV, मिनीबस और 25-सीट बस।",
+    "badge": "वाहन संग्रह",
+    "filters": {
+      "all": "सभी",
+      "sedan": "सेडान",
+      "suv": "SUV",
+      "muv": "MUV",
+      "minibus": "मिनीबस",
+      "bus": "बस"
+    },
+    "seats": "सीटें",
+    "category": "श्रेणी",
+    "fuel": "ईंधन",
+    "availability": {
+      "available": "उपलब्ध",
+      "booked": "बुक हो गया",
+      "maintenance": "रखरखाव",
+      "inactive": "अनुपलब्ध"
+    },
+    "chauffeurIncluded": "चालक शामिल",
+    "recommendedFor": "इसके लिए उपयुक्त",
+    "features": "विशेषताएँ",
+    "bookNow": "अभी बुक करें",
+    "viewDetails": "विवरण देखें",
+    "compare": "तुलना करें",
+    "addToCompare": "तुलना में जोड़ें",
+    "removeFromCompare": "हटाएँ"
+  },
+  "tripPlanner": {
+    "title": "स्मार्ट यात्रा योजनाकार",
+    "subtitle": "अपनी यात्रा के बारे में बताएँ और हम आपके लिए सबसे अच्छा वाहन सुझाएंगे।",
+    "steps": {
+      "tripDetails": "यात्रा विवरण",
+      "vehicleSelect": "वाहन चुनें",
+      "review": "समीक्षा",
+      "whatsApp": "पूछताछ भेजें"
+    },
+    "fields": {
+      "pickup": "पिकअप स्थान",
+      "destination": "गंतव्य",
+      "tripType": "यात्रा का प्रकार",
+      "journeyType": "यात्रा का तरीका",
+      "pickupDate": "पिकअप तिथि",
+      "pickupTime": "पिकअप समय",
+      "returnDate": "वापसी तिथि",
+      "returnTime": "वापसी समय",
+      "passengers": "यात्री",
+      "luggage": "सामान बैग",
+      "tripPurpose": "यात्रा का उद्देश्य",
+      "vehicleCategory": "पसंदीदा वाहन श्रेणी"
+    },
+    "tripType": {
+      "outstation": "आउटस्टेशन",
+      "local": "स्थानीय",
+      "airport": "हवाई अड्डा स्थानांतरण"
+    },
+    "journeyType": {
+      "oneWay": "एकतरफा",
+      "roundTrip": "वापसी यात्रा"
+    },
+    "purpose": {
+      "personal": "व्यक्तिगत",
+      "corporate": "कॉर्पोरेट",
+      "family": "परिवार",
+      "wedding": "विवाह",
+      "groupTour": "समूह यात्रा",
+      "other": "अन्य"
+    },
+    "recommendations": {
+      "title": "अनुशंसित वाहन",
+      "subtitle": "आपकी यात्रा आवश्यकताओं के आधार पर",
+      "noResults": "आपकी आवश्यकताओं के लिए कोई वाहन उपलब्ध नहीं। कृपया सीधे संपर्क करें।",
+      "reason": "क्यों अनुशंसित",
+      "selectVehicle": "यह वाहन चुनें",
+      "compare": "तुलना करें"
+    },
+    "review": {
+      "title": "यात्रा सारांश",
+      "fareNote": "किराया Benaka Tours & Travels द्वारा आपके मार्ग, अवधि, वाहन और यात्रा आवश्यकताओं के आधार पर निर्धारित किया जाएगा।",
+      "editTrip": "यात्रा संपादित करें"
+    },
+    "actions": {
+      "next": "अगला",
+      "back": "पीछे",
+      "requestQuote": "अंतिम दर जानें",
+      "sendWhatsApp": "WhatsApp से भेजें",
+      "copyDetails": "विवरण कॉपी करें",
+      "call": "अभी कॉल करें",
+      "saveTrip": "यात्रा सहेजें",
+      "editTrip": "यात्रा संपादित करें"
+    },
+    "validation": {
+      "pickupRequired": "पिकअप स्थान आवश्यक है",
+      "destinationRequired": "गंतव्य आवश्यक है",
+      "dateRequired": "तिथि आवश्यक है",
+      "passengersMin": "कम से कम 1 यात्री आवश्यक",
+      "passengersMax": "अधिकतम 25 यात्री",
+      "timeRequired": "समय आवश्यक है"
+    }
+  },
+  "comparison": {
+    "title": "वाहन तुलना",
+    "subtitle": "एक साथ 3 वाहनों की तुलना करें",
+    "addVehicle": "तुलना में वाहन जोड़ें",
+    "clearAll": "सब हटाएँ",
+    "compareNow": "अभी तुलना करें",
+    "table": {
+      "vehicle": "वाहन",
+      "category": "श्रेणी",
+      "seats": "बैठने की क्षमता",
+      "fuel": "ईंधन प्रकार",
+      "features": "मुख्य विशेषताएँ",
+      "availability": "उपलब्धता",
+      "chauffeur": "चालक शामिल",
+      "recommendedFor": "इसके लिए उपयुक्त",
+      "action": "वाहन चुनें"
+    },
+    "badges": {
+      "bestFamily": "परिवार के लिए सर्वश्रेष्ठ",
+      "bestPremium": "प्रीमियम आराम के लिए सर्वश्रेष्ठ",
+      "bestGroup": "बड़े समूह के लिए सर्वश्रेष्ठ"
+    },
+    "bar": {
+      "comparing": "तुलना हो रही है",
+      "vehicles": "वाहन",
+      "viewComparison": "तुलना देखें",
+      "maxReached": "अधिकतम 3 वाहन। एक हटाएँ फिर जोड़ें।"
+    },
+    "empty": "तुलना के लिए कोई वाहन नहीं चुना गया। वाहन सूची देखें और तुलना पर क्लिक करें।",
+    "selectThisVehicle": "यह वाहन चुनें",
+    "yes": "हाँ",
+    "no": "नहीं"
+  },
+  "savedTrips": {
+    "title": "मेरी यात्राएँ",
+    "recentTrips": "हाल की यात्राएँ",
+    "savedTrips": "सहेजी यात्राएँ",
+    "noTrips": "अभी तक कोई यात्रा सहेजी नहीं। शुरू करने के लिए यात्रा की योजना बनाएँ।",
+    "actions": {
+      "bookAgain": "फिर बुक करें",
+      "edit": "संपादित करें",
+      "whatsApp": "WhatsApp",
+      "delete": "हटाएँ",
+      "clearHistory": "इतिहास साफ करें",
+      "clearHistoryConfirm": "क्या आप सभी सहेजी यात्राएँ हटाना चाहते हैं?",
+      "cancel": "रद्द करें"
+    },
+    "labels": {
+      "passengers": "यात्री",
+      "vehicle": "वाहन",
+      "date": "तिथि",
+      "tripType": "यात्रा का प्रकार"
+    }
+  },
+  "voice": {
+    "tapToSpeak": "बोलें",
+    "listening": "सुन रहा हूँ...",
+    "processing": "प्रक्रिया...",
+    "success": "समझ गया!",
+    "denied": "माइक्रोफ़ोन एक्सेस अस्वीकृत",
+    "unsupported": "इस ब्राउज़र में आवाज़ समर्थित नहीं",
+    "stop": "रोकें",
+    "tryAgain": "फिर कोशिश करें",
+    "hint": "जैसे: \"कल गदग से हुबली के लिए 5 लोगों के लिए कार चाहिए\""
+  },
+  "language": {
+    "label": "भाषा",
+    "en": "EN",
+    "kn": "ಕನ್ನಡ",
+    "hi": "हिंदी"
+  },
+  "btn": {
+    "bookNow": "अभी बुक करें",
+    "requestQuote": "दर जानें",
+    "whatsApp": "WhatsApp",
+    "call": "अभी कॉल करें",
+    "compare": "तुलना करें",
+    "saveTrip": "यात्रा सहेजें",
+    "planTrip": "यात्रा की योजना बनाएँ",
+    "viewFleet": "वाहन देखें",
+    "close": "बंद करें",
+    "back": "पीछे",
+    "next": "अगला",
+    "submit": "जमा करें",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "copy": "कॉपी करें",
+    "copied": "कॉपी हो गया!"
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "कुछ गलत हो गया",
+    "noResults": "कोई परिणाम नहीं मिला",
+    "passengers": "यात्री",
+    "vehicle": "वाहन",
+    "from": "से",
+    "to": "को",
+    "date": "तिथि",
+    "time": "समय",
+    "chauffeurIncluded": "चालक शामिल",
+    "available": "उपलब्ध",
+    "booked": "बुक हो गया"
+  },
+  "footer": {
+    "tagline": "गदग का प्रीमियर चालक-सहित वाहन सेवा",
+    "rights": "© 2025 Benaka Tours & Travels. सर्वाधिकार सुरक्षित।",
+    "poweredBy": "Benaka द्वारा संचालित"
+  }
+}

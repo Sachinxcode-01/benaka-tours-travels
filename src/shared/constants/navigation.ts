@@ -8,6 +8,7 @@ export interface NavItem {
 export const NAV_ITEMS: readonly NavItem[] = [
   { label: "Home", href: "/", type: "route", id: "home" },
   { label: "Fleet", href: "/fleet", type: "route", id: "fleet" },
+  { label: "Plan Trip", href: "/trip-planner", type: "route", id: "trip-planner" },
   { label: "Services", href: "#services", type: "section", id: "services" },
   { label: "Why Us", href: "#why-us", type: "section", id: "why-us" },
   {

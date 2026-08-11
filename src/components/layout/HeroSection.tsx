@@ -13,6 +13,7 @@ import { PrimaryButton } from "../ui/PrimaryButton";
 import { WhatsAppButton } from "../common/WhatsAppButton";
 import { CallButton } from "../common/CallButton";
 import { QuickInquiryForm } from "../forms/QuickInquiryForm";
+import { CountUpNumber } from "@shared/ui/count-up/CountUpNumber";
 import type { BookingRequest } from "../../types/booking";
 
 interface HeroSectionProps {
@@ -154,7 +155,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <Car className="w-5 h-5" />
             </div>
             <strong className="text-xl sm:text-2xl font-extrabold text-white block">
-              11+ Active
+              <CountUpNumber end={11} suffix="+" /> Active
             </strong>
             <span className="text-xs text-slate-400">Fleet Vehicles</span>
           </div>
@@ -164,7 +165,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <Users className="w-5 h-5" />
             </div>
             <strong className="text-xl sm:text-2xl font-extrabold text-white block">
-              500+ Happy
+              <CountUpNumber end={500} suffix="+" /> Happy
             </strong>
             <span className="text-xs text-slate-400">Clients Served</span>
           </div>
@@ -174,9 +175,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <Star className="w-5 h-5 fill-current" />
             </div>
             <strong className="text-xl sm:text-2xl font-extrabold text-white block">
-              4.9 / 5.0 Rating
+              <CountUpNumber end={4.9} decimals={1} suffix=" / 5.0" />
             </strong>
-            <span className="text-xs text-slate-400">21+ Reviews</span>
+            <span className="text-xs text-slate-400">21+ Verified Reviews</span>
           </div>
 
           <div className="glass-panel p-4 rounded-2xl border border-white/10 text-center">
@@ -184,7 +185,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <Clock className="w-5 h-5" />
             </div>
             <strong className="text-xl sm:text-2xl font-extrabold text-white block">
-              Since 2019
+              Since <CountUpNumber end={2019} duration={1.2} />
             </strong>
             <span className="text-xs text-slate-400">Gadag Chauffeur Hub</span>
           </div>

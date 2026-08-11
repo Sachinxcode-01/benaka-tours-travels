@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#07090D] text-slate-400 pt-16 pb-24 md:pb-12 border-t border-[#D4AF37]/20 overflow-hidden">
+    <footer className="relative bg-[#07090D] text-slate-400 pt-16 pb-32 sm:pb-24 md:pb-12 border-t border-[#D4AF37]/20 overflow-hidden">
       {/* Decorative Gold Glow & Road Line Graphics */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-60" />
       <div className="absolute inset-0 bg-glass-radial pointer-events-none" />
@@ -210,17 +210,25 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Copyright Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-          <p>
-            © {new Date().getFullYear()} BENAKA TOURS AND TRAVELS. All rights
-            reserved.
-          </p>
+          <div className="space-y-1 text-center md:text-left">
+            <p>
+              © {new Date().getFullYear()} BENAKA TOURS AND TRAVELS. All rights
+              reserved.
+            </p>
+            <p className="text-[11px] text-slate-500">
+              Designed &amp; Developed by{" "}
+              <span className="text-[#D4AF37] font-semibold hover:underline cursor-pointer">
+                Sachin Developer
+              </span>
+            </p>
+          </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <span className="hover:text-white cursor-pointer">
               Privacy Policy
             </span>
             <span className="hover:text-white cursor-pointer">
-              Terms & Conditions
+              Terms &amp; Conditions
             </span>
             <span className="hover:text-white cursor-pointer">
               Cancellation Policy
@@ -234,7 +242,7 @@ export const Footer: React.FC = () => {
           <button
             onClick={scrollToTop}
             aria-label="Back to top"
-            className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#121620] border border-white/10 hover:border-[#D4AF37] text-white hover:text-[#D4AF37] transition-all"
+            className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#121620] border border-white/10 hover:border-[#D4AF37] text-white hover:text-[#D4AF37] transition-all cursor-pointer"
           >
             <span>Back to top</span>
             <ArrowUp className="w-4 h-4" />
