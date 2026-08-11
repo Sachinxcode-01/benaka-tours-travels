@@ -26,7 +26,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  const fallbackSvg = `/assets/vehicles/placeholders/${vehicle.slug}.svg`;
+  const fallbackSvg = "/assets/vehicles/placeholders/benekavehicles.png";
 
   return (
     <GlassCard

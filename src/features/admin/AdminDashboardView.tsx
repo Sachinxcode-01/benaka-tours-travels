@@ -114,10 +114,17 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     <div className="min-h-screen bg-[#0B0D12] text-slate-200">
       {/* Header Bar */}
       <header className="bg-[#121620] border-b border-[#D4AF37]/20 py-4 px-6 sticky top-0 z-30 flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
+          <img
+            src="/assets/brand/benaka_emblem_gold_transparent.png"
+            alt="Benaka Fleet Admin"
+            className="h-9 w-auto object-contain shrink-0"
+          />
           <div className="flex flex-col">
-            <span className="font-accent text-2xl text-[#D4AF37]">Benaka</span>
-            <span className="text-[10px] tracking-[0.2em] font-extrabold uppercase text-white">
+            <span className="font-accent text-2xl text-[#D4AF37] leading-none">
+              Benaka
+            </span>
+            <span className="text-[10px] tracking-[0.2em] font-extrabold uppercase text-white mt-0.5">
               Fleet Admin Portal
             </span>
           </div>
@@ -236,7 +243,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                     status: "Available",
                     notes: "",
                     image:
-                      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80",
+                      "/assets/vehicles/placeholders/swift dszire.jpg",
                     features: ["AC", "Music System"],
                     recommendedFor: ["Local", "Outstation"],
                     chauffeurIncluded: true,

@@ -22,7 +22,7 @@ export const BUSINESS_INFO: BusinessInformation = {
     whatsappNumber: "916362416120",
     email: "benakatravelsbusiness@gmail.com",
     address: "Panchaxari Nagar 5th Cross, Gadag, Karnataka, India",
-    mapsUrl: "https://maps.app.goo.gl/ZZwZNzWCMptx3mPv9",
+    mapsUrl: "https://maps.app.goo.gl/DNABVnQ9cGwE6T9T7",
   },
   metrics: {
     fleetSizeDisplay: "11+",

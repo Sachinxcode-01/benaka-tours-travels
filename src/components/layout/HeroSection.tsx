@@ -29,21 +29,45 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       id="home"
       className="relative min-h-[92vh] flex flex-col justify-between pt-8 pb-16 overflow-hidden"
     >
-      {/* High-Res Hero Highway Background Image & Overlays */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85"
-          alt="Benaka Tours & Travels - Luxury Highway Chauffeur Fleet"
-          className="w-full h-full object-cover object-center filter brightness-[0.4] contrast-125 scale-105"
+      {/* Premium Cinematic Hero Background Layer System */}
+      <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
+        {/* Real Benaka Vehicle Background Image */}
+        <motion.div
+          initial={{ scale: 1.04, opacity: 0.9 }}
+          animate={{ scale: 1.0, opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0 w-full h-full bg-cover bg-no-repeat bg-[position:65%_center] md:bg-[position:58%_center] lg:bg-[position:center_right] filter brightness-[0.55] contrast-125"
+          style={{
+            backgroundImage: `url("/assets/vehicles/placeholders/benekavehicles.png")`,
+          }}
         />
-        {/* Dark Obsidian Overlay Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D12] via-[#0B0D12]/70 to-[#0B0D12]/40" />
-        <div className="absolute inset-0 bg-glass-radial opacity-80" />
-        {/* Road line overlay effect */}
-        <div className="absolute inset-0 road-lines-bg opacity-30 pointer-events-none" />
+
+        {/* Horizontal Cinematic Dark Readability Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(5, 6, 8, 0.95) 0%, rgba(5, 6, 8, 0.78) 38%, rgba(5, 6, 8, 0.38) 65%, rgba(5, 6, 8, 0.22) 100%)",
+          }}
+        />
+
+        {/* Vertical Bottom Seamless Fade Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, transparent 55%, rgba(5, 6, 8, 0.95) 100%)",
+          }}
+        />
+
+        {/* Subtle Gold Radial Spotlight Accent */}
+        <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#D4AF37]/12 blur-3xl" />
+
+        {/* Existing Road Line Decorative Pattern */}
+        <div className="absolute inset-0 road-lines-bg opacity-25" />
       </div>
 
-      {/* Hero Content */}
+      {/* Hero Content Layer */}
       <div className="max-w-7xl mx-auto px-4 relative z-10 my-auto text-center space-y-8">
         {/* Animated Gold Badge */}
         <motion.div

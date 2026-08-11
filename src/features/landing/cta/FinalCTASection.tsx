@@ -75,7 +75,7 @@ export const FinalCTASection: React.FC = () => {
           <span>Gadag's #1 Chauffeur Rental Service</span>
         </div>
 
-        {/* Cinematic Headline */}
+        {/* Headline */}
         <div className="cta-animate space-y-4">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
             Travel With Confidence.

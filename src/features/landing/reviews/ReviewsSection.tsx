@@ -72,6 +72,7 @@ export const ReviewsSection: React.FC = () => {
 
   return (
     <section
+      id="reviews"
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onMouseEnter={() => setIsPaused(true)}

@@ -166,7 +166,7 @@ export const ServicesPreviewSection: React.FC = () => {
   };
 
   return (
-    <section ref={containerRef} className="py-20 bg-[#07080B] text-white relative">
+    <section id="services" ref={containerRef} className="py-20 bg-[#07080B] text-white relative">
       <div className="max-w-7xl mx-auto px-4 space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">

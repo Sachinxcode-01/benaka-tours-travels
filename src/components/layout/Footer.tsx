@@ -30,13 +30,20 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           {/* Column 1: Brand Story */}
           <div className="space-y-4">
-            <div className="flex flex-col">
-              <span className="font-accent text-3xl text-[#D4AF37]">
-                Benaka
-              </span>
-              <span className="text-xs tracking-[0.2em] font-extrabold uppercase text-white">
-                Tours & Travels
-              </span>
+            <div className="flex items-center gap-3">
+              <img
+                src="/assets/brand/benaka_emblem_gold_transparent.png"
+                alt="Benaka Emblem"
+                className="h-12 w-auto object-contain shrink-0"
+              />
+              <div className="flex flex-col">
+                <span className="font-accent text-3xl text-[#D4AF37] leading-none">
+                  Benaka
+                </span>
+                <span className="text-xs tracking-[0.2em] font-extrabold uppercase text-white mt-0.5">
+                  Tours & Travels
+                </span>
+              </div>
             </div>
             <p className="text-sm text-slate-300 leading-relaxed">
               Panchaxari Nagar, Gadag&apos;s premier chauffeur-driven rental

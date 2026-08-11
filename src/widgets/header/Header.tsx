@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, Phone, MessageCircle, Shield } from "lucide-react";
 import { TopBar } from "../top-bar";
+import { NAV_ITEMS, type NavItem } from "@shared/constants/navigation";
 import { createTelUrl } from "@shared/services/phone.service";
 import { createWhatsAppInquiryUrl } from "@shared/services/whatsapp.service";
 import { useScrollDirection } from "@shared/hooks/useScrollDirection";
@@ -13,6 +14,10 @@ export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("home");
+
+  const location = useLocation();
+  const navigate = useNavigate();
   const scrollDir = useScrollDirection();
 
   useEffect(() => {
@@ -31,25 +36,93 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Fleet", href: "#fleet" },
-    { label: "Services", href: "#services" },
-    { label: "Why Us", href: "#why-us" },
-    { label: "Destinations", href: "#destinations" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#contact" },
-  ];
+  // IntersectionObserver for active section highlighting on home page
+  useEffect(() => {
+    if (location.pathname !== "/") return;
 
-  const handleNavClick = (href: string) => {
+    const sectionIds = ["home", "services", "fleet", "why-us", "destinations", "reviews", "faq", "contact"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+  // Handle escape key to close mobile menu
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileMenuOpen]);
+
+  // Cross-page or local smooth scroll navigation handler
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+    item: NavItem
+  ) => {
     setIsMobileMenuOpen(false);
-    if (href.startsWith("#")) {
-      const targetElement = document.querySelector(href);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
+
+    if (item.type === "section") {
+      e.preventDefault();
+      if (location.pathname === "/") {
+        const targetId = item.href.replace("#", "");
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          setActiveSection(targetId);
+        }
+      } else {
+        navigate(`/${item.href}`);
+        setTimeout(() => {
+          const targetId = item.href.replace("#", "");
+          const element = document.getElementById(targetId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    } else if (item.type === "route") {
+      if (location.pathname === item.href && item.href === "/") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     }
+  };
+
+  const isLinkActive = (item: NavItem) => {
+    if (item.type === "route") {
+      if (item.href === "/") return location.pathname === "/";
+      return location.pathname.startsWith(item.href);
+    }
+    return location.pathname === "/" && activeSection === item.id;
   };
 
   return (
@@ -81,38 +154,75 @@ export const Header: React.FC = () => {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <span className="font-brand-accent text-2xl sm:text-3xl font-bold text-amber-400 group-hover:text-amber-300 transition-colors">
-              Benaka
-            </span>
-            <span className="text-xs sm:text-sm font-bold tracking-wider text-slate-100 uppercase">
-              Tours & Travels
-            </span>
+          <Link
+            to="/"
+            onClick={(e) => {
+              if (location.pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+            className="flex items-center gap-2.5 group cursor-pointer"
+            aria-label="Benaka Tours and Travels Homepage"
+          >
+            <img
+              src="/assets/brand/benaka_emblem_gold_transparent.png"
+              alt="Benaka Emblem"
+              className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 shrink-0"
+            />
+            <div className="flex flex-col justify-center">
+              <span className="font-brand-accent text-2xl sm:text-3xl font-bold text-amber-400 group-hover:text-amber-300 transition-colors leading-none">
+                Benaka
+              </span>
+              <span className="text-[10px] sm:text-xs font-extrabold tracking-[0.2em] text-slate-100 uppercase mt-0.5">
+                Tours & Travels
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-5 text-xs font-semibold uppercase tracking-wider">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => {
-                  if (link.href.startsWith("#")) {
-                    e.preventDefault();
-                    handleNavClick(link.href);
-                  }
-                }}
-                className="text-slate-300 hover:text-amber-400 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all hover:after:w-full"
-              >
-                {link.label}
-              </a>
-            ))}
-            <Link
-              to="/admin"
-              className="text-slate-400 hover:text-amber-400 transition-colors py-1"
-            >
-              Admin
-            </Link>
+            {NAV_ITEMS.map((item) => {
+              const active = isLinkActive(item);
+              if (item.type === "route") {
+                return (
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    onClick={(e) => handleNavClick(e, item)}
+                    className={`py-1 relative transition-colors ${
+                      active
+                        ? "text-[#D4AF37] font-bold after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-[#D4AF37]"
+                        : "text-slate-300 hover:text-amber-400 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all hover:after:w-full"
+                    }`}
+                  >
+                    {item.label === "Admin" ? (
+                      <span className="inline-flex items-center gap-1 text-slate-400 hover:text-[#D4AF37]">
+                        <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
+                        <span>Admin</span>
+                      </span>
+                    ) : (
+                      item.label
+                    )}
+                  </Link>
+                );
+              }
+
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item)}
+                  className={`py-1 relative transition-colors ${
+                    active
+                      ? "text-[#D4AF37] font-bold after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-[#D4AF37]"
+                      : "text-slate-300 hover:text-amber-400 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all hover:after:w-full"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Action CTAs */}
@@ -142,7 +252,7 @@ export const Header: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Trigger */}
           <div className="lg:hidden flex items-center">
             <IconButton
               icon={
@@ -152,7 +262,7 @@ export const Header: React.FC = () => {
                   <Menu className="h-6 w-6" />
                 )
               }
-              aria-label="Toggle Navigation Menu"
+              aria-label={isMobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
               variant="ghost"
               size="md"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -169,35 +279,55 @@ export const Header: React.FC = () => {
         title="Navigation Menu"
         position="right"
       >
-        <div className="flex flex-col space-y-6 pt-4">
-          <nav className="flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => {
-                  if (link.href.startsWith("#")) {
-                    e.preventDefault();
-                    handleNavClick(link.href);
-                  } else {
-                    setIsMobileMenuOpen(false);
-                  }
-                }}
-                className="text-lg font-medium text-slate-200 hover:text-amber-400 transition-colors border-b border-neutral-800 pb-2"
-              >
-                {link.label}
-              </a>
-            ))}
-            <Link
-              to="/admin"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-lg font-medium text-slate-400 hover:text-amber-400 transition-colors border-b border-neutral-800 pb-2"
-            >
-              Admin Portal
-            </Link>
+        <div className="flex flex-col space-y-6 pt-2">
+          <div className="flex items-center justify-center pb-4 border-b border-neutral-800">
+            <img
+              src="/assets/brand/benaka_stacked_gold_transparent.png"
+              alt="Benaka Tours & Travels"
+              className="h-16 w-auto object-contain"
+            />
+          </div>
+          <nav className="flex flex-col space-y-3">
+            {NAV_ITEMS.map((item) => {
+              const active = isLinkActive(item);
+              if (item.type === "route") {
+                return (
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    onClick={(e) => handleNavClick(e, item)}
+                    className={`text-base font-semibold py-2.5 px-3 rounded-xl border-b border-neutral-800/60 transition-all flex items-center justify-between ${
+                      active
+                        ? "text-[#D4AF37] bg-amber-500/10 font-bold"
+                        : "text-slate-200 hover:text-amber-400 hover:bg-neutral-900"
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    {item.label === "Admin" && (
+                      <Shield className="w-4 h-4 text-[#D4AF37]" />
+                    )}
+                  </Link>
+                );
+              }
+
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item)}
+                  className={`text-base font-semibold py-2.5 px-3 rounded-xl border-b border-neutral-800/60 transition-all ${
+                    active
+                      ? "text-[#D4AF37] bg-amber-500/10 font-bold"
+                      : "text-slate-200 hover:text-amber-400 hover:bg-neutral-900"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </nav>
 
-          <div className="flex flex-col gap-3 pt-4">
+          <div className="flex flex-col gap-3 pt-2">
             <a href={createTelUrl()}>
               <Button
                 variant="outline"
@@ -205,7 +335,7 @@ export const Header: React.FC = () => {
                 fullWidth
                 leftIcon={<Phone className="h-4 w-4" />}
               >
-                Call Directly
+                Call Directly (+91 63624 16120)
               </Button>
             </a>
             <a

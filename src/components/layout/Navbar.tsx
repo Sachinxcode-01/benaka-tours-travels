@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, useScroll, useSpring } from "motion/react";
 import { Menu, Shield } from "lucide-react";
+import { NAV_ITEMS, type NavItem } from "@shared/constants/navigation";
 import { CallButton } from "../common/CallButton";
 import { WhatsAppButton } from "../common/WhatsAppButton";
 import { Drawer } from "../common/Drawer";
@@ -11,6 +12,7 @@ export const Navbar: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
+  const navigate = useNavigate();
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -21,62 +23,76 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-
-      // Update active section based on scroll
-      const sections = [
-        "home",
-        "fleet",
-        "services",
-        "why-us",
-        "reviews",
-        "faq",
-        "contact",
-      ];
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 200 && rect.bottom >= 200) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
+      setIsScrolled(window.scrollY > 40);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "#home", id: "home" },
-    { name: "Fleet", href: "#fleet", id: "fleet" },
-    { name: "Services", href: "#services", id: "services" },
-    { name: "Why Benaka", href: "#why-us", id: "why-us" },
-    { name: "Reviews", href: "#reviews", id: "reviews" },
-    { name: "FAQ", href: "#faq", id: "faq" },
-    { name: "Contact", href: "#contact", id: "contact" },
-  ];
+  // IntersectionObserver for homepage sections
+  useEffect(() => {
+    if (location.pathname !== "/") return;
+
+    const sectionIds = ["home", "services", "fleet", "why-us", "destinations", "reviews", "faq", "contact"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
+    item: NavItem
   ) => {
-    if (location.pathname === "/") {
+    setIsDrawerOpen(false);
+
+    if (item.type === "section") {
       e.preventDefault();
-      const targetId = href.replace("#", "");
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        setActiveSection(targetId);
+      if (location.pathname === "/") {
+        const targetId = item.href.replace("#", "");
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          setActiveSection(targetId);
+        }
+      } else {
+        navigate(`/${item.href}`);
+        setTimeout(() => {
+          const targetId = item.href.replace("#", "");
+          const element = document.getElementById(targetId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    } else if (item.type === "route") {
+      if (location.pathname === item.href && item.href === "/") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     }
-    setIsDrawerOpen(false);
+  };
+
+  const isLinkActive = (item: NavItem) => {
+    if (item.type === "route") {
+      if (item.href === "/") return location.pathname === "/";
+      return location.pathname.startsWith(item.href);
+    }
+    return location.pathname === "/" && activeSection === item.id;
   };
 
   return (
@@ -90,12 +106,27 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="flex flex-col">
+          <Link
+            to="/"
+            onClick={(e) => {
+              if (location.pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+            className="flex items-center gap-2.5 group cursor-pointer"
+            aria-label="Benaka Tours and Travels Homepage"
+          >
+            <img
+              src="/assets/brand/benaka_emblem_gold_transparent.png"
+              alt="Benaka Emblem"
+              className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 shrink-0"
+            />
+            <div className="flex flex-col justify-center">
               <span className="font-accent text-2xl md:text-3xl text-[#D4AF37] leading-none group-hover:text-amber-400 transition-colors">
                 Benaka
               </span>
-              <span className="text-xs tracking-[0.2em] font-extrabold uppercase text-white group-hover:text-[#D4AF37] transition-colors">
+              <span className="text-[10px] sm:text-xs tracking-[0.2em] font-extrabold uppercase text-white group-hover:text-[#D4AF37] transition-colors mt-0.5">
                 Tours & Travels
               </span>
             </div>
@@ -103,35 +134,55 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`relative text-sm font-medium transition-colors hover:text-[#D4AF37] ${
-                  activeSection === link.id
-                    ? "text-[#D4AF37] font-semibold"
-                    : "text-slate-300"
-                }`}
-              >
-                {link.name}
-                {activeSection === link.id && (
-                  <motion.div
-                    layoutId="activeNavIndicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] rounded-full"
-                  />
-                )}
-              </a>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              const active = isLinkActive(item);
+              if (item.type === "route") {
+                return (
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    onClick={(e) => handleNavClick(e, item)}
+                    className={`relative text-sm font-medium transition-colors hover:text-[#D4AF37] ${
+                      active ? "text-[#D4AF37] font-semibold" : "text-slate-300"
+                    }`}
+                  >
+                    {item.label === "Admin" ? (
+                      <span className="inline-flex items-center gap-1 text-slate-400 hover:text-[#D4AF37]">
+                        <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
+                        <span>Admin</span>
+                      </span>
+                    ) : (
+                      item.label
+                    )}
+                    {active && (
+                      <motion.div
+                        layoutId="activeNavIndicatorNavbar"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] rounded-full"
+                      />
+                    )}
+                  </Link>
+                );
+              }
 
-            <Link
-              to="/admin"
-              className="flex items-center gap-1 text-xs text-slate-400 hover:text-[#D4AF37] border border-white/10 hover:border-[#D4AF37]/40 px-2.5 py-1 rounded-lg transition-all"
-              title="Admin Portal"
-            >
-              <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
-              <span>Admin</span>
-            </Link>
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item)}
+                  className={`relative text-sm font-medium transition-colors hover:text-[#D4AF37] ${
+                    active ? "text-[#D4AF37] font-semibold" : "text-slate-300"
+                  }`}
+                >
+                  {item.label}
+                  {active && (
+                    <motion.div
+                      layoutId="activeNavIndicatorNavbar"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] rounded-full"
+                    />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Action CTAs */}
@@ -164,25 +215,43 @@ export const Navbar: React.FC = () => {
         title="Navigation"
       >
         <div className="flex flex-col gap-2">
-          {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-base font-semibold py-3 px-4 rounded-xl text-slate-200 hover:bg-[#1A1F2C] hover:text-[#D4AF37] transition-all"
-            >
-              {link.name}
-            </a>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            const active = isLinkActive(item);
+            if (item.type === "route") {
+              return (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  onClick={(e) => handleNavClick(e, item)}
+                  className={`text-base font-semibold py-3 px-4 rounded-xl transition-all flex items-center justify-between ${
+                    active
+                      ? "text-[#D4AF37] bg-amber-500/10 font-bold"
+                      : "text-slate-200 hover:bg-[#1A1F2C] hover:text-[#D4AF37]"
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  {item.label === "Admin" && (
+                    <Shield className="w-4 h-4 text-[#D4AF37]" />
+                  )}
+                </Link>
+              );
+            }
 
-          <Link
-            to="/admin"
-            onClick={() => setIsDrawerOpen(false)}
-            className="flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-xl text-slate-300 hover:bg-[#1A1F2C] hover:text-[#D4AF37]"
-          >
-            <Shield className="w-4 h-4 text-[#D4AF37]" />
-            <span>Secure Admin Portal</span>
-          </Link>
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item)}
+                className={`text-base font-semibold py-3 px-4 rounded-xl transition-all ${
+                  active
+                    ? "text-[#D4AF37] bg-amber-500/10 font-bold"
+                    : "text-slate-200 hover:bg-[#1A1F2C] hover:text-[#D4AF37]"
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
 
           <div className="pt-6 flex flex-col gap-3">
             <CallButton size="md" fullWidth />

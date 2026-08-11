@@ -62,7 +62,7 @@ export const FeaturedFleetSection: React.FC = () => {
             <GlassCard
               key={vehicle.id}
               hoverable
-              className="flex flex-col justify-between p-6 space-y-4"
+              className="flex flex-col justify-between p-6 space-y-4 group"
             >
               <div className="space-y-4">
                 {/* Header Pills */}
@@ -73,24 +73,27 @@ export const FeaturedFleetSection: React.FC = () => {
                   <StatusBadge status={vehicle.availability} />
                 </div>
 
-                {/* Vehicle Visual Placeholder */}
-                <div className="h-44 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center relative overflow-hidden group">
-                  <div className="text-center space-y-1">
-                    <span className="text-4xl group-hover:scale-110 transition-transform inline-block">
-                      🚘
-                    </span>
-                    <p className="text-[11px] text-slate-400 font-mono">
-                      {vehicle.name}
-                    </p>
-                  </div>
-                  <div className="absolute bottom-2 left-2 bg-amber-500/20 text-amber-300 text-[10px] px-2 py-0.5 rounded font-semibold backdrop-blur-sm">
+                {/* Real Vehicle Image Container */}
+                <div className="h-44 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center relative overflow-hidden">
+                  <img
+                    src={vehicle.image}
+                    alt={`${vehicle.name} Chauffeur Rental`}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src =
+                        "/assets/vehicles/placeholders/benekavehicles.png";
+                    }}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-2 left-2 bg-amber-500/20 text-amber-300 text-[10px] px-2 py-0.5 rounded font-semibold backdrop-blur-sm border border-amber-500/30">
                     100% Chauffeur Included
                   </div>
                 </div>
 
                 {/* Specs */}
                 <div>
-                  <h3 className="text-lg font-bold text-white">
+                  <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
                     {vehicle.name}
                   </h3>
                   <p className="text-xs text-slate-400 mt-0.5">

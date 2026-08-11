@@ -3,3 +3,11 @@
 @import "./typography.css";
 @import "./utilities.css";
 @import "./accessibility.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+}

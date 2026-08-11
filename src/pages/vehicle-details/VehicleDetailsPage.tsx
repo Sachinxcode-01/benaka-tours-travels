@@ -32,7 +32,7 @@ export const VehicleDetailsPage: React.FC = () => {
     return <NotFoundPage />;
   }
 
-  const fallbackSvg = `/assets/vehicles/placeholders/${vehicle.slug}.svg`;
+  const fallbackSvg = "/assets/vehicles/placeholders/benekavehicles.png";
 
   const similarVehicles = FLEET_VEHICLES.filter(
     (v) =>

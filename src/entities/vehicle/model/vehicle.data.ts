@@ -22,8 +22,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/swift-dzire.svg",
-    gallery: ["/assets/vehicles/placeholders/swift-dzire.svg"],
+    image: "/assets/vehicles/placeholders/swift dszire.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/swift dszire.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 1,
   },
   {
@@ -42,8 +45,8 @@ export const FLEET_VEHICLES: Vehicle[] = [
     recommendedFor: ["Outstation Trips", "Daily Rentals", "Executive Pick-up"],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/hyundai-aura.svg",
-    gallery: ["/assets/vehicles/placeholders/hyundai-aura.svg"],
+    image: "/assets/vehicles/placeholders/benekavehicles.png",
+    gallery: ["/assets/vehicles/placeholders/benekavehicles.png"],
     sortOrder: 2,
   },
   {
@@ -66,8 +69,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/maruti-ertiga.svg",
-    gallery: ["/assets/vehicles/placeholders/maruti-ertiga.svg"],
+    image: "/assets/vehicles/placeholders/eritiga.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/eritiga.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 3,
   },
   {
@@ -90,8 +96,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/innova-crysta.svg",
-    gallery: ["/assets/vehicles/placeholders/innova-crysta.svg"],
+    image: "/assets/vehicles/placeholders/Toyota-Innova-Crysta.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/Toyota-Innova-Crysta.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 4,
   },
   {
@@ -114,8 +123,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/force-toofan.svg",
-    gallery: ["/assets/vehicles/placeholders/force-toofan.svg"],
+    image: "/assets/vehicles/placeholders/Toofan cruser.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/Toofan cruser.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 5,
   },
   {
@@ -138,8 +150,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/mahindra-scorpio.svg",
-    gallery: ["/assets/vehicles/placeholders/mahindra-scorpio.svg"],
+    image: "/assets/vehicles/placeholders/scropio.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/scropio.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 6,
   },
   {
@@ -162,8 +177,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/mahindra-bolero.svg",
-    gallery: ["/assets/vehicles/placeholders/mahindra-bolero.svg"],
+    image: "/assets/vehicles/placeholders/bolero.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/bolero.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 7,
   },
   {
@@ -186,8 +204,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/maruti-brezza.svg",
-    gallery: ["/assets/vehicles/placeholders/maruti-brezza.svg"],
+    image: "/assets/vehicles/placeholders/brezza.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/brezza.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 8,
   },
   {
@@ -206,8 +227,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     recommendedFor: ["Business Trips", "Luxury Outstation", "VIP Commute"],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/grand-vitara.svg",
-    gallery: ["/assets/vehicles/placeholders/grand-vitara.svg"],
+    image: "/assets/vehicles/placeholders/Grand vitara.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/Grand vitara.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 9,
   },
   {
@@ -230,8 +254,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/mahindra-thar.svg",
-    gallery: ["/assets/vehicles/placeholders/mahindra-thar.svg"],
+    image: "/assets/vehicles/placeholders/Thar.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/Thar.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 10,
   },
   {
@@ -254,8 +281,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/tempo-traveller.svg",
-    gallery: ["/assets/vehicles/placeholders/tempo-traveller.svg"],
+    image: "/assets/vehicles/placeholders/Tempo-Traveller.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/Tempo-Traveller.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 11,
   },
   {
@@ -278,8 +308,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "booked",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/25-seater-bus.svg",
-    gallery: ["/assets/vehicles/placeholders/25-seater-bus.svg"],
+    image: "/assets/vehicles/placeholders/25 seater bus.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/25 seater bus.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 12,
   },
 ];

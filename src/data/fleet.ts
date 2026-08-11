@@ -9,8 +9,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     fuel: "Petrol / CNG / Diesel",
     status: "Available",
     notes: "Compact AC Sedan, budget friendly for city & local trips",
-    image:
-      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/swift dszire.jpg",
     features: [
       "Air Conditioning",
       "Music System",
@@ -36,8 +35,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     fuel: "CNG",
     status: "Available",
     notes: "AC Comfort Sedan with high mileage for smooth outstation rides",
-    image:
-      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/benekavehicles.png",
     features: [
       "AC with Rear Vents",
       "Touchscreen Infotainment",
@@ -61,8 +59,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     fuel: "Petrol / CNG",
     status: "Available",
     notes: "Spacious Family MUV with flexible seating & smooth AC performance",
-    image:
-      "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/eritiga.jpg",
     features: [
       "Dual AC Units",
       "Reclining Rear Seats",
@@ -88,8 +85,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     fuel: "Diesel",
     status: "Available",
     notes: "Premier Luxury MUV for long-distance executive & family travel",
-    image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/Toyota-Innova-Crysta.jpg",
     features: [
       "Captain Armrest Seats",
       "Automatic Climate Control",
@@ -116,8 +112,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     status: "Available",
     notes:
       "Large capacity multi-utility vehicle for big families & pilgrimage groups",
-    image:
-      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/Toofan cruser.jpg",
     features: [
       "11 Passenger Seats",
       "Heavy-Duty Diesel Engine",
@@ -143,8 +138,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     status: "Available",
     notes:
       "Tough & powerful SUV built for rough terrains & outstation adventures",
-    image:
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/scropio.jpg",
     features: [
       "mHawk Diesel Engine",
       "High Ground Clearance",
@@ -170,8 +164,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     fuel: "Diesel",
     status: "Available",
     notes: "Reliable, heavy-duty rural & rough terrain travel SUV",
-    image:
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/bolero.jpg",
     features: [
       "mHawk75 Engine",
       "Metal Body Strength",
@@ -196,8 +189,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     fuel: "Petrol / CNG",
     status: "Available",
     notes: "Modern compact SUV, easy urban navigation & comfortable ride",
-    image:
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/brezza.jpg",
     features: [
       "Auto AC",
       "SmartPlay Studio",
@@ -222,8 +214,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     fuel: "Petrol / CNG",
     status: "Available",
     notes: "Mid-size luxury SUV with premium interior comfort & high elegance",
-    image:
-      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/Grand vitara.jpg",
     features: [
       "Panoramic Sunroof Vibe",
       "Leatherette Interiors",
@@ -249,8 +240,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     fuel: "Diesel",
     status: "Available",
     notes: "4x4 adventure SUV for style, rugged travel & celebratory entrances",
-    image:
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/Thar.jpg",
     features: [
       "4x4 Drive Mode",
       "Iconic Convertible Styling",
@@ -276,8 +266,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     status: "Available",
     notes:
       "Chauffeur-driven group tour coach with push-back seats & ample luggage space",
-    image:
-      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/Tempo-Traveller.jpg",
     features: [
       "13 Push-back Reclining Seats",
       "Roof Mounted AC",
@@ -304,8 +293,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     status: "Booked",
     notes:
       "AC / Non-AC Large Tour Coach for marriages, corporate events & school tours",
-    image:
-      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/25 seater bus.jpg",
     features: [
       "25 Comfortable Seats",
       "High Capacity Luggage Hold",

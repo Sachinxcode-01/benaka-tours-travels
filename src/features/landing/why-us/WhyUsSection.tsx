@@ -37,8 +37,7 @@ export const WHY_BENAKA_PILLARS: WhyPillar[] = [
     description:
       "Every BENAKA vehicle comes with an experienced driver in uniform. Certified for long-distance highway routes, temple tours, and city transit.",
     icon: UserCheck,
-    image:
-      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/swift dszire.jpg",
     highlights: [
       "Highway Route Expertise",
       "Formal Attire & Courtesy",
@@ -53,8 +52,7 @@ export const WHY_BENAKA_PILLARS: WhyPillar[] = [
     description:
       "Choose from Dzire, Aura, Ertiga, Innova Crysta, Scorpio, Bolero, Brezza, Grand Vitara, Thar, Toofan, Tempo Traveller, and 25-Seater Bus.",
     icon: Car,
-    image:
-      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/benekavehicles.png",
     highlights: [
       "Sedan, MUV, SUV & Minibus",
       "Live Availability Status",
@@ -69,8 +67,7 @@ export const WHY_BENAKA_PILLARS: WhyPillar[] = [
     description:
       "Our chauffeur arrives directly at your doorstep in Panchaxari Nagar, Gadag, or surrounding locations. No travelling to taxi stands required.",
     icon: Home,
-    image:
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/Toyota-Innova-Crysta.jpg",
     highlights: [
       "Zero Taxi Stand Travel",
       "Luggage Assistance Included",
@@ -85,8 +82,7 @@ export const WHY_BENAKA_PILLARS: WhyPillar[] = [
     description:
       "Thoroughly cleaned, sanitized, and air-conditioned interiors before every single journey for maximum passenger comfort.",
     icon: Sparkles,
-    image:
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/brezza.jpg",
     highlights: [
       "Deep Interior Sanitization",
       "Fresh AC Air Quality",
@@ -101,8 +97,7 @@ export const WHY_BENAKA_PILLARS: WhyPillar[] = [
     description:
       "Our drivers know exact highway routes, toll shortcuts, and scenic rest stops across Karnataka, Goa, Maharashtra, and Tamil Nadu.",
     icon: MapPin,
-    image:
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/scropio.jpg",
     highlights: [
       "Toll & Fastag Integration",
       "Scenic Temple Stopovers",
@@ -117,8 +112,7 @@ export const WHY_BENAKA_PILLARS: WhyPillar[] = [
     description:
       "Request a chauffeur quotation on WhatsApp in 30 seconds. Get immediate availability confirmation and exact estimated fare quotes.",
     icon: MessageCircle,
-    image:
-      "https://images.unsplash.com/photo-1616469829941-c7200edec809?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/Grand vitara.jpg",
     highlights: [
       "30-Second Inquiry Wizard",
       "Direct Manager Response",
@@ -133,8 +127,7 @@ export const WHY_BENAKA_PILLARS: WhyPillar[] = [
     description:
       "Available 24/7 for early morning flight transfers at Hubballi Airport, late-night train arrivals, or emergency outstation departures.",
     icon: Clock,
-    image:
-      "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/Tempo-Traveller.jpg",
     highlights: [
       "Flight Tracking Included",
       "Midnight Pickup Ready",
@@ -149,8 +142,7 @@ export const WHY_BENAKA_PILLARS: WhyPillar[] = [
     description:
       "Spacious MUVs for family pilgrimages and executive sedans for corporate delegates. GST compliant billing for corporate contracts.",
     icon: Briefcase,
-    image:
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80",
+    image: "/assets/vehicles/placeholders/25 seater bus.jpg",
     highlights: [
       "Family Pilgrimage Ready",
       "GST Tax Invoice Billing",
@@ -160,9 +152,9 @@ export const WHY_BENAKA_PILLARS: WhyPillar[] = [
 ];
 
 export const WhyUsSection: React.FC = () => {
+  const [activeStep, setActiveStep] = useState<number>(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
-  const [activeStep, setActiveStep] = useState<number>(0);
 
   useEffect(() => {
     if (!sectionRef.current || !pinRef.current) return;
@@ -192,6 +184,7 @@ export const WhyUsSection: React.FC = () => {
 
   return (
     <section
+      id="why-us"
       ref={sectionRef}
       className="py-24 bg-[#0B0D12] text-white relative overflow-hidden"
     >

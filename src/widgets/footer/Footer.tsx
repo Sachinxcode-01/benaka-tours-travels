@@ -25,13 +25,20 @@ export const Footer: React.FC = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
         {/* Brand & Story */}
         <div className="lg:col-span-2 space-y-4">
-          <div className="flex items-center gap-2">
-            <span className="font-brand-accent text-3xl font-bold text-amber-400">
-              Benaka
-            </span>
-            <span className="text-sm font-bold tracking-wider text-slate-100 uppercase">
-              Tours & Travels
-            </span>
+          <div className="flex items-center gap-3">
+            <img
+              src="/assets/brand/benaka_emblem_gold_transparent.png"
+              alt="Benaka Emblem"
+              className="h-12 w-auto object-contain shrink-0"
+            />
+            <div className="flex flex-col">
+              <span className="font-brand-accent text-3xl font-bold text-amber-400 leading-none">
+                Benaka
+              </span>
+              <span className="text-xs font-bold tracking-[0.2em] text-slate-100 uppercase mt-0.5">
+                Tours & Travels
+              </span>
+            </div>
           </div>
 
           <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
