@@ -35,7 +35,7 @@ export const INITIAL_FLEET: Vehicle[] = [
     fuel: "CNG",
     status: "Available",
     notes: "AC Comfort Sedan with high mileage for smooth outstation rides",
-    image: "/assets/vehicles/placeholders/benekavehicles.png",
+    image: "/assets/vehicles/placeholders/Hyundai Aura.jpg",
     features: [
       "AC with Rear Vents",
       "Touchscreen Infotainment",

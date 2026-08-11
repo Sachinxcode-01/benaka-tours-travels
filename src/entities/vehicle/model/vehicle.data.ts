@@ -45,8 +45,11 @@ export const FLEET_VEHICLES: Vehicle[] = [
     recommendedFor: ["Outstation Trips", "Daily Rentals", "Executive Pick-up"],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/benekavehicles.png",
-    gallery: ["/assets/vehicles/placeholders/benekavehicles.png"],
+    image: "/assets/vehicles/placeholders/Hyundai Aura.jpg",
+    gallery: [
+      "/assets/vehicles/placeholders/Hyundai Aura.jpg",
+      "/assets/vehicles/placeholders/benekavehicles.png",
+    ],
     sortOrder: 2,
   },
   {
