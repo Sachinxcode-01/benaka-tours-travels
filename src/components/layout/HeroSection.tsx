@@ -33,7 +33,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     >
       {/* Real Benaka Vehicle Fleet Background Layer */}
       <motion.div
-        initial={shouldReduceMotion ? { scale: 1, opacity: 1 } : { scale: 1.03, opacity: 0.85 }}
+        initial={
+          shouldReduceMotion
+            ? { scale: 1, opacity: 1 }
+            : { scale: 1.03, opacity: 0.85 }
+        }
         animate={{ scale: 1.0, opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="hero-background absolute inset-0 z-0 bg-no-repeat bg-cover bg-[position:center_right] max-[1024px]:bg-[position:62%_center] max-[768px]:bg-[position:68%_center] max-[430px]:bg-[position:72%_center] pointer-events-none select-none"

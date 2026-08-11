@@ -31,7 +31,9 @@ export const HeroSection: React.FC = () => {
     () => {
       if (!containerRef.current || typeof window === "undefined") return;
       try {
-        const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const mediaQuery = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        );
         if (mediaQuery.matches) return;
 
         const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -41,7 +43,7 @@ export const HeroSection: React.FC = () => {
             bgRef.current,
             { opacity: 0.85, scale: 1.03 },
             { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" },
-            0
+            0,
           );
         }
 
@@ -50,7 +52,7 @@ export const HeroSection: React.FC = () => {
             badgeRef.current,
             { opacity: 0, y: -15 },
             { opacity: 1, y: 0, duration: 0.4 },
-            "-=0.9"
+            "-=0.9",
           );
         }
         if (brandTitleRef.current) {
@@ -58,7 +60,7 @@ export const HeroSection: React.FC = () => {
             brandTitleRef.current,
             { opacity: 0, y: 20 },
             { opacity: 1, y: 0, duration: 0.4 },
-            "-=0.2"
+            "-=0.2",
           );
         }
         if (titleRef.current) {
@@ -66,7 +68,7 @@ export const HeroSection: React.FC = () => {
             titleRef.current,
             { opacity: 0, y: 25 },
             { opacity: 1, y: 0, duration: 0.5 },
-            "-=0.2"
+            "-=0.2",
           );
         }
         if (descRef.current) {
@@ -74,7 +76,7 @@ export const HeroSection: React.FC = () => {
             descRef.current,
             { opacity: 0, y: 20 },
             { opacity: 1, y: 0, duration: 0.4 },
-            "-=0.2"
+            "-=0.2",
           );
         }
         if (ctaRef.current?.children?.length) {
@@ -82,7 +84,7 @@ export const HeroSection: React.FC = () => {
             Array.from(ctaRef.current.children),
             { opacity: 0, y: 15 },
             { opacity: 1, y: 0, stagger: 0.08, duration: 0.4 },
-            "-=0.2"
+            "-=0.2",
           );
         }
         if (trustRef.current?.children?.length) {
@@ -90,14 +92,14 @@ export const HeroSection: React.FC = () => {
             Array.from(trustRef.current.children),
             { opacity: 0, scale: 0.95 },
             { opacity: 1, scale: 1, stagger: 0.05, duration: 0.3 },
-            "-=0.2"
+            "-=0.2",
           );
         }
       } catch {
         // Fallback gracefully if GSAP is unavailable in test environment
       }
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   const handleScrollToFleet = () => {

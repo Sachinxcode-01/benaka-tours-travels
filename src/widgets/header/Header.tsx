@@ -36,6 +36,18 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Auto-close mobile drawer when window is resized to desktop width (>= 1024px)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // IntersectionObserver for active section highlighting on home page
   useEffect(() => {
     if (location.pathname !== "/") return;
@@ -189,7 +201,7 @@ export const Header: React.FC = () => {
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
+          {/* Desktop Nav Links (Visible only on >= 1024px) */}
           <nav className="hidden lg:flex items-center gap-5 text-xs font-semibold uppercase tracking-wider">
             {NAV_ITEMS.map((item) => {
               const active = isLinkActive(item);
@@ -234,8 +246,8 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          {/* Action CTAs */}
-          <div className="hidden sm:flex items-center gap-2.5">
+          {/* Action CTAs (Visible only on >= 1024px) */}
+          <div className="hidden lg:flex items-center gap-2.5">
             <a href={createTelUrl()} className="inline-flex">
               <Button
                 variant="outline"
@@ -261,8 +273,8 @@ export const Header: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Trigger */}
-          <div className="lg:hidden flex items-center">
+          {/* Mobile Menu Trigger (Visible only on < 1024px) */}
+          <div className="flex lg:hidden items-center">
             <IconButton
               icon={
                 isMobileMenuOpen ? (

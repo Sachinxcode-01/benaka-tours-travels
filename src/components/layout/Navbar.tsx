@@ -30,6 +30,18 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Auto-close mobile drawer when window is resized to desktop width (>= 1024px)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsDrawerOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // IntersectionObserver for homepage sections
   useEffect(() => {
     if (location.pathname !== "/") return;
@@ -141,7 +153,7 @@ export const Navbar: React.FC = () => {
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
+          {/* Desktop Nav Links (Visible only on >= 1024px) */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {NAV_ITEMS.map((item) => {
               const active = isLinkActive(item);
@@ -194,17 +206,17 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* Action CTAs */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Action CTAs (Visible only on >= 1024px) */}
+          <div className="hidden lg:flex items-center gap-3">
             <CallButton size="sm" />
             <WhatsAppButton size="sm" label="WhatsApp" />
           </div>
 
-          {/* Mobile Hamburger Trigger */}
+          {/* Mobile Hamburger Trigger (Visible only on < 1024px) */}
           <button
             onClick={() => setIsDrawerOpen(true)}
             aria-label="Open Navigation Menu"
-            className="lg:hidden p-2.5 rounded-xl bg-[#121620] border border-white/10 text-white hover:text-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+            className="lg:hidden p-2.5 rounded-xl bg-[#121620] border border-white/10 text-white hover:text-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] cursor-pointer"
           >
             <Menu className="w-6 h-6" />
           </button>
