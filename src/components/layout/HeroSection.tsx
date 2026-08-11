@@ -29,18 +29,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section
       id="home"
-      className="hero relative min-h-[100svh] w-full flex flex-col justify-between pt-8 pb-16 overflow-hidden bg-[#040507] isolation-isolate"
+      className="hero relative min-h-[100svh] w-full flex flex-col justify-between pt-8 pb-16 overflow-hidden bg-[#040507]"
     >
       {/* Real Benaka Vehicle Fleet Background Layer */}
       <motion.div
-        initial={
-          shouldReduceMotion
-            ? { scale: 1, opacity: 1 }
-            : { scale: 1.04, opacity: 0.82 }
-        }
+        initial={shouldReduceMotion ? { scale: 1, opacity: 1 } : { scale: 1.03, opacity: 0.85 }}
         animate={{ scale: 1.0, opacity: 1 }}
-        transition={{ duration: 1.4, ease: "easeOut" }}
-        className="hero-background absolute inset-0 z-[-3] bg-no-repeat bg-cover bg-[position:center_right] max-[1024px]:bg-[position:62%_center] max-[768px]:bg-[position:68%_center] max-[430px]:bg-[position:72%_center] pointer-events-none select-none"
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="hero-background absolute inset-0 z-0 bg-no-repeat bg-cover bg-[position:center_right] max-[1024px]:bg-[position:62%_center] max-[768px]:bg-[position:68%_center] max-[430px]:bg-[position:72%_center] pointer-events-none select-none"
         style={{
           backgroundImage: `url("/assets/vehicles/placeholders/benekavehicles.png")`,
         }}
@@ -48,29 +44,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       {/* Dual Cinematic Gradient Overlay for Maximum Text Contrast */}
       <div
-        className="hero-overlay absolute inset-0 z-[-2] pointer-events-none"
+        className="hero-overlay absolute inset-0 z-1 pointer-events-none"
         style={{
           background: `
             linear-gradient(
               90deg,
-              rgba(4, 5, 7, 0.98) 0%,
-              rgba(4, 5, 7, 0.93) 26%,
-              rgba(4, 5, 7, 0.72) 48%,
-              rgba(4, 5, 7, 0.32) 72%,
-              rgba(4, 5, 7, 0.12) 100%
+              rgba(4, 5, 7, 0.94) 0%,
+              rgba(4, 5, 7, 0.88) 28%,
+              rgba(4, 5, 7, 0.60) 52%,
+              rgba(4, 5, 7, 0.25) 75%,
+              rgba(4, 5, 7, 0.05) 100%
             ),
             linear-gradient(
               180deg,
-              rgba(4, 5, 7, 0.08) 0%,
-              rgba(4, 5, 7, 0.08) 58%,
-              rgba(4, 5, 7, 0.92) 100%
+              rgba(4, 5, 7, 0.1) 0%,
+              rgba(4, 5, 7, 0.1) 55%,
+              rgba(4, 5, 7, 0.95) 100%
             )
           `,
         }}
       />
 
       {/* Gold Radial Spotlight Accent */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#D4AF37]/12 blur-3xl pointer-events-none z-[-1]" />
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#D4AF37]/15 blur-3xl pointer-events-none z-2" />
 
       {/* Hero Content Layer */}
       <div className="hero-content max-w-7xl mx-auto px-4 relative z-10 my-auto text-center space-y-8">

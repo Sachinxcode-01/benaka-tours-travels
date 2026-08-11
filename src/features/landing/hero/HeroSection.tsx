@@ -31,9 +31,7 @@ export const HeroSection: React.FC = () => {
     () => {
       if (!containerRef.current || typeof window === "undefined") return;
       try {
-        const mediaQuery = window.matchMedia(
-          "(prefers-reduced-motion: reduce)",
-        );
+        const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
         if (mediaQuery.matches) return;
 
         const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -41,9 +39,9 @@ export const HeroSection: React.FC = () => {
         if (bgRef.current) {
           tl.fromTo(
             bgRef.current,
-            { opacity: 0.82, scale: 1.04 },
-            { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" },
-            0,
+            { opacity: 0.85, scale: 1.03 },
+            { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" },
+            0
           );
         }
 
@@ -52,7 +50,7 @@ export const HeroSection: React.FC = () => {
             badgeRef.current,
             { opacity: 0, y: -15 },
             { opacity: 1, y: 0, duration: 0.4 },
-            "-=1.0",
+            "-=0.9"
           );
         }
         if (brandTitleRef.current) {
@@ -60,7 +58,7 @@ export const HeroSection: React.FC = () => {
             brandTitleRef.current,
             { opacity: 0, y: 20 },
             { opacity: 1, y: 0, duration: 0.4 },
-            "-=0.2",
+            "-=0.2"
           );
         }
         if (titleRef.current) {
@@ -68,7 +66,7 @@ export const HeroSection: React.FC = () => {
             titleRef.current,
             { opacity: 0, y: 25 },
             { opacity: 1, y: 0, duration: 0.5 },
-            "-=0.2",
+            "-=0.2"
           );
         }
         if (descRef.current) {
@@ -76,7 +74,7 @@ export const HeroSection: React.FC = () => {
             descRef.current,
             { opacity: 0, y: 20 },
             { opacity: 1, y: 0, duration: 0.4 },
-            "-=0.2",
+            "-=0.2"
           );
         }
         if (ctaRef.current?.children?.length) {
@@ -84,7 +82,7 @@ export const HeroSection: React.FC = () => {
             Array.from(ctaRef.current.children),
             { opacity: 0, y: 15 },
             { opacity: 1, y: 0, stagger: 0.08, duration: 0.4 },
-            "-=0.2",
+            "-=0.2"
           );
         }
         if (trustRef.current?.children?.length) {
@@ -92,14 +90,14 @@ export const HeroSection: React.FC = () => {
             Array.from(trustRef.current.children),
             { opacity: 0, scale: 0.95 },
             { opacity: 1, scale: 1, stagger: 0.05, duration: 0.3 },
-            "-=0.2",
+            "-=0.2"
           );
         }
       } catch {
         // Fallback gracefully if GSAP is unavailable in test environment
       }
     },
-    { scope: containerRef },
+    { scope: containerRef }
   );
 
   const handleScrollToFleet = () => {
@@ -116,12 +114,12 @@ export const HeroSection: React.FC = () => {
     <section
       ref={containerRef}
       id="home"
-      className="hero relative min-h-[100svh] w-full flex flex-col justify-between pt-12 pb-16 overflow-hidden bg-[#040507] isolation-isolate"
+      className="hero relative min-h-[100svh] w-full flex flex-col justify-between pt-12 pb-16 overflow-hidden bg-[#040507]"
     >
       {/* Real Benaka Vehicle Fleet Background Layer */}
       <div
         ref={bgRef}
-        className="hero-background absolute inset-0 z-[-3] bg-no-repeat bg-cover bg-[position:center_right] max-[1024px]:bg-[position:62%_center] max-[768px]:bg-[position:68%_center] max-[430px]:bg-[position:72%_center] pointer-events-none select-none"
+        className="hero-background absolute inset-0 z-0 bg-no-repeat bg-cover bg-[position:center_right] max-[1024px]:bg-[position:62%_center] max-[768px]:bg-[position:68%_center] max-[430px]:bg-[position:72%_center] pointer-events-none select-none"
         style={{
           backgroundImage: `url("/assets/vehicles/placeholders/benekavehicles.png")`,
         }}
@@ -129,29 +127,29 @@ export const HeroSection: React.FC = () => {
 
       {/* Dual Cinematic Gradient Overlay for Maximum Text Contrast */}
       <div
-        className="hero-overlay absolute inset-0 z-[-2] pointer-events-none"
+        className="hero-overlay absolute inset-0 z-1 pointer-events-none"
         style={{
           background: `
             linear-gradient(
               90deg,
-              rgba(4, 5, 7, 0.98) 0%,
-              rgba(4, 5, 7, 0.93) 26%,
-              rgba(4, 5, 7, 0.72) 48%,
-              rgba(4, 5, 7, 0.32) 72%,
-              rgba(4, 5, 7, 0.12) 100%
+              rgba(4, 5, 7, 0.94) 0%,
+              rgba(4, 5, 7, 0.88) 28%,
+              rgba(4, 5, 7, 0.60) 52%,
+              rgba(4, 5, 7, 0.25) 75%,
+              rgba(4, 5, 7, 0.05) 100%
             ),
             linear-gradient(
               180deg,
-              rgba(4, 5, 7, 0.08) 0%,
-              rgba(4, 5, 7, 0.08) 58%,
-              rgba(4, 5, 7, 0.92) 100%
+              rgba(4, 5, 7, 0.1) 0%,
+              rgba(4, 5, 7, 0.1) 55%,
+              rgba(4, 5, 7, 0.95) 100%
             )
           `,
         }}
       />
 
       {/* Gold Radial Spotlight Accent */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#D4AF37]/12 blur-3xl pointer-events-none z-[-1]" />
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#D4AF37]/15 blur-3xl pointer-events-none z-2" />
 
       {/* Hero Content Layer */}
       <div className="hero-content relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 my-auto">
