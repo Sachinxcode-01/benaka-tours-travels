@@ -37,7 +37,10 @@ export const buttonVariants = cva(
 
 export interface ButtonProps
   extends
-    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart">,
+    Omit<
+      React.ButtonHTMLAttributes<HTMLButtonElement>,
+      "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart"
+    >,
     VariantProps<typeof buttonVariants> {
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
@@ -81,7 +84,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         <span>{children}</span>
 
         {!isLoading && rightIcon ? (
-          <span className="ml-2 inline-flex items-center transition-transform group-hover:translate-x-1">{rightIcon}</span>
+          <span className="ml-2 inline-flex items-center transition-transform group-hover:translate-x-1">
+            {rightIcon}
+          </span>
         ) : null}
       </motion.button>
     );

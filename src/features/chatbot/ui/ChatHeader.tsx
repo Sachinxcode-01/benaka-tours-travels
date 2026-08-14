@@ -31,7 +31,9 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
           </div>
           <div className="flex items-center gap-1.5 text-[10px] md:text-xs text-amber-300/90 font-medium truncate">
             <span className="text-emerald-400 font-bold shrink-0">● 24/7</span>
-            <span className="truncate hidden sm:inline">• Chauffeur Rentals</span>
+            <span className="truncate hidden sm:inline">
+              • Chauffeur Rentals
+            </span>
           </div>
         </div>
       </div>

@@ -51,17 +51,25 @@ export const Step4WhatsApp: React.FC<Step4WhatsAppProps> = ({
     tripPurpose: formData.tripPurpose,
     vehicleId: selectedVehicle?.id,
     vehicleName: selectedVehicle?.name,
-    vehicleCategory: formData.preferredCategory !== "any" ? formData.preferredCategory : undefined,
+    vehicleCategory:
+      formData.preferredCategory !== "any"
+        ? formData.preferredCategory
+        : undefined,
     customerName: "Guest",
     customerPhone: "Provided on chat",
     pickupAddress: formData.pickup,
     privacyConsent: true,
   };
 
-  const waMessage = generateBookingWhatsAppMessage(bookingRequest as BookingRequest);
+  const waMessage = generateBookingWhatsAppMessage(
+    bookingRequest as BookingRequest,
+  );
   const waUrl = createWhatsAppInquiryUrl(waMessage);
 
-  const displayMessage = waMessage.replace(/^Hello Benaka Tours & Travels 👋\n\n/, "");
+  const displayMessage = waMessage.replace(
+    /^Hello Benaka Tours & Travels 👋\n\n/,
+    "",
+  );
 
   const handleCopy = useCallback(async () => {
     try {
@@ -171,7 +179,11 @@ export const Step4WhatsApp: React.FC<Step4WhatsAppProps> = ({
               : "bg-[#1A1F2C] border-white/15 text-slate-400 hover:border-[#D4AF37]/40 hover:text-[#D4AF37]"
           }`}
         >
-          {saved ? <Check className="w-3.5 h-3.5" /> : <Bookmark className="w-3.5 h-3.5" />}
+          {saved ? (
+            <Check className="w-3.5 h-3.5" />
+          ) : (
+            <Bookmark className="w-3.5 h-3.5" />
+          )}
           {saved ? "Trip Saved!" : "Save Trip"}
         </button>
 

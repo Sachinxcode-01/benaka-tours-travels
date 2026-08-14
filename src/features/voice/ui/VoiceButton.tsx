@@ -1,7 +1,10 @@
 import React from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Mic, MicOff, Square } from "lucide-react";
-import { useVoiceInput, type UseVoiceInputOptions } from "../hooks/useVoiceInput";
+import {
+  useVoiceInput,
+  type UseVoiceInputOptions,
+} from "../hooks/useVoiceInput";
 import type { VoiceEntities } from "../model/voice.types";
 
 interface VoiceButtonProps extends UseVoiceInputOptions {
@@ -25,9 +28,7 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
   if (state === "unsupported") return null;
 
   const isSmall = size === "sm";
-  const btnSize = isSmall
-    ? "w-9 h-9"
-    : "w-11 h-11";
+  const btnSize = isSmall ? "w-9 h-9" : "w-11 h-11";
 
   const label =
     state === "listening"
@@ -81,7 +82,11 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
               <Square className="w-4 h-4 fill-current" />
             </motion.div>
           ) : state === "denied" ? (
-            <motion.div key="denied" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            <motion.div
+              key="denied"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
               <MicOff className="w-4 h-4" />
             </motion.div>
           ) : (

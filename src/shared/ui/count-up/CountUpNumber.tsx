@@ -44,7 +44,10 @@ export const CountUpNumber: React.FC<CountUpNumberProps> = ({
 
           const step = (timestamp: number) => {
             if (!startTime) startTime = timestamp;
-            const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+            const progress = Math.min(
+              (timestamp - startTime) / (duration * 1000),
+              1,
+            );
             // Ease out cubic
             const easeProgress = 1 - Math.pow(1 - progress, 3);
             const currentVal = startVal + (end - startVal) * easeProgress;

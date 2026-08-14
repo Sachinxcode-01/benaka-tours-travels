@@ -513,8 +513,16 @@ export class ResponseBuilder {
       text: "🗺️ **Smart Trip Planner**\n\nUse our interactive Trip Planner to enter your route, passenger count, travel dates, and luggage requirements. Our recommendation engine will suggest the best chauffeur-driven vehicles for your trip.",
       timestamp: Date.now(),
       quickReplies: [
-        { id: "qr-tp-nav", label: "🚗 View Vehicles", payload: PAYLOAD_VIEW_FLEET },
-        { id: "qr-tp-wa", label: "💬 WhatsApp Quote", payload: PAYLOAD_WHATSAPP_CONTACT },
+        {
+          id: "qr-tp-nav",
+          label: "🚗 View Vehicles",
+          payload: PAYLOAD_VIEW_FLEET,
+        },
+        {
+          id: "qr-tp-wa",
+          label: "💬 WhatsApp Quote",
+          payload: PAYLOAD_WHATSAPP_CONTACT,
+        },
       ],
       actions: [
         {
@@ -535,7 +543,11 @@ export class ResponseBuilder {
       timestamp: Date.now(),
       quickReplies: [
         { id: "qr-vc-fl", label: "🚗 View Fleet", payload: PAYLOAD_VIEW_FLEET },
-        { id: "qr-vc-tp", label: "🗺️ Trip Planner", payload: PAYLOAD_PLAN_TRIP },
+        {
+          id: "qr-vc-tp",
+          label: "🗺️ Trip Planner",
+          payload: PAYLOAD_PLAN_TRIP,
+        },
       ],
       actions: [
         {
@@ -555,7 +567,11 @@ export class ResponseBuilder {
       text: "📋 **My Saved Trips**\n\nView your recent and saved trip requests, re-book previously planned routes, or generate new WhatsApp quotes.",
       timestamp: Date.now(),
       quickReplies: [
-        { id: "qr-mt-tp", label: "🗺️ Plan New Trip", payload: PAYLOAD_PLAN_TRIP },
+        {
+          id: "qr-mt-tp",
+          label: "🗺️ Plan New Trip",
+          payload: PAYLOAD_PLAN_TRIP,
+        },
         { id: "qr-mt-fl", label: "🚗 View Fleet", payload: PAYLOAD_VIEW_FLEET },
       ],
       actions: [
@@ -601,4 +617,3 @@ export class ResponseBuilder {
     };
   }
 }
-

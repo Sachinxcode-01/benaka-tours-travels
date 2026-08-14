@@ -62,7 +62,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   min-height: 100svh;
-  background-color: #07080B;
+  background-color: #07080b;
 }
 
 #root {
@@ -135,4 +135,3 @@ code {
   will-change: transform, opacity;
   transform: translateZ(0);
 }
-

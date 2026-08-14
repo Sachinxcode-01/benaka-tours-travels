@@ -115,7 +115,10 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}) {
     };
 
     recognition.onerror = (event: SpeechRecognitionErrorEventInner) => {
-      if (event.error === "not-allowed" || event.error === "service-not-allowed") {
+      if (
+        event.error === "not-allowed" ||
+        event.error === "service-not-allowed"
+      ) {
         setState("denied");
       } else {
         setState("idle");

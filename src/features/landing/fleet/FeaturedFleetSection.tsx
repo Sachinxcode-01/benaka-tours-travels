@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { FLEET_VEHICLES, type Vehicle, type VehicleCategory } from "@entities/vehicle";
+import {
+  FLEET_VEHICLES,
+  type Vehicle,
+  type VehicleCategory,
+} from "@entities/vehicle";
 import { createWhatsAppInquiryUrl } from "@shared/services/whatsapp.service";
 import { Container } from "@shared/ui/container";
 import { SectionHeading } from "@shared/ui/section-heading";
@@ -13,7 +17,8 @@ import { BookingWizardModal } from "../../booking/BookingWizardModal";
 
 export const FeaturedFleetSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [activeVehicleDrawer, setActiveVehicleDrawer] = useState<Vehicle | null>(null);
+  const [activeVehicleDrawer, setActiveVehicleDrawer] =
+    useState<Vehicle | null>(null);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState<boolean>(false);
 
   const categories = [
@@ -61,7 +66,10 @@ export const FeaturedFleetSection: React.FC = () => {
         </div>
 
         {/* Fleet Grid */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           <AnimatePresence mode="popLayout">
             {filteredVehicles.map((vehicle) => (
               <motion.div
@@ -110,7 +118,8 @@ export const FeaturedFleetSection: React.FC = () => {
                         {vehicle.name}
                       </h3>
                       <p className="text-xs text-slate-400 mt-0.5">
-                        💺 {vehicle.seats} Seats | ⛽ {vehicle.fuelTypes.join(", ")}
+                        💺 {vehicle.seats} Seats | ⛽{" "}
+                        {vehicle.fuelTypes.join(", ")}
                       </p>
                     </div>
 
@@ -142,7 +151,9 @@ export const FeaturedFleetSection: React.FC = () => {
                     </Button>
 
                     <a
-                      href={createWhatsAppInquiryUrl({ vehicleName: vehicle.name })}
+                      href={createWhatsAppInquiryUrl({
+                        vehicleName: vehicle.name,
+                      })}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

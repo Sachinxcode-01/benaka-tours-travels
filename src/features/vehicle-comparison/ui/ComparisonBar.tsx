@@ -22,10 +22,11 @@ export const ComparisonBar: React.FC = () => {
             <div className="flex items-center gap-2 text-purple-400">
               <Scale className="w-4 h-4 shrink-0" />
               <span className="text-sm font-semibold">
-                Comparing{" "}
-                <span className="text-white font-bold">{count}</span>
+                Comparing <span className="text-white font-bold">{count}</span>
                 {" / "}
-                <span className="text-slate-400">{MAX_COMPARISON_VEHICLES}</span>{" "}
+                <span className="text-slate-400">
+                  {MAX_COMPARISON_VEHICLES}
+                </span>{" "}
                 vehicles
               </span>
             </div>

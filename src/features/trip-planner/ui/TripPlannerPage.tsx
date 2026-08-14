@@ -59,8 +59,9 @@ export const TripPlannerPage: React.FC = () => {
               Plan Your Perfect Journey
             </h1>
             <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
-              Tell us about your trip and we'll recommend the best chauffeur-driven
-              vehicle for you — then send your enquiry instantly via WhatsApp.
+              Tell us about your trip and we'll recommend the best
+              chauffeur-driven vehicle for you — then send your enquiry
+              instantly via WhatsApp.
             </p>
           </motion.div>
         </div>

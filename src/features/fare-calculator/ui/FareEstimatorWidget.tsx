@@ -104,11 +104,17 @@ const TEMPLE_TOURS = [
 const AIRPORT_ROUTES = [
   { name: "Gadag ↔ Hubballi Airport (HBX)", fareDzire: 1800, fareErtiga: 2400 },
   { name: "Gadag ↔ Belagavi Airport (IXG)", fareDzire: 3800, fareErtiga: 4800 },
-  { name: "Gadag ↔ Goa Dabolim / Mopa (GOI/GOX)", fareDzire: 6500, fareErtiga: 8500 },
+  {
+    name: "Gadag ↔ Goa Dabolim / Mopa (GOI/GOX)",
+    fareDzire: 6500,
+    fareErtiga: 8500,
+  },
 ];
 
 export const FareEstimatorWidget: React.FC = () => {
-  const [tripType, setTripType] = useState<"outstation" | "local" | "temple" | "airport">("outstation");
+  const [tripType, setTripType] = useState<
+    "outstation" | "local" | "temple" | "airport"
+  >("outstation");
   const [selectedVehicleId, setSelectedVehicleId] = useState<string>("dzire");
   const [distanceKm, setDistanceKm] = useState<number>(300);
   const [daysCount, setDaysCount] = useState<number>(1);
@@ -118,8 +124,9 @@ export const FareEstimatorWidget: React.FC = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState<boolean>(false);
 
   const selectedVehicle = useMemo(
-    () => VEHICLE_RATES.find((v) => v.id === selectedVehicleId) || VEHICLE_RATES[0],
-    [selectedVehicleId]
+    () =>
+      VEHICLE_RATES.find((v) => v.id === selectedVehicleId) || VEHICLE_RATES[0],
+    [selectedVehicleId],
   );
 
   // Calculation logic
@@ -132,7 +139,10 @@ export const FareEstimatorWidget: React.FC = () => {
       baseFare = minKm * selectedVehicle.perKm;
       driverCost = daysCount * selectedVehicle.driverAllowance;
     } else if (tripType === "local") {
-      baseFare = localPkg === "8h" ? selectedVehicle.local8hr80km : selectedVehicle.local12hr120km;
+      baseFare =
+        localPkg === "8h"
+          ? selectedVehicle.local8hr80km
+          : selectedVehicle.local12hr120km;
       driverCost = 0; // Included in local pkg
     } else if (tripType === "temple") {
       const tour = TEMPLE_TOURS[selectedTempleIndex];
@@ -141,7 +151,8 @@ export const FareEstimatorWidget: React.FC = () => {
       driverCost = tour.days * selectedVehicle.driverAllowance;
     } else if (tripType === "airport") {
       const route = AIRPORT_ROUTES[selectedAirportIndex];
-      baseFare = selectedVehicleId === "dzire" ? route.fareDzire : route.fareErtiga;
+      baseFare =
+        selectedVehicleId === "dzire" ? route.fareDzire : route.fareErtiga;
       driverCost = 0;
     }
 
@@ -170,7 +181,10 @@ export const FareEstimatorWidget: React.FC = () => {
       `Vehicle: ${selectedVehicle.name}\n` +
       `Estimated Total: ₹${fareBreakdown.estimatedTotal.toLocaleString("en-IN")}\n\n` +
       `Please confirm driver availability & exact quotation.`;
-    window.open(`https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+    window.open(
+      `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(text)}`,
+      "_blank",
+    );
   };
 
   return (
@@ -191,7 +205,8 @@ export const FareEstimatorWidget: React.FC = () => {
             <span className="text-gradient-gold">Zero Hidden Surprises.</span>
           </h2>
           <p className="text-sm text-slate-300">
-            Calculate instant estimates for outstation, local, temple tours, and airport drops with verified local drivers.
+            Calculate instant estimates for outstation, local, temple tours, and
+            airport drops with verified local drivers.
           </p>
         </div>
 
@@ -257,7 +272,9 @@ export const FareEstimatorWidget: React.FC = () => {
                         className="w-12 h-12 rounded-xl object-cover shrink-0 border border-white/10"
                       />
                       <div className="min-w-0">
-                        <div className="font-bold text-xs text-white truncate">{v.name}</div>
+                        <div className="font-bold text-xs text-white truncate">
+                          {v.name}
+                        </div>
                         <div className="text-[11px] text-slate-400 flex items-center gap-2">
                           <span>{v.category}</span>
                           <span className="w-1 h-1 rounded-full bg-amber-400" />
@@ -283,9 +300,12 @@ export const FareEstimatorWidget: React.FC = () => {
                   <div className="space-y-2">
                     <div className="flex justify-between items-center text-xs">
                       <span className="text-slate-300 font-semibold flex items-center gap-1.5">
-                        <Navigation className="w-3.5 h-3.5 text-amber-400" /> Estimated Distance (Km)
+                        <Navigation className="w-3.5 h-3.5 text-amber-400" />{" "}
+                        Estimated Distance (Km)
                       </span>
-                      <span className="font-bold text-[#D4AF37] text-sm">{distanceKm} Km</span>
+                      <span className="font-bold text-[#D4AF37] text-sm">
+                        {distanceKm} Km
+                      </span>
                     </div>
                     <input
                       type="range"
@@ -306,9 +326,12 @@ export const FareEstimatorWidget: React.FC = () => {
                   <div className="space-y-2 pt-2 border-t border-white/10">
                     <div className="flex justify-between items-center text-xs">
                       <span className="text-slate-300 font-semibold flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-amber-400" /> Trip Duration (Days)
+                        <Calendar className="w-3.5 h-3.5 text-amber-400" /> Trip
+                        Duration (Days)
                       </span>
-                      <span className="font-bold text-[#D4AF37] text-sm">{daysCount} Day(s)</span>
+                      <span className="font-bold text-[#D4AF37] text-sm">
+                        {daysCount} Day(s)
+                      </span>
                     </div>
                     <div className="flex gap-2">
                       {[1, 2, 3, 4, 5, 7].map((d) => (
@@ -338,7 +361,9 @@ export const FareEstimatorWidget: React.FC = () => {
                   exit={{ opacity: 0, y: -10 }}
                   className="space-y-3 bg-[#121620] p-4 rounded-2xl border border-white/10"
                 >
-                  <label className="text-xs font-bold text-slate-300">Choose Package Duration</label>
+                  <label className="text-xs font-bold text-slate-300">
+                    Choose Package Duration
+                  </label>
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       type="button"
@@ -349,8 +374,12 @@ export const FareEstimatorWidget: React.FC = () => {
                           : "bg-[#1A1F2C] border-white/10"
                       }`}
                     >
-                      <div className="font-bold text-xs text-white">8 Hours / 80 Km</div>
-                      <div className="text-[11px] text-amber-300 mt-1">Standard Full-Day City Package</div>
+                      <div className="font-bold text-xs text-white">
+                        8 Hours / 80 Km
+                      </div>
+                      <div className="text-[11px] text-amber-300 mt-1">
+                        Standard Full-Day City Package
+                      </div>
                     </button>
                     <button
                       type="button"
@@ -361,8 +390,12 @@ export const FareEstimatorWidget: React.FC = () => {
                           : "bg-[#1A1F2C] border-white/10"
                       }`}
                     >
-                      <div className="font-bold text-xs text-white">12 Hours / 120 Km</div>
-                      <div className="text-[11px] text-amber-300 mt-1">Extended Outskirt City Package</div>
+                      <div className="font-bold text-xs text-white">
+                        12 Hours / 120 Km
+                      </div>
+                      <div className="text-[11px] text-amber-300 mt-1">
+                        Extended Outskirt City Package
+                      </div>
                     </button>
                   </div>
                 </motion.div>
@@ -376,7 +409,9 @@ export const FareEstimatorWidget: React.FC = () => {
                   exit={{ opacity: 0, y: -10 }}
                   className="space-y-3 bg-[#121620] p-4 rounded-2xl border border-white/10"
                 >
-                  <label className="text-xs font-bold text-slate-300">Select Heritage Shrine Route</label>
+                  <label className="text-xs font-bold text-slate-300">
+                    Select Heritage Shrine Route
+                  </label>
                   <div className="space-y-2">
                     {TEMPLE_TOURS.map((t, idx) => (
                       <button
@@ -391,9 +426,13 @@ export const FareEstimatorWidget: React.FC = () => {
                       >
                         <div>
                           <div className="font-bold text-xs">{t.name}</div>
-                          <div className="text-[11px] text-slate-400">{t.desc}</div>
+                          <div className="text-[11px] text-slate-400">
+                            {t.desc}
+                          </div>
                         </div>
-                        <span className="text-xs font-semibold text-amber-400 shrink-0">~{t.dist} Km</span>
+                        <span className="text-xs font-semibold text-amber-400 shrink-0">
+                          ~{t.dist} Km
+                        </span>
                       </button>
                     ))}
                   </div>
@@ -408,7 +447,9 @@ export const FareEstimatorWidget: React.FC = () => {
                   exit={{ opacity: 0, y: -10 }}
                   className="space-y-3 bg-[#121620] p-4 rounded-2xl border border-white/10"
                 >
-                  <label className="text-xs font-bold text-slate-300">Select Airport Route</label>
+                  <label className="text-xs font-bold text-slate-300">
+                    Select Airport Route
+                  </label>
                   <div className="space-y-2">
                     {AIRPORT_ROUTES.map((r, idx) => (
                       <button
@@ -422,7 +463,9 @@ export const FareEstimatorWidget: React.FC = () => {
                         }`}
                       >
                         <span className="font-bold text-xs">{r.name}</span>
-                        <span className="text-xs font-bold text-amber-300">Fixed Fare Route</span>
+                        <span className="text-xs font-bold text-amber-300">
+                          Fixed Fare Route
+                        </span>
                       </button>
                     ))}
                   </div>
@@ -444,13 +487,21 @@ export const FareEstimatorWidget: React.FC = () => {
 
             {/* Price Box */}
             <div className="text-center py-4 bg-[#0B0D12] rounded-xl border border-white/10 space-y-1">
-              <span className="text-xs text-slate-400 uppercase font-semibold">Estimated Total Fare</span>
+              <span className="text-xs text-slate-400 uppercase font-semibold">
+                Estimated Total Fare
+              </span>
               <div className="text-3xl sm:text-4xl font-extrabold text-[#D4AF37]">
                 ₹{fareBreakdown.estimatedTotal.toLocaleString("en-IN")}
-                <span className="text-xs font-normal text-slate-400 ml-1.5">*approx</span>
+                <span className="text-xs font-normal text-slate-400 ml-1.5">
+                  *approx
+                </span>
               </div>
               <p className="text-[11px] text-slate-400">
-                Vehicle: <span className="text-slate-200 font-bold">{selectedVehicle.name}</span> ({selectedVehicle.seats} Seats)
+                Vehicle:{" "}
+                <span className="text-slate-200 font-bold">
+                  {selectedVehicle.name}
+                </span>{" "}
+                ({selectedVehicle.seats} Seats)
               </p>
             </div>
 
@@ -466,7 +517,9 @@ export const FareEstimatorWidget: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 text-slate-400 text-[11px] pt-1">
                 <HelpCircle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>Excludes Tolls, Parking & Interstate Permits (Paid directly)</span>
+                <span>
+                  Excludes Tolls, Parking & Interstate Permits (Paid directly)
+                </span>
               </div>
             </div>
 

@@ -6,6 +6,7 @@ import { ServicesPreviewSection } from "@features/landing/services/ServicesPrevi
 import { FeaturedFleetSection } from "@features/landing/fleet/FeaturedFleetSection";
 import { WhyUsSection } from "@features/landing/why-us/WhyUsSection";
 import { DestinationsSection } from "@features/landing/destinations/DestinationsSection";
+import { CinematicFleetVideoSection } from "@features/landing/cinematic-video/CinematicFleetVideoSection";
 import { ReviewsSection } from "@features/landing/reviews/ReviewsSection";
 import { FAQPreviewSection } from "@features/landing/faq/FAQPreviewSection";
 import { LocationSection } from "@features/landing/location/LocationSection";
@@ -35,10 +36,13 @@ export const HomePage: React.FC = () => {
       {/* 7. Popular Destinations */}
       <DestinationsSection />
 
-      {/* 8. Customer Reviews */}
+      {/* 8. Cinematic Benaka Fleet Film Showcase */}
+      <CinematicFleetVideoSection />
+
+      {/* 9. Customer Reviews */}
       <ReviewsSection />
 
-      {/* 9. FAQ Preview */}
+      {/* 10. FAQ Preview */}
       <FAQPreviewSection />
 
       {/* 10. Location & Map */}

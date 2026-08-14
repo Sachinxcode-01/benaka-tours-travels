@@ -105,7 +105,9 @@ export const SavedTripCard: React.FC<SavedTripCardProps> = ({
           <Users className="w-3 h-3 text-slate-500 mt-0.5 shrink-0" />
           <div>
             <p className="text-[10px] text-slate-500">Passengers</p>
-            <p className="text-xs text-slate-300 font-medium">{trip.passengers}</p>
+            <p className="text-xs text-slate-300 font-medium">
+              {trip.passengers}
+            </p>
           </div>
         </div>
         {trip.vehicleName && (

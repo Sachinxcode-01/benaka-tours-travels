@@ -57,10 +57,7 @@ export const Step3ReviewTrip: React.FC<Step3ReviewTripProps> = ({
           <ReviewRow label="Pickup" value={formData.pickup} />
           <ReviewRow label="Destination" value={formData.destination} />
           <ReviewRow label="Date" value={formData.pickupDate} />
-          <ReviewRow
-            label="Time"
-            value={formData.pickupTime}
-          />
+          <ReviewRow label="Time" value={formData.pickupTime} />
           <ReviewRow
             label="Journey"
             value={
@@ -69,7 +66,13 @@ export const Step3ReviewTrip: React.FC<Step3ReviewTripProps> = ({
                 : "One-Way"
             }
           />
-          <ReviewRow label="Trip Type" value={formData.tripType.charAt(0).toUpperCase() + formData.tripType.slice(1)} />
+          <ReviewRow
+            label="Trip Type"
+            value={
+              formData.tripType.charAt(0).toUpperCase() +
+              formData.tripType.slice(1)
+            }
+          />
           <ReviewRow
             label="Passengers"
             value={`${formData.passengers} passenger${formData.passengers > 1 ? "s" : ""}`}
@@ -104,9 +107,12 @@ export const Step3ReviewTrip: React.FC<Step3ReviewTripProps> = ({
               />
             </div>
             <div>
-              <p className="font-bold text-white text-sm">{selectedVehicle.name}</p>
+              <p className="font-bold text-white text-sm">
+                {selectedVehicle.name}
+              </p>
               <p className="text-xs text-slate-400 mt-0.5">
-                {selectedVehicle.seats} Seats • {selectedVehicle.category.toUpperCase()} •{" "}
+                {selectedVehicle.seats} Seats •{" "}
+                {selectedVehicle.category.toUpperCase()} •{" "}
                 {selectedVehicle.fuelTypes.join("/")}
               </p>
               <p className="text-xs text-emerald-400 mt-1 font-medium">
@@ -123,8 +129,8 @@ export const Step3ReviewTrip: React.FC<Step3ReviewTripProps> = ({
         <p className="text-xs text-amber-300/80 leading-relaxed">
           <strong className="text-amber-300">Fare Note:</strong> The fare will
           be calculated by Benaka Tours & Travels based on your route, distance,
-          duration, vehicle and travel requirements. No fare is confirmed at this
-          stage.
+          duration, vehicle and travel requirements. No fare is confirmed at
+          this stage.
         </p>
       </div>
 

@@ -1,11 +1,6 @@
 // Voice assistant state machine types
 export type VoiceState =
-  | "idle"
-  | "listening"
-  | "processing"
-  | "success"
-  | "denied"
-  | "unsupported";
+  "idle" | "listening" | "processing" | "success" | "denied" | "unsupported";
 
 export interface VoiceEntities {
   pickup?: string;

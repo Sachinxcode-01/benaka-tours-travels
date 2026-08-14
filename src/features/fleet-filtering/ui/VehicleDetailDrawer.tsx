@@ -44,7 +44,7 @@ export const VehicleDetailDrawer: React.FC<VehicleDetailDrawerProps> = ({
       `Please provide exact fare quotation and availability.`;
     window.open(
       `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(text)}`,
-      "_blank"
+      "_blank",
     );
   };
 
@@ -121,7 +121,11 @@ export const VehicleDetailDrawer: React.FC<VehicleDetailDrawerProps> = ({
                           : "border-white/10 opacity-60 hover:opacity-100"
                       }`}
                     >
-                      <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                      <img
+                        src={img}
+                        alt="Thumbnail"
+                        className="w-full h-full object-cover"
+                      />
                     </button>
                   ))}
                 </div>
@@ -132,8 +136,12 @@ export const VehicleDetailDrawer: React.FC<VehicleDetailDrawerProps> = ({
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
               <div className="p-3 rounded-2xl bg-[#121620] border border-white/10 space-y-1">
                 <Users className="w-4 h-4 text-amber-400 mx-auto" />
-                <div className="text-xs font-bold text-white">{vehicle.seats} Seater</div>
-                <div className="text-[10px] text-slate-400">Passenger Capacity</div>
+                <div className="text-xs font-bold text-white">
+                  {vehicle.seats} Seater
+                </div>
+                <div className="text-[10px] text-slate-400">
+                  Passenger Capacity
+                </div>
               </div>
 
               <div className="p-3 rounded-2xl bg-[#121620] border border-white/10 space-y-1">
@@ -144,8 +152,12 @@ export const VehicleDetailDrawer: React.FC<VehicleDetailDrawerProps> = ({
 
               <div className="p-3 rounded-2xl bg-[#121620] border border-white/10 space-y-1">
                 <Sparkles className="w-4 h-4 text-amber-400 mx-auto" />
-                <div className="text-xs font-bold text-white">Dual AC Vents</div>
-                <div className="text-[10px] text-slate-400">Climate Control</div>
+                <div className="text-xs font-bold text-white">
+                  Dual AC Vents
+                </div>
+                <div className="text-[10px] text-slate-400">
+                  Climate Control
+                </div>
               </div>
 
               <div className="p-3 rounded-2xl bg-[#121620] border border-white/10 space-y-1">

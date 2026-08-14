@@ -6,12 +6,7 @@ export type TripStep = 1 | 2 | 3 | 4;
 export type TripPlannerTripType = "outstation" | "local" | "airport";
 export type TripPlannerJourneyType = "one-way" | "round-trip";
 export type TripPlannerPurpose =
-  | "Personal"
-  | "Corporate"
-  | "Family"
-  | "Wedding"
-  | "Group Tour"
-  | "Other";
+  "Personal" | "Corporate" | "Family" | "Wedding" | "Group Tour" | "Other";
 
 export interface TripFormData {
   pickup: string;

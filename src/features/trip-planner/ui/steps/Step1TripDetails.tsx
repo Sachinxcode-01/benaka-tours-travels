@@ -1,6 +1,14 @@
 import React from "react";
 import { motion } from "motion/react";
-import { MapPin, Calendar, Clock, Users, Briefcase, Target, ArrowRight } from "lucide-react";
+import {
+  MapPin,
+  Calendar,
+  Clock,
+  Users,
+  Briefcase,
+  Target,
+  ArrowRight,
+} from "lucide-react";
 import type { TripFormData } from "../../model/trip-planner.types";
 import { VoiceButton } from "@features/voice";
 import type { VoiceEntities } from "@features/voice";
@@ -23,7 +31,12 @@ const JOURNEY_TYPES = [
 ] as const;
 
 const PURPOSES = [
-  "Personal", "Corporate", "Family", "Wedding", "Group Tour", "Other",
+  "Personal",
+  "Corporate",
+  "Family",
+  "Wedding",
+  "Group Tour",
+  "Other",
 ] as const;
 
 const CATEGORIES = [
@@ -40,7 +53,9 @@ export const Step1TripDetails: React.FC<Step1TripDetailsProps> = ({
   onUpdate,
   onNext,
 }) => {
-  const [errors, setErrors] = React.useState<Partial<Record<keyof TripFormData, string>>>({});
+  const [errors, setErrors] = React.useState<
+    Partial<Record<keyof TripFormData, string>>
+  >({});
 
   const validate = () => {
     const e: Partial<Record<keyof TripFormData, string>> = {};
@@ -73,7 +88,8 @@ export const Step1TripDetails: React.FC<Step1TripDetailsProps> = ({
       errors[field] ? "border-red-500/60" : "border-white/10"
     } rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-colors`;
 
-  const labelCls = "block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5";
+  const labelCls =
+    "block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5";
 
   return (
     <motion.div
@@ -127,7 +143,9 @@ export const Step1TripDetails: React.FC<Step1TripDetailsProps> = ({
             className={inputCls("destination")}
           />
           {errors.destination && (
-            <p className="text-red-400 text-[10px] mt-1">{errors.destination}</p>
+            <p className="text-red-400 text-[10px] mt-1">
+              {errors.destination}
+            </p>
           )}
         </div>
       </div>
@@ -220,7 +238,9 @@ export const Step1TripDetails: React.FC<Step1TripDetailsProps> = ({
                 id="tp-return-date"
                 type="date"
                 value={formData.returnDate}
-                min={formData.pickupDate || new Date().toISOString().split("T")[0]}
+                min={
+                  formData.pickupDate || new Date().toISOString().split("T")[0]
+                }
                 onChange={(e) => onUpdate({ returnDate: e.target.value })}
                 className={inputCls("returnDate")}
               />
@@ -255,7 +275,9 @@ export const Step1TripDetails: React.FC<Step1TripDetailsProps> = ({
             max={25}
             value={formData.passengers}
             onChange={(e) =>
-              onUpdate({ passengers: Math.max(1, parseInt(e.target.value) || 1) })
+              onUpdate({
+                passengers: Math.max(1, parseInt(e.target.value) || 1),
+              })
             }
             className={inputCls("passengers")}
           />
@@ -293,7 +315,9 @@ export const Step1TripDetails: React.FC<Step1TripDetailsProps> = ({
             id="tp-purpose"
             value={formData.tripPurpose}
             onChange={(e) =>
-              onUpdate({ tripPurpose: e.target.value as TripFormData["tripPurpose"] })
+              onUpdate({
+                tripPurpose: e.target.value as TripFormData["tripPurpose"],
+              })
             }
             className={inputCls("tripPurpose")}
           >

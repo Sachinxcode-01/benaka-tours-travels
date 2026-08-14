@@ -11,8 +11,14 @@ import { MAX_COMPARISON_VEHICLES } from "../model/comparison.types";
 import type { Vehicle } from "@entities/vehicle";
 
 export const ComparisonPage: React.FC = () => {
-  const { comparedVehicles, removeFromComparison, clearComparison, count, toggleComparison, canAdd } =
-    useComparisonStore();
+  const {
+    comparedVehicles,
+    removeFromComparison,
+    clearComparison,
+    count,
+    toggleComparison,
+    canAdd,
+  } = useComparisonStore();
 
   const availableToAdd = FLEET_VEHICLES.filter(
     (v) => !comparedVehicles.some((cv) => cv.id === v.id),
@@ -47,8 +53,8 @@ export const ComparisonPage: React.FC = () => {
                 Compare Vehicles
               </h1>
               <p className="text-slate-400 text-sm max-w-lg">
-                Compare up to {MAX_COMPARISON_VEHICLES} vehicles side by side to find the
-                perfect match for your journey.
+                Compare up to {MAX_COMPARISON_VEHICLES} vehicles side by side to
+                find the perfect match for your journey.
               </p>
             </div>
             <div className="flex gap-2">
@@ -87,7 +93,8 @@ export const ComparisonPage: React.FC = () => {
               </h2>
               <p className="text-slate-500 text-sm mb-8 max-w-md mx-auto">
                 Browse the fleet and click "Compare" on any vehicle to start
-                comparing. You can select up to {MAX_COMPARISON_VEHICLES} vehicles.
+                comparing. You can select up to {MAX_COMPARISON_VEHICLES}{" "}
+                vehicles.
               </p>
               <Link
                 to="/fleet"

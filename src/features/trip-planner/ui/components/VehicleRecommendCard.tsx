@@ -18,9 +18,18 @@ const rankColors = {
 };
 
 const rankBadge = {
-  exact: { label: "Best Fit", color: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30" },
-  comfortable: { label: "Comfortable", color: "bg-amber-500/15 text-[#D4AF37] border-amber-500/30" },
-  premium: { label: "Spacious", color: "bg-purple-500/15 text-purple-400 border-purple-500/30" },
+  exact: {
+    label: "Best Fit",
+    color: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
+  },
+  comfortable: {
+    label: "Comfortable",
+    color: "bg-amber-500/15 text-[#D4AF37] border-amber-500/30",
+  },
+  premium: {
+    label: "Spacious",
+    color: "bg-purple-500/15 text-purple-400 border-purple-500/30",
+  },
 };
 
 export const VehicleRecommendCard: React.FC<VehicleRecommendCardProps> = ({

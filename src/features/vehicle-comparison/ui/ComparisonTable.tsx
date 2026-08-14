@@ -27,12 +27,22 @@ const Cell: React.FC<CellProps> = ({ value, highlight }) => (
 // Derive a simple badge label from vehicle recommendedFor
 function getBadge(vehicle: Vehicle): string | null {
   const tags = vehicle.recommendedFor.map((r) => r.toLowerCase());
-  if (tags.some((t) => t.includes("wedding") || t.includes("premium") || t.includes("executive")))
+  if (
+    tags.some(
+      (t) =>
+        t.includes("wedding") ||
+        t.includes("premium") ||
+        t.includes("executive"),
+    )
+  )
     return "Premium Comfort";
-  if (tags.some((t) => t.includes("group") || t.includes("large") || t.includes("tour")))
+  if (
+    tags.some(
+      (t) => t.includes("group") || t.includes("large") || t.includes("tour"),
+    )
+  )
     return "Large Group";
-  if (tags.some((t) => t.includes("family")))
-    return "Family";
+  if (tags.some((t) => t.includes("family"))) return "Family";
   return null;
 }
 
@@ -160,7 +170,10 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({
               >
                 <ul className="space-y-0.5">
                   {v.features.slice(0, 4).map((f) => (
-                    <li key={f} className="text-[10px] text-slate-400 flex items-start gap-1">
+                    <li
+                      key={f}
+                      className="text-[10px] text-slate-400 flex items-start gap-1"
+                    >
                       <span className="text-emerald-400 mt-0.5">•</span>
                       {f}
                     </li>
@@ -204,9 +217,7 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({
             {vehicles.map((v) => (
               <Cell
                 key={v.id}
-                value={
-                  <Check className="w-4 h-4 text-emerald-400 mx-auto" />
-                }
+                value={<Check className="w-4 h-4 text-emerald-400 mx-auto" />}
               />
             ))}
           </tr>

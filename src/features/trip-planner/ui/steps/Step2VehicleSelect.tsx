@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { motion } from "motion/react";
 import { MessageSquare, ArrowRight, ArrowLeft, Scale } from "lucide-react";
-import type { TripFormData, VehicleRecommendation } from "../../model/trip-planner.types";
+import type {
+  TripFormData,
+  VehicleRecommendation,
+} from "../../model/trip-planner.types";
 import type { Vehicle } from "@entities/vehicle";
 import { VehicleRecommendCard } from "../components/VehicleRecommendCard";
 import { useComparisonStore } from "@features/vehicle-comparison/model/comparison.store";
@@ -45,7 +48,8 @@ export const Step2VehicleSelect: React.FC<Step2VehicleSelectProps> = ({
           <strong className="text-white">{formData.destination}</strong>
         </span>
         <span>
-          👥 <strong className="text-white">{formData.passengers}</strong> passengers
+          👥 <strong className="text-white">{formData.passengers}</strong>{" "}
+          passengers
         </span>
         <span>
           📅 <strong className="text-white">{formData.pickupDate}</strong>
@@ -62,7 +66,8 @@ export const Step2VehicleSelect: React.FC<Step2VehicleSelectProps> = ({
             .
           </p>
           <p className="text-slate-500 text-xs">
-            For groups over 25 or special requirements, please contact our team directly.
+            For groups over 25 or special requirements, please contact our team
+            directly.
           </p>
           <button
             onClick={onContact}
@@ -75,7 +80,8 @@ export const Step2VehicleSelect: React.FC<Step2VehicleSelectProps> = ({
       ) : (
         <div className="space-y-3">
           <h3 className="text-sm font-semibold text-slate-300">
-            {recommendations.length} vehicle{recommendations.length > 1 ? "s" : ""} recommended for your trip
+            {recommendations.length} vehicle
+            {recommendations.length > 1 ? "s" : ""} recommended for your trip
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {recommendations.map((rec) => (

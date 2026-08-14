@@ -19,7 +19,11 @@ export const WELCOME_QUICK_REPLIES = [
     label: "🗺️ Plan a Trip",
     payload: PAYLOAD_TRIP_PLANNER,
   },
-  { id: "qr-3", label: "⚖️ Compare Vehicles", payload: PAYLOAD_COMPARE_VEHICLES },
+  {
+    id: "qr-3",
+    label: "⚖️ Compare Vehicles",
+    payload: PAYLOAD_COMPARE_VEHICLES,
+  },
   {
     id: "qr-4",
     label: "📋 My Saved Trips",

@@ -15,6 +15,7 @@ import { Footer } from "../components/layout/Footer";
 import { StickyMobileBar } from "../components/layout/StickyMobileBar";
 import { BookingWizardModal } from "../features/booking/BookingWizardModal";
 import { FareEstimatorWidget } from "../features/fare-calculator/ui/FareEstimatorWidget";
+import { CinematicFleetVideoSection } from "../features/landing/cinematic-video/CinematicFleetVideoSection";
 import { INITIAL_FLEET } from "../data/fleet";
 import type { Vehicle } from "../types/fleet";
 import type { BookingRequest } from "../types/booking";
@@ -89,6 +90,9 @@ export const HomePage: React.FC = () => {
 
       {/* Why BENAKA Section */}
       <WhyBenakaSection />
+
+      {/* Cinematic Benaka Fleet Film Showcase */}
+      <CinematicFleetVideoSection />
 
       {/* Testimonials Carousel Section */}
       <TestimonialsSection />
