@@ -115,7 +115,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className="pt-3 sm:pt-6 mt-2.5 sm:mt-4 border-t border-white/10 grid grid-cols-2 gap-1.5 sm:gap-2 relative z-10">
         <button
           onClick={() => onOpenBooking(service)}
-          className="py-1.5 sm:py-2.5 px-2 sm:px-3 rounded-lg sm:rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] text-black font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1 sm:gap-1.5 shadow-md hover:brightness-110 active:scale-95 transition-all"
+          className="py-1.5 sm:py-2.5 px-2 sm:px-3 rounded-lg sm:rounded-xl bg-linear-to-r from-[#D4AF37] to-[#F59E0B] text-black font-bold text-[11px] sm:text-xs flex items-center justify-center gap-1 sm:gap-1.5 shadow-md hover:brightness-110 active:scale-95 transition-all"
         >
           <span>Request Quote</span>
           <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />

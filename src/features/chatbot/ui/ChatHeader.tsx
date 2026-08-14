@@ -13,7 +13,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
   onClose,
 }) => {
   return (
-    <div className="flex items-center justify-between p-2.5 md:p-4 bg-gradient-to-r from-[#0B0D12] via-[#121620] to-[#0B0D12] border-b border-[#D4AF37]/30 text-white rounded-t-2xl shrink-0 select-none">
+    <div className="flex items-center justify-between p-2.5 md:p-4 bg-linear-to-r from-[#0B0D12] via-[#121620] to-[#0B0D12] border-b border-[#D4AF37]/30 text-white rounded-t-2xl shrink-0 select-none">
       <div className="flex items-center gap-2 md:gap-3 min-w-0">
         <div className="relative shrink-0">
           <img

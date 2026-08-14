@@ -53,7 +53,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({
       }
       exit={{ opacity: 0, y: 20, scale: 0.95 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed bottom-20 right-3.5 md:bottom-6 md:right-6 w-[min(92vw,360px)] md:w-[400px] h-[min(68svh,560px)] md:h-[620px] max-h-[calc(100svh-140px)] md:max-h-[85vh] z-50 flex flex-col bg-[#07080B]/98 border border-[#D4AF37]/30 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl"
+      className="fixed bottom-20 right-3.5 md:bottom-6 md:right-6 w-[min(92vw,360px)] md:w-100 h-[min(68svh,560px)] md:h-155 max-h-[calc(100svh-140px)] md:max-h-[85vh] z-50 flex flex-col bg-[#07080B]/98 border border-[#D4AF37]/30 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl"
     >
       {/* Header */}
       <ChatHeader onMinimize={onMinimize} onReset={onReset} onClose={onClose} />

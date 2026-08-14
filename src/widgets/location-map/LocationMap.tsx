@@ -99,7 +99,7 @@ export const LocationMap: React.FC = () => {
       </div>
 
       {/* Map Container View */}
-      <div className="relative h-[340px] sm:h-[420px] md:h-[480px] lg:h-[540px] w-full overflow-hidden">
+      <div className="relative h-85 sm:h-105 md:h-120 lg:h-135 w-full overflow-hidden">
         {activeTab === "interactive" ? (
           <Map
             ref={mapRef}
@@ -125,7 +125,7 @@ export const LocationMap: React.FC = () => {
                 </div>
               </MarkerContent>
               <MarkerPopup>
-                <div className="p-1 text-center space-y-1 min-w-[160px]">
+                <div className="p-1 text-center space-y-1 min-w-40">
                   <strong className="text-xs font-bold text-neutral-900 block">
                     BENAKA TOURS & TRAVELS
                   </strong>
@@ -183,7 +183,7 @@ export const LocationMap: React.FC = () => {
           href={getGoogleMapsUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="py-3 px-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] text-black font-bold text-xs flex items-center justify-center gap-1.5 shadow-md hover:brightness-110 active:scale-95 transition-all min-h-[44px]"
+          className="py-3 px-3 rounded-xl bg-linear-to-r from-[#D4AF37] to-[#F59E0B] text-black font-bold text-xs flex items-center justify-center gap-1.5 shadow-md hover:brightness-110 active:scale-95 transition-all min-h-11"
         >
           <Navigation className="w-4 h-4" />
           <span>Get Directions</span>
@@ -193,7 +193,7 @@ export const LocationMap: React.FC = () => {
           href={getGoogleMapsUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="py-3 px-3 rounded-xl bg-[#1A1F2C] text-slate-200 border border-white/10 font-bold text-xs flex items-center justify-center gap-1.5 hover:border-[#D4AF37] hover:text-[#D4AF37] active:scale-95 transition-all min-h-[44px]"
+          className="py-3 px-3 rounded-xl bg-[#1A1F2C] text-slate-200 border border-white/10 font-bold text-xs flex items-center justify-center gap-1.5 hover:border-[#D4AF37] hover:text-[#D4AF37] active:scale-95 transition-all min-h-11"
         >
           <ExternalLink className="w-4 h-4" />
           <span>Open Google Maps</span>
@@ -201,7 +201,7 @@ export const LocationMap: React.FC = () => {
 
         <a
           href={createTelUrl()}
-          className="py-3 px-3 rounded-xl bg-[#1A1F2C] text-slate-200 border border-white/10 font-bold text-xs flex items-center justify-center gap-1.5 hover:border-amber-400 hover:text-amber-300 active:scale-95 transition-all min-h-[44px]"
+          className="py-3 px-3 rounded-xl bg-[#1A1F2C] text-slate-200 border border-white/10 font-bold text-xs flex items-center justify-center gap-1.5 hover:border-amber-400 hover:text-amber-300 active:scale-95 transition-all min-h-11"
         >
           <Phone className="w-4 h-4 text-amber-400" />
           <span>Call Now</span>
@@ -211,7 +211,7 @@ export const LocationMap: React.FC = () => {
           href={createWhatsAppInquiryUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="py-3 px-3 rounded-xl bg-emerald-600/90 text-white font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-emerald-600 active:scale-95 transition-all min-h-[44px]"
+          className="py-3 px-3 rounded-xl bg-emerald-600/90 text-white font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-emerald-600 active:scale-95 transition-all min-h-11"
         >
           <MessageCircle className="w-4 h-4 fill-current" />
           <span>WhatsApp</span>

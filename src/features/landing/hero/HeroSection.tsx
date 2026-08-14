@@ -116,12 +116,12 @@ export const HeroSection: React.FC = () => {
     <section
       ref={containerRef}
       id="home"
-      className="hero relative min-h-[100svh] w-full flex flex-col justify-between pt-12 pb-16 overflow-hidden bg-[#040507]"
+      className="hero relative min-h-svh w-full flex flex-col justify-between pt-12 pb-16 overflow-hidden bg-[#040507]"
     >
       {/* Real Benaka Vehicle Fleet Background Layer */}
       <div
         ref={bgRef}
-        className="hero-background absolute inset-0 z-0 bg-no-repeat bg-cover bg-[position:center_right] max-[1024px]:bg-[position:62%_center] max-[768px]:bg-[position:68%_center] max-[430px]:bg-[position:72%_center] pointer-events-none select-none"
+        className="hero-background absolute inset-0 z-0 bg-no-repeat bg-cover bg-position-[center_right] max-[1024px]:bg-position-[62%_center] max-[768px]:bg-position-[68%_center] max-[430px]:bg-position-[72%_center] pointer-events-none select-none"
         style={{
           backgroundImage: `url("/assets/vehicles/placeholders/benekavehicles.png")`,
         }}
@@ -151,7 +151,7 @@ export const HeroSection: React.FC = () => {
       />
 
       {/* Gold Radial Spotlight Accent */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#D4AF37]/15 blur-3xl pointer-events-none z-2" />
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-137.5 h-137.5 rounded-full bg-[#D4AF37]/15 blur-3xl pointer-events-none z-2" />
 
       {/* Hero Content Layer */}
       <div className="hero-content relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 my-auto">

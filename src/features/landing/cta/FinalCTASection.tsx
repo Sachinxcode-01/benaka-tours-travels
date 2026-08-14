@@ -66,7 +66,7 @@ export const FinalCTASection: React.FC = () => {
       </div>
 
       {/* Gold Light Sweep Spotlight Gradient */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-amber-500/10 via-[#D4AF37]/15 to-emerald-500/10 blur-3xl pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-75 bg-linear-to-r from-amber-500/10 via-[#D4AF37]/15 to-emerald-500/10 blur-3xl pointer-events-none rounded-full" />
 
       <div className="max-w-4xl mx-auto px-4 text-center space-y-8 relative z-10">
         {/* Badge */}
@@ -105,7 +105,7 @@ export const FinalCTASection: React.FC = () => {
         <div className="cta-animate flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <button
             onClick={() => setIsBookingModalOpen(true)}
-            className="w-full sm:w-auto py-4 px-8 rounded-2xl bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] text-black font-extrabold text-base flex items-center justify-center gap-2 shadow-xl shadow-amber-500/20 hover:brightness-110 active:scale-95 transition-all min-h-[52px]"
+            className="w-full sm:w-auto py-4 px-8 rounded-2xl bg-linear-to-r from-[#D4AF37] to-[#F59E0B] text-black font-extrabold text-base flex items-center justify-center gap-2 shadow-xl shadow-amber-500/20 hover:brightness-110 active:scale-95 transition-all min-h-13"
           >
             <span>Request Quote</span>
             <ArrowRight className="w-5 h-5" />
@@ -115,7 +115,7 @@ export const FinalCTASection: React.FC = () => {
             href={`https://wa.me/${WHATSAPP_PHONE_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto py-4 px-8 rounded-2xl bg-emerald-600 text-white font-bold text-base flex items-center justify-center gap-2 shadow-xl shadow-emerald-600/30 hover:brightness-110 active:scale-95 transition-all min-h-[52px]"
+            className="w-full sm:w-auto py-4 px-8 rounded-2xl bg-emerald-600 text-white font-bold text-base flex items-center justify-center gap-2 shadow-xl shadow-emerald-600/30 hover:brightness-110 active:scale-95 transition-all min-h-13"
           >
             <MessageCircle className="w-5 h-5 fill-current" />
             <span>WhatsApp Now</span>
@@ -123,7 +123,7 @@ export const FinalCTASection: React.FC = () => {
 
           <a
             href={`tel:${WHATSAPP_PHONE_NUMBER}`}
-            className="w-full sm:w-auto py-3.5 px-6 rounded-2xl border border-[#D4AF37]/40 bg-[#121620] text-[#D4AF37] font-semibold text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-[52px]"
+            className="w-full sm:w-auto py-3.5 px-6 rounded-2xl border border-[#D4AF37]/40 bg-[#121620] text-[#D4AF37] font-semibold text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-13"
           >
             <PhoneCall className="w-4 h-4" />
             <span>Call {DISPLAY_PHONE_NUMBER}</span>
@@ -131,7 +131,7 @@ export const FinalCTASection: React.FC = () => {
 
           <Link
             to="/fleet"
-            className="w-full sm:w-auto py-3.5 px-6 rounded-2xl border border-white/10 bg-[#121620] text-slate-200 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-[52px]"
+            className="w-full sm:w-auto py-3.5 px-6 rounded-2xl border border-white/10 bg-[#121620] text-slate-200 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-13"
           >
             <span>Explore Fleet</span>
           </Link>

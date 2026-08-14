@@ -295,7 +295,7 @@ export const WhyUsSection: React.FC = () => {
                     <div
                       className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold shrink-0 transition-all ${
                         isActive
-                          ? "bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] text-black shadow-lg shadow-amber-500/20"
+                          ? "bg-linear-to-r from-[#D4AF37] to-[#F59E0B] text-black shadow-lg shadow-amber-500/20"
                           : "bg-[#121620] text-slate-400 border border-white/10"
                       }`}
                     >

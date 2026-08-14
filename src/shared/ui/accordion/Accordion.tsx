@@ -26,7 +26,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
         aria-controls={`accordion-panel-${id}`}
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between p-5 text-left text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 min-h-[44px] cursor-pointer"
+        className="flex w-full items-center justify-between p-5 text-left text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 min-h-11 cursor-pointer"
       >
         <span>{question}</span>
         <ChevronDown

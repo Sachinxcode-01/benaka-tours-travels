@@ -156,13 +156,13 @@ export const ChatLauncher: React.FC = () => {
         onDragStart={handleDragStart}
         onDrag={handleDrag}
         onDragEnd={handleDragEnd}
-        className="fixed bottom-4 right-4 z-40 touch-none cursor-grab active:cursor-grabbing select-none"
-        style={{ touchAction: "none" }}
+        className="fixed bottom-4 right-4 z-40 touch-none select-none"
+        style={{ touchAction: "none", cursor: "grab" }}
       >
         <button
           onClick={handleLauncherClick}
           aria-label="Open Benaka AI Travel Assistant"
-          className="relative group p-3.5 sm:p-4 rounded-full bg-gradient-to-br from-[#D4AF37] via-amber-500 to-amber-600 text-black shadow-[0_0_25px_rgba(212,175,55,0.4)] border-2 border-amber-300 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-amber-400/50 cursor-grab active:cursor-grabbing"
+          className="relative group p-3.5 sm:p-4 rounded-full bg-linear-to-br from-[#D4AF37] via-amber-500 to-amber-600 text-black shadow-[0_0_25px_rgba(212,175,55,0.4)] border-2 border-amber-300 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-amber-400/50"
         >
           {/* Glowing Ring Animation */}
           <span className="absolute inset-0 rounded-full bg-amber-400/30 animate-ping pointer-events-none" />

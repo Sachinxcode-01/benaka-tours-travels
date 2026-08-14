@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Link } from "react-router-dom";
-import { FLEET_VEHICLES, type VehicleCategory } from "@entities/vehicle";
+import { FLEET_VEHICLES, type Vehicle, type VehicleCategory } from "@entities/vehicle";
 import { createWhatsAppInquiryUrl } from "@shared/services/whatsapp.service";
 import { Container } from "@shared/ui/container";
 import { SectionHeading } from "@shared/ui/section-heading";
@@ -9,9 +8,13 @@ import { GlassCard } from "@shared/ui/glass-card";
 import { StatusBadge } from "@shared/ui/status-badge";
 import { Badge } from "@shared/ui/badge";
 import { Button } from "@shared/ui/button";
+import { VehicleDetailDrawer } from "../../fleet-filtering/ui/VehicleDetailDrawer";
+import { BookingWizardModal } from "../../booking/BookingWizardModal";
 
 export const FeaturedFleetSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [activeVehicleDrawer, setActiveVehicleDrawer] = useState<Vehicle | null>(null);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState<boolean>(false);
 
   const categories = [
     { key: "all", label: "All Vehicles (12)" },
@@ -46,7 +49,7 @@ export const FeaturedFleetSection: React.FC = () => {
             <button
               key={cat.key}
               onClick={() => setSelectedCategory(cat.key)}
-              className={`text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 cursor-pointer min-h-[44px] ${
+              className={`text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 cursor-pointer min-h-11 ${
                 selectedCategory === cat.key
                   ? "bg-amber-500 text-neutral-950 shadow-md shadow-amber-500/20 font-bold"
                   : "bg-neutral-900/80 text-slate-300 hover:bg-neutral-800 border border-neutral-800"
@@ -71,7 +74,8 @@ export const FeaturedFleetSection: React.FC = () => {
               >
                 <GlassCard
                   hoverable
-                  className="flex flex-col justify-between p-6 space-y-4 group h-full"
+                  className="flex flex-col justify-between p-6 space-y-4 group h-full cursor-pointer"
+                  onClick={() => setActiveVehicleDrawer(vehicle)}
                 >
                   <div className="space-y-4">
                     {/* Header Pills */}
@@ -124,12 +128,18 @@ export const FeaturedFleetSection: React.FC = () => {
                   </div>
 
                   {/* Actions */}
-                  <div className="pt-4 border-t border-amber-500/10 grid grid-cols-2 gap-2">
-                    <Link to={`/fleet/${vehicle.slug}`}>
-                      <Button variant="outline" size="sm" fullWidth>
-                        Details
-                      </Button>
-                    </Link>
+                  <div
+                    className="pt-4 border-t border-amber-500/10 grid grid-cols-2 gap-2"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      fullWidth
+                      onClick={() => setActiveVehicleDrawer(vehicle)}
+                    >
+                      Quick Specs
+                    </Button>
 
                     <a
                       href={createWhatsAppInquiryUrl({ vehicleName: vehicle.name })}
@@ -146,6 +156,19 @@ export const FeaturedFleetSection: React.FC = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Vehicle Specification Drawer Modal */}
+        <VehicleDetailDrawer
+          vehicle={activeVehicleDrawer}
+          onClose={() => setActiveVehicleDrawer(null)}
+          onBook={() => setIsBookingModalOpen(true)}
+        />
+
+        {/* Multi-Step Booking Wizard Modal */}
+        <BookingWizardModal
+          isOpen={isBookingModalOpen}
+          onClose={() => setIsBookingModalOpen(false)}
+        />
       </Container>
     </section>
   );

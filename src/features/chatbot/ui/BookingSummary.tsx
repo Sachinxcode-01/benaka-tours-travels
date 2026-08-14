@@ -30,7 +30,7 @@ export const BookingSummary: React.FC<BookingSummaryProps> = ({ summary }) => {
     `Please confirm availability and estimated fare.`;
 
   return (
-    <div className="p-2.5 md:p-4 rounded-xl bg-gradient-to-b from-[#121620] to-[#0B0D12] border border-[#D4AF37]/40 text-[11px] md:text-xs text-slate-200 space-y-2 md:space-y-3 shadow-xl my-1.5">
+    <div className="p-2.5 md:p-4 rounded-xl bg-linear-to-b from-[#121620] to-[#0B0D12] border border-[#D4AF37]/40 text-[11px] md:text-xs text-slate-200 space-y-2 md:space-y-3 shadow-xl my-1.5">
       <div className="flex items-center justify-between border-b border-white/10 pb-1.5">
         <span className="font-bold text-[#D4AF37] uppercase tracking-wider text-[10px] md:text-xs">
           📋 Trip Summary

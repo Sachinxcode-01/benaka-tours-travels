@@ -132,8 +132,8 @@ export const ReviewsSection: React.FC = () => {
     >
       {/* Background Ambient Radial Gold Glow & Faint Grid */}
       <div className="pointer-events-none user-select-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-amber-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-2xl" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-200 h-125 bg-amber-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-100 h-100 bg-amber-500/5 rounded-full blur-2xl" />
         <svg
           className="absolute inset-0 w-full h-full opacity-[0.03] stroke-amber-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +208,7 @@ export const ReviewsSection: React.FC = () => {
               animate="animate"
               exit="exit"
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#121620] to-[#0B0D12] border border-[#D4AF37]/40 shadow-[0_0_30px_rgba(212,175,55,0.15)] space-y-6 relative overflow-hidden backdrop-blur-xl"
+              className="p-8 sm:p-10 rounded-3xl bg-linear-to-b from-[#121620] to-[#0B0D12] border border-[#D4AF37]/40 shadow-[0_0_30px_rgba(212,175,55,0.15)] space-y-6 relative overflow-hidden backdrop-blur-xl"
             >
               {/* Background Watermark Quote */}
               <Quote className="w-28 h-28 absolute -bottom-4 -right-4 text-[#D4AF37]/10 pointer-events-none select-none" />
@@ -246,7 +246,7 @@ export const ReviewsSection: React.FC = () => {
               {/* Customer Profile Footer */}
               <div className="flex items-center justify-between pt-4 border-t border-white/10 relative z-10">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#D4AF37] to-amber-600 flex items-center justify-center font-bold text-black text-base shadow-md">
+                  <div className="w-11 h-11 rounded-full bg-linear-to-br from-[#D4AF37] to-amber-600 flex items-center justify-center font-bold text-black text-base shadow-md">
                     {current.name.charAt(0)}
                   </div>
                   <div>
@@ -311,7 +311,7 @@ export const ReviewsSection: React.FC = () => {
                   aria-label={`Go to review ${idx + 1}`}
                   className={`h-2.5 rounded-full transition-all cursor-pointer ${
                     currentIndex === idx
-                      ? "w-8 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B]"
+                      ? "w-8 bg-linear-to-r from-[#D4AF37] to-[#F59E0B]"
                       : "w-2.5 bg-slate-700 hover:bg-slate-500"
                   }`}
                 />
@@ -321,7 +321,7 @@ export const ReviewsSection: React.FC = () => {
         </div>
 
         {/* Final CTA Support Card */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#121620] to-[#0B0D12] border border-[#D4AF37]/30 text-center space-y-6 shadow-2xl relative overflow-hidden">
+        <div className="p-8 sm:p-10 rounded-3xl bg-linear-to-b from-[#121620] to-[#0B0D12] border border-[#D4AF37]/30 text-center space-y-6 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-6 pointer-events-none opacity-20">
             <Sparkles className="w-20 h-20 text-[#D4AF37]" />
           </div>
@@ -338,7 +338,7 @@ export const ReviewsSection: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 relative z-10 pt-2">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:brightness-110 cursor-pointer"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-linear-to-r from-[#D4AF37] to-[#F59E0B] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:brightness-110 cursor-pointer"
             >
               Request Quote
             </button>

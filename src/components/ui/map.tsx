@@ -141,7 +141,7 @@ export const Map = forwardRef<MapRef, MapProps>(
       <MapContext.Provider value={mapState}>
         <div
           ref={containerRef}
-          className={`w-full h-full min-h-[300px] relative ${className}`}
+          className={`w-full h-full min-h-75 relative ${className}`}
         >
           {children}
         </div>

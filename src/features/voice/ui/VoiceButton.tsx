@@ -101,7 +101,7 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
       {!isSmall && (
         <span
           aria-live="polite"
-          className={`text-[10px] font-medium transition-colors text-center leading-tight max-w-[70px] ${
+          className={`text-[10px] font-medium transition-colors text-center leading-tight max-w-17.5 ${
             isListening
               ? "text-red-400"
               : state === "success"

@@ -14,6 +14,7 @@ import { InteractiveMapSection } from "../components/map/InteractiveMapSection";
 import { Footer } from "../components/layout/Footer";
 import { StickyMobileBar } from "../components/layout/StickyMobileBar";
 import { BookingWizardModal } from "../features/booking/BookingWizardModal";
+import { FareEstimatorWidget } from "../features/fare-calculator/ui/FareEstimatorWidget";
 import { INITIAL_FLEET } from "../data/fleet";
 import type { Vehicle } from "../types/fleet";
 import type { BookingRequest } from "../types/booking";
@@ -82,6 +83,9 @@ export const HomePage: React.FC = () => {
 
       {/* Tailored Services Section */}
       <ServicesSection onOpenBooking={() => handleOpenBooking()} />
+
+      {/* Interactive Fare & Route Estimator Widget */}
+      <FareEstimatorWidget />
 
       {/* Why BENAKA Section */}
       <WhyBenakaSection />

@@ -35,7 +35,7 @@ export const FleetFilterBar: React.FC<FleetFilterBarProps> = ({
             <button
               key={tab.key}
               onClick={() => onFilterChange(tab.key)}
-              className={`relative text-xs font-semibold px-4 py-2.5 rounded-full transition-colors cursor-pointer min-h-[44px] flex items-center justify-center ${
+              className={`relative text-xs font-semibold px-4 py-2.5 rounded-full transition-colors cursor-pointer min-h-11 flex items-center justify-center ${
                 isActive
                   ? "text-neutral-950 font-bold"
                   : "text-slate-300 hover:text-white bg-neutral-900/80 border border-neutral-800"
@@ -44,7 +44,7 @@ export const FleetFilterBar: React.FC<FleetFilterBarProps> = ({
               {isActive && (
                 <motion.div
                   layoutId="fleet-filter-active-pill"
-                  className="absolute inset-0 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 rounded-full shadow-md shadow-amber-500/20"
+                  className="absolute inset-0 bg-linear-to-r from-amber-400 via-amber-300 to-amber-500 rounded-full shadow-md shadow-amber-500/20"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}

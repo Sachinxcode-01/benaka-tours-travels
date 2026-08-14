@@ -87,8 +87,8 @@ export const FAQPreviewSection: React.FC = () => {
     >
       {/* Background Ambient Radial Gold Glow & Faint Route Grid */}
       <div className="pointer-events-none user-select-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-amber-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 -right-20 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-2xl" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-175 h-125 bg-amber-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 -right-20 w-100 h-100 bg-amber-500/5 rounded-full blur-2xl" />
         <svg
           className="absolute inset-0 w-full h-full opacity-[0.03] stroke-amber-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ export const FAQPreviewSection: React.FC = () => {
         </div>
 
         {/* 100% Chauffeur-Driven Policy Highlight Banner */}
-        <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-amber-500/15 via-[#121620] to-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl backdrop-blur-md">
+        <div className="p-5 sm:p-6 rounded-2xl bg-linear-to-r from-amber-500/15 via-[#121620] to-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl backdrop-blur-md">
           <div className="flex items-center gap-3.5 text-amber-300">
             <div className="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center shrink-0">
               <ShieldCheck className="w-6 h-6 text-[#D4AF37]" />
@@ -175,7 +175,7 @@ export const FAQPreviewSection: React.FC = () => {
                 {isActive && (
                   <motion.div
                     layoutId="activeFaqCategory"
-                    className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] rounded-xl z-0"
+                    className="absolute inset-0 bg-linear-to-r from-[#D4AF37] to-[#F59E0B] rounded-xl z-0"
                     transition={{ type: "spring", stiffness: 400, damping: 35 }}
                   />
                 )}
@@ -208,7 +208,7 @@ export const FAQPreviewSection: React.FC = () => {
                     initial={{ scaleY: 0 }}
                     animate={{ scaleY: 1 }}
                     exit={{ scaleY: 0 }}
-                    className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#D4AF37] to-amber-500"
+                    className="absolute left-0 top-0 bottom-0 w-1.5 bg-linear-to-b from-[#D4AF37] to-amber-500"
                   />
                 )}
 
@@ -217,7 +217,7 @@ export const FAQPreviewSection: React.FC = () => {
                   aria-expanded={isOpen}
                   aria-controls={contentId}
                   onClick={() => toggleFAQ(item.id)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] cursor-pointer min-h-[44px]"
+                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] cursor-pointer min-h-11"
                 >
                   <span
                     className={`font-bold text-base sm:text-lg transition-colors ${
@@ -268,7 +268,7 @@ export const FAQPreviewSection: React.FC = () => {
         </div>
 
         {/* Final 24/7 Support Card */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#121620] to-[#0B0D12] border border-[#D4AF37]/30 text-center space-y-6 shadow-2xl relative overflow-hidden">
+        <div className="p-8 sm:p-10 rounded-3xl bg-linear-to-b from-[#121620] to-[#0B0D12] border border-[#D4AF37]/30 text-center space-y-6 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-6 pointer-events-none opacity-20">
             <Sparkles className="w-20 h-20 text-[#D4AF37]" />
           </div>
