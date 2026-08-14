@@ -28,22 +28,22 @@ interface FleetVideoItem {
 
 const FLEET_VIDEOS: FleetVideoItem[] = [
   {
-    id: "fleet-arrival",
-    src: "/assets/vehicles/placeholders/Fleet_vehicles_parking_on_lawn_202608140843.mp4",
-    title: "THE FLEET ARRIVES",
-    subtitle: "Every journey begins with trust.",
-  },
-  {
     id: "drone-cinematic",
     src: "/assets/vehicles/placeholders/Drone_filming_vehicle_fleet_comm…_202608140857.mp4",
     title: "BENAKA FROM ABOVE",
-    subtitle: "A cinematic view of premium mobility.",
+    subtitle: "Experience our fleet from a cinematic perspective.",
   },
   {
     id: "drone-aerial",
     src: "/assets/vehicles/placeholders/Drone_flying_over_vehicle_fleet_202608140858.mp4",
-    title: "DRIVEN BEYOND HORIZONS",
-    subtitle: "Professional travel from Gadag and beyond.",
+    title: "A JOURNEY FROM ABOVE",
+    subtitle: "Premium mobility, captured from the sky.",
+  },
+  {
+    id: "fleet-showcase",
+    src: "/assets/vehicles/placeholders/Fleet_vehicles_parking_on_lawn_202608140843.mp4",
+    title: "THE BENAKA FLEET",
+    subtitle: "Driven by trust. Defined by comfort.",
   },
 ];
 
