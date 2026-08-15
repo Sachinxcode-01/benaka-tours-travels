@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #0b0d12;
+    color: #f1f5f9;
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F7E7A9 0%, #D4AF37 50%, #8C6B17 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+.glass-panel {
+  background: rgba(18, 22, 32, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-field {
+  background-color: #0b0d12;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.admin-field:focus {
+  border-color: #d4af37;
+}

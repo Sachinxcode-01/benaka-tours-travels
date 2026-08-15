@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  FLEET_VEHICLES,
-  type Vehicle,
-  type VehicleCategory,
-} from "@entities/vehicle";
+import { type Vehicle, type VehicleCategory } from "@entities/vehicle";
+import { useLiveFleet } from "@shared/hooks/useLiveFleet";
 import { createWhatsAppInquiryUrl } from "@shared/services/whatsapp.service";
 import { Container } from "@shared/ui/container";
 import { SectionHeading } from "@shared/ui/section-heading";
@@ -21,16 +18,18 @@ export const FeaturedFleetSection: React.FC = () => {
     useState<Vehicle | null>(null);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState<boolean>(false);
 
+  const fleetList = useLiveFleet();
+
   const categories = [
-    { key: "all", label: "All Vehicles (12)" },
-    { key: "sedan", label: "Sedans (2)" },
-    { key: "muv", label: "MUVs (3)" },
-    { key: "suv", label: "SUVs (5)" },
-    { key: "minibus", label: "Minibus (1)" },
-    { key: "bus", label: "Heavy Coach (1)" },
+    { key: "all", label: `All Vehicles (${fleetList.length})` },
+    { key: "sedan", label: "Sedans" },
+    { key: "muv", label: "MUVs" },
+    { key: "suv", label: "SUVs" },
+    { key: "minibus", label: "Minibus" },
+    { key: "bus", label: "Heavy Coach" },
   ];
 
-  const filteredVehicles = FLEET_VEHICLES.filter((v) => {
+  const filteredVehicles = fleetList.filter((v) => {
     if (selectedCategory === "all") return true;
     return v.category === (selectedCategory as VehicleCategory);
   });

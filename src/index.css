@@ -135,3 +135,15 @@ code {
   will-change: transform, opacity;
   transform: translateZ(0);
 }
+
+.booking-field {
+  background-color: #0B0D12;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.booking-field:focus {
+  border-color: #D4AF37;
+  outline: none;
+}
+

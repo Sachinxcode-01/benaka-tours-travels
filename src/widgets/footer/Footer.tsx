@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="w-full border-t border-amber-500/20 bg-[#050608] text-slate-400 text-sm relative">
       {/* Gold Road-Line Top Accent */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-60" />
+      <div className="h-0.5 w-full bg-linear-to-r from-transparent via-amber-500 to-transparent opacity-60" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
         {/* Brand & Story */}
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider text-amber-400">
+          <h4 className="font-bold mb-4 uppercase text-xs tracking-wider text-amber-400">
             Quick Links
           </h4>
           <ul className="space-y-2.5 text-xs">
@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
 
         {/* Legal & Portals */}
         <div>
-          <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider text-amber-400">
+          <h4 className="font-bold mb-4 uppercase text-xs tracking-wider text-amber-400">
             Legal & Admin
           </h4>
           <ul className="space-y-2.5 text-xs">
@@ -134,20 +134,12 @@ export const Footer: React.FC = () => {
                 Terms of Service
               </Link>
             </li>
-            <li>
-              <Link
-                to="/admin"
-                className="hover:text-amber-400 transition-colors text-slate-300 font-semibold"
-              >
-                Admin Portal
-              </Link>
-            </li>
           </ul>
         </div>
 
         {/* Contact Info */}
         <div>
-          <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider text-amber-400">
+          <h4 className="font-bold mb-4 uppercase text-xs tracking-wider text-amber-400">
             Contact & Office
           </h4>
           <ul className="space-y-3 text-xs text-slate-300">

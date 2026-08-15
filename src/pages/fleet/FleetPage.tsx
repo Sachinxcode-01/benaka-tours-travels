@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "@shared/lib/motion";
-import { FLEET_VEHICLES, VehicleCard } from "@entities/vehicle";
+import { VehicleCard } from "@entities/vehicle";
+import { useLiveFleet } from "@shared/hooks/useLiveFleet";
 import {
   FleetFilterBar,
   type FleetFilterOption,
@@ -12,30 +13,31 @@ import { FloatingQuickInquiryForm } from "@features/landing/inquiry-form/Floatin
 
 export const FleetPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<FleetFilterOption>("all");
+  const fleetVehicles = useLiveFleet();
 
   const counts = useMemo(() => {
     return {
-      all: FLEET_VEHICLES.length,
-      sedan: FLEET_VEHICLES.filter((v) => v.category === "sedan").length,
-      muv: FLEET_VEHICLES.filter((v) => v.category === "muv").length,
-      suv: FLEET_VEHICLES.filter((v) => v.category === "suv").length,
-      minibus: FLEET_VEHICLES.filter((v) => v.category === "minibus").length,
-      bus: FLEET_VEHICLES.filter((v) => v.category === "bus").length,
-      available: FLEET_VEHICLES.filter((v) => v.availability === "available")
+      all: fleetVehicles.length,
+      sedan: fleetVehicles.filter((v) => v.category === "sedan").length,
+      muv: fleetVehicles.filter((v) => v.category === "muv").length,
+      suv: fleetVehicles.filter((v) => v.category === "suv").length,
+      minibus: fleetVehicles.filter((v) => v.category === "minibus").length,
+      bus: fleetVehicles.filter((v) => v.category === "bus").length,
+      available: fleetVehicles.filter((v) => v.availability === "available")
         .length,
-      booked: FLEET_VEHICLES.filter((v) => v.availability === "booked").length,
+      booked: fleetVehicles.filter((v) => v.availability === "booked").length,
     };
-  }, []);
+  }, [fleetVehicles]);
 
   const filteredVehicles = useMemo(() => {
-    return FLEET_VEHICLES.filter((v) => {
+    return fleetVehicles.filter((v) => {
       if (activeFilter === "all") return true;
       if (activeFilter === "available" || activeFilter === "booked") {
         return v.availability === activeFilter;
       }
       return v.category === activeFilter;
     });
-  }, [activeFilter]);
+  }, [activeFilter, fleetVehicles]);
 
   return (
     <div className="w-full py-12 bg-[#07080B] min-h-screen space-y-12">

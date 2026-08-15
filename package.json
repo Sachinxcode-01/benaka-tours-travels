@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:admin": "npm run dev --prefix admin-website",
     "build": "tsc -b && vite build",
+    "build:admin": "npm run build --prefix admin-website",
     "lint": "oxlint",
     "test": "vitest",
     "test:run": "vitest run",

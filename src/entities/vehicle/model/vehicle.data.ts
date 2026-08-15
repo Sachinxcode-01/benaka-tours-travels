@@ -1,6 +1,7 @@
 import type { Vehicle } from "./vehicle.types";
+import { FLEET_STORAGE_KEY, formatVehicleImageUrl } from "@shared/services/fleetSyncService";
 
-export const FLEET_VEHICLES: Vehicle[] = [
+export const DEFAULT_FLEET_VEHICLES: Vehicle[] = [
   {
     id: "veh-01",
     slug: "maruti-swift-dzire",
@@ -22,9 +23,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/swift dszire.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/swift dszire.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/swift dszire.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/swift dszire.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 1,
@@ -45,9 +46,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     recommendedFor: ["Outstation Trips", "Daily Rentals", "Executive Pick-up"],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/Hyundai Aura.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/Hyundai Aura.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/Hyundai Aura.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/Hyundai Aura.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 2,
@@ -72,9 +73,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/eritiga.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/eritiga.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/eritiga.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/eritiga.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 3,
@@ -99,9 +100,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/Toyota-Innova-Crysta.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/Toyota-Innova-Crysta.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/Toyota-Innova-Crysta.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/Toyota-Innova-Crysta.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 4,
@@ -126,9 +127,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/Toofan cruser.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/Toofan cruser.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/Toofan cruser.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/Toofan cruser.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 5,
@@ -153,9 +154,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/scropio.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/scropio.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/scropio.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/scropio.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 6,
@@ -180,9 +181,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/bolero.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/bolero.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/bolero.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/bolero.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 7,
@@ -207,9 +208,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/brezza.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/brezza.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/brezza.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/brezza.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 8,
@@ -230,9 +231,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     recommendedFor: ["Business Trips", "Luxury Outstation", "VIP Commute"],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/Grand vitara.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/Grand vitara.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/Grand vitara.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/Grand vitara.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 9,
@@ -257,9 +258,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/Thar.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/Thar.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/Thar.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/Thar.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 10,
@@ -284,9 +285,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "available",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/Tempo-Traveller.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/Tempo-Traveller.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/Tempo-Traveller.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/Tempo-Traveller.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 11,
@@ -311,11 +312,61 @@ export const FLEET_VEHICLES: Vehicle[] = [
     ],
     availability: "booked",
     chauffeurIncluded: true,
-    image: "/assets/vehicles/placeholders/25 seater bus.jpg",
+    image: formatVehicleImageUrl("/assets/vehicles/placeholders/25 seater bus.jpg"),
     gallery: [
-      "/assets/vehicles/placeholders/25 seater bus.jpg",
+      formatVehicleImageUrl("/assets/vehicles/placeholders/25 seater bus.jpg"),
       "/assets/vehicles/placeholders/benekavehicles.png",
     ],
     sortOrder: 12,
   },
 ];
+
+/**
+ * Get live fleet vehicles synced from Admin Panel or default fallback
+ */
+export function getLiveFleetVehicles(): Vehicle[] {
+  if (typeof window === "undefined") return DEFAULT_FLEET_VEHICLES;
+  try {
+    const raw = localStorage.getItem(FLEET_STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed.map((item: any, idx: number) => {
+          const cat = (item.category || "sedan").toLowerCase();
+          const avail =
+            item.status === "Available"
+              ? "available"
+              : item.status === "Booked"
+              ? "booked"
+              : "maintenance";
+
+          const formattedImg = formatVehicleImageUrl(item.image || "/assets/vehicles/placeholders/swift dszire.jpg");
+
+          return {
+            id: item.id || `veh-${idx + 1}`,
+            slug: (item.id || item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")).replace(/^veh-/, ""),
+            name: item.name,
+            category: cat as any,
+            seats: item.seats || 5,
+            fuelTypes: item.fuel ? [item.fuel] : ["Diesel"],
+            features: item.features || ["Air Conditioning", "Chauffeur Driven"],
+            recommendedFor: item.recommendedFor || ["Local & Outstation Trips"],
+            availability: avail as any,
+            chauffeurIncluded: true,
+            image: formattedImg,
+            gallery: [formattedImg, "/assets/vehicles/placeholders/benekavehicles.png"],
+            sortOrder: idx + 1,
+            ratePerKm: item.ratePerKm,
+            driverAllowanceDay: item.driverAllowanceDay,
+            registrationNo: item.registrationNo,
+          };
+        });
+      }
+    }
+  } catch (err) {
+    console.error("Error parsing live fleet storage", err);
+  }
+  return DEFAULT_FLEET_VEHICLES;
+}
+
+export const FLEET_VEHICLES = DEFAULT_FLEET_VEHICLES;

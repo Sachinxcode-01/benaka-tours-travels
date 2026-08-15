@@ -260,6 +260,30 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
 
       setIsSubmitting(true);
       setTimeout(() => {
+        try {
+          const rawInq = localStorage.getItem("benaka_customer_inquiries");
+          const existingInquiries = rawInq ? JSON.parse(rawInq) : [];
+          const newInquiry = {
+            id: `inq-${Date.now()}`,
+            createdAt: new Date().toISOString().replace("T", " ").substring(0, 16),
+            customerName: formData.customerName,
+            customerPhone: formData.customerPhone,
+            pickupLocation: formData.pickupLocation,
+            destination: formData.destination,
+            pickupDate: formData.pickupDate,
+            vehicleName: formData.vehicleName || "Vehicle Inquiry",
+            passengers: formData.passengers || 1,
+            status: "New",
+            notes: formData.additionalNotes || "",
+          };
+          const updated = [newInquiry, ...existingInquiries];
+          localStorage.setItem("benaka_customer_inquiries", JSON.stringify(updated));
+          window.dispatchEvent(new Event("storage"));
+          window.dispatchEvent(new CustomEvent("benaka_inquiries_updated"));
+        } catch (e) {
+          console.error("Failed to sync new inquiry to Admin storage", e);
+        }
+
         setIsSubmitting(false);
         setStep(4);
       }, 300);
@@ -355,7 +379,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
               <span
                 className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 ${
                   step === s.number
-                    ? "bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] text-black shadow-lg shadow-amber-500/20 scale-105"
+                    ? "bg-linear-to-r from-[#D4AF37] to-[#F59E0B] text-black shadow-lg shadow-amber-500/20 scale-105"
                     : step > s.number
                       ? "bg-emerald-500 text-white"
                       : "bg-[#121620] text-slate-400 border border-white/10"
@@ -483,7 +507,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                   onChange={(e) =>
                     updateField("tripType", e.target.value as TripType)
                   }
-                  className="w-full px-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full px-3 py-2.5 booking-field rounded-xl text-sm"
                 >
                   <option value="outstation">Outstation Journey</option>
                   <option value="local">Local City Trip</option>
@@ -497,7 +521,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                   onChange={(e) =>
                     updateField("journeyType", e.target.value as JourneyType)
                   }
-                  className="w-full px-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full px-3 py-2.5 booking-field rounded-xl text-sm"
                 >
                   <option value="one-way">One-Way Drop</option>
                   <option value="round-trip">Round Trip</option>
@@ -525,7 +549,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                   type="time"
                   value={formData.pickupTime}
                   onChange={(e) => updateField("pickupTime", e.target.value)}
-                  className="w-full px-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full px-3 py-2.5 booking-field rounded-xl text-sm"
                 />
               </FormField>
 
@@ -582,7 +606,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                   onChange={(e) =>
                     updateField("vehicleCategory", e.target.value)
                   }
-                  className="w-full px-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full px-3 py-2.5 booking-field rounded-xl text-sm"
                 >
                   <option value="all">All Vehicles (Show All)</option>
                   <option value="sedan">Sedan (4 Seater)</option>
@@ -612,7 +636,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                       updateField("vehicleName", v.name);
                     }
                   }}
-                  className="w-full px-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full px-3 py-2.5 booking-field rounded-xl text-sm"
                 >
                   {filteredFleet.map((v) => (
                     <option key={v.id} value={v.id}>
@@ -660,7 +684,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                   onChange={(e) =>
                     updateField("luggage", parseInt(e.target.value) || 0)
                   }
-                  className="w-full px-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full px-3 py-2.5 booking-field rounded-xl text-sm"
                 />
               </FormField>
 
@@ -670,7 +694,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                   onChange={(e) =>
                     updateField("tripPurpose", e.target.value as TripPurpose)
                   }
-                  className="w-full px-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full px-3 py-2.5 booking-field rounded-xl text-sm"
                 >
                   <option value="Personal">Personal / Family</option>
                   <option value="Corporate">Corporate / Business</option>
@@ -706,7 +730,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                 value={formData.additionalNotes}
                 onChange={(e) => updateField("additionalNotes", e.target.value)}
                 placeholder="Special pickup timing, carrier requirements, temple stopovers..."
-                className="w-full px-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                className="w-full px-3 py-2.5 booking-field rounded-xl text-sm"
               />
             </FormField>
 
@@ -798,7 +822,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                   value={formData.customerEmail || ""}
                   onChange={(e) => updateField("customerEmail", e.target.value)}
                   placeholder="suresh@example.com"
-                  className="w-full pl-9 pr-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full pl-9 pr-3 py-2.5 booking-field rounded-xl text-sm"
                 />
               </div>
             </FormField>
@@ -891,7 +915,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
             )}
 
             {/* Estimated Quote Card */}
-            <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-[#121620] to-emerald-500/10 border border-[#D4AF37]/30 text-center space-y-1.5 shadow-lg">
+            <div className="p-4 rounded-2xl bg-linear-to-r from-amber-500/10 via-[#121620] to-emerald-500/10 border border-[#D4AF37]/30 text-center space-y-1.5 shadow-lg">
               <div className="text-xs uppercase font-bold text-[#D4AF37] tracking-wider">
                 Estimated Quote
               </div>
@@ -958,7 +982,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                 href={generateWhatsAppInquiryUrl(formData)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold text-base flex items-center justify-center gap-2 shadow-xl shadow-emerald-600/30 hover:brightness-110 active:scale-[0.99] transition-all min-h-[48px]"
+                className="w-full py-4 px-6 rounded-xl bg-linear-to-r from-emerald-500 to-emerald-600 text-white font-bold text-base flex items-center justify-center gap-2 shadow-xl shadow-emerald-600/30 hover:brightness-110 active:scale-[0.99] transition-all min-h-12"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
                 <span>Send Quotation Request on WhatsApp</span>
@@ -967,7 +991,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
               <div className="grid grid-cols-2 gap-3">
                 <a
                   href={`tel:${WHATSAPP_PHONE_NUMBER}`}
-                  className="py-3 px-4 rounded-xl border border-[#D4AF37]/40 bg-[#121620] text-[#D4AF37] font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-[44px]"
+                  className="py-3 px-4 rounded-xl border border-[#D4AF37]/40 bg-[#121620] text-[#D4AF37] font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-11"
                 >
                   <PhoneCall className="w-4 h-4" />
                   <span>Call {DISPLAY_PHONE_NUMBER}</span>
@@ -976,7 +1000,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                 <button
                   type="button"
                   onClick={handleCopyInquiry}
-                  className="py-3 px-4 rounded-xl border border-white/10 bg-[#121620] text-slate-200 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-[44px]"
+                  className="py-3 px-4 rounded-xl border border-white/10 bg-[#121620] text-slate-200 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-11"
                 >
                   <Copy className="w-4 h-4 text-[#D4AF37]" />
                   <span>{copied ? "Copied Inquiry!" : "Copy Inquiry"}</span>

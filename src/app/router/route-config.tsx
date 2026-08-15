@@ -11,9 +11,6 @@ const BookingPage = lazy(() => import("@pages/booking/BookingPage"));
 const ContactPage = lazy(() => import("@pages/contact/ContactPage"));
 const PrivacyPage = lazy(() => import("@pages/privacy/PrivacyPage"));
 const TermsPage = lazy(() => import("@pages/terms/TermsPage"));
-const AdminPlaceholderPage = lazy(
-  () => import("@pages/admin/AdminPlaceholderPage"),
-);
 const NotFoundPage = lazy(() => import("@pages/not-found/NotFoundPage"));
 
 export const routes: RouteObject[] = [
@@ -70,14 +67,6 @@ export const routes: RouteObject[] = [
     element: (
       <PageShell>
         <TermsPage />
-      </PageShell>
-    ),
-  },
-  {
-    path: "/admin",
-    element: (
-      <PageShell>
-        <AdminPlaceholderPage />
       </PageShell>
     ),
   },
