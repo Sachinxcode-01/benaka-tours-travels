@@ -20,6 +20,7 @@ import { Car, MessageCircle, DollarSign, Shield, TrendingUp } from "lucide-react
 
 const FLEET_STORAGE_KEY = "benaka_fleet_inventory";
 const INQUIRIES_STORAGE_KEY = "benaka_customer_inquiries";
+const TARIFFS_STORAGE_KEY = "benaka_tariff_rates";
 
 export const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
@@ -59,7 +60,21 @@ export const App: React.FC = () => {
     return INITIAL_INQUIRIES;
   });
 
-  const [tariffs, setTariffs] = useState<TariffRate[]>(INITIAL_TARIFFS);
+  // Load live tariffs from storage or initialize
+  const [tariffs, setTariffs] = useState<TariffRate[]>(() => {
+    try {
+      const raw = localStorage.getItem(TARIFFS_STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (e) {
+      console.error("Error initializing tariffs state", e);
+    }
+    localStorage.setItem(TARIFFS_STORAGE_KEY, JSON.stringify(INITIAL_TARIFFS));
+    return INITIAL_TARIFFS;
+  });
+
   const [auditLogs, setAuditLogs] = useState<AuditLog[]>(INITIAL_AUDIT_LOGS);
   const [analytics, setAnalytics] = useState<AnalyticsMetric>(INITIAL_ANALYTICS);
 
@@ -91,6 +106,17 @@ export const App: React.FC = () => {
     }
   };
 
+  const syncTariffsState = (newTariffs: TariffRate[]) => {
+    setTariffs(newTariffs);
+    try {
+      localStorage.setItem(TARIFFS_STORAGE_KEY, JSON.stringify(newTariffs));
+      window.dispatchEvent(new Event("storage"));
+      window.dispatchEvent(new CustomEvent("benaka_tariffs_updated"));
+    } catch (e) {
+      console.error("Failed to sync tariffs state", e);
+    }
+  };
+
   // Listen for storage changes from public website or cross-window triggers
   useEffect(() => {
     const handleStorageChange = () => {
@@ -105,6 +131,11 @@ export const App: React.FC = () => {
           const parsed = JSON.parse(rawFleet);
           if (Array.isArray(parsed)) setFleet(parsed);
         }
+        const rawTariffs = localStorage.getItem(TARIFFS_STORAGE_KEY);
+        if (rawTariffs) {
+          const parsed = JSON.parse(rawTariffs);
+          if (Array.isArray(parsed)) setTariffs(parsed);
+        }
       } catch (e) {
         console.error("Failed to handle storage change", e);
       }
@@ -113,11 +144,13 @@ export const App: React.FC = () => {
     window.addEventListener("storage", handleStorageChange);
     window.addEventListener("benaka_inquiries_updated", handleStorageChange);
     window.addEventListener("benaka_fleet_updated", handleStorageChange);
+    window.addEventListener("benaka_tariffs_updated", handleStorageChange);
 
     return () => {
       window.removeEventListener("storage", handleStorageChange);
       window.removeEventListener("benaka_inquiries_updated", handleStorageChange);
       window.removeEventListener("benaka_fleet_updated", handleStorageChange);
+      window.removeEventListener("benaka_tariffs_updated", handleStorageChange);
     };
   }, []);
 
@@ -199,10 +232,9 @@ export const App: React.FC = () => {
 
   // Tariff handler
   const handleSaveTariff = (updated: TariffRate) => {
-    setTariffs((prev) =>
-      prev.map((t) => (t.id === updated.id ? updated : t))
-    );
-    addAuditLog("TARIFF_UPDATE", `Updated rate card tariff for category ${updated.category}.`);
+    const updatedTariffs = tariffs.map((t) => (t.id === updated.id ? updated : t));
+    syncTariffsState(updatedTariffs);
+    addAuditLog("TARIFF_UPDATE", `Updated rate card tariff for category ${updated.category} (Base 80km: ₹${updated.baseRate80Km}, Extra/KM: ₹${updated.extraPerKm}, Driver: ₹${updated.driverAllowancePerDay}).`);
   };
 
   if (!isAuthenticated) {

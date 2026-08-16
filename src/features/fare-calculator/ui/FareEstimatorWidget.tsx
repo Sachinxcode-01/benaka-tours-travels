@@ -123,10 +123,90 @@ export const FareEstimatorWidget: React.FC = () => {
   const [selectedAirportIndex, setSelectedAirportIndex] = useState<number>(0);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState<boolean>(false);
 
+  const [vehicleRates, setVehicleRates] = React.useState<VehicleRate[]>(() => {
+    try {
+      const rawTariffs = localStorage.getItem("benaka_tariff_rates");
+      if (rawTariffs) {
+        const tariffs = JSON.parse(rawTariffs);
+        if (Array.isArray(tariffs) && tariffs.length > 0) {
+          const sedan = tariffs.find((t: any) => t.category === "Sedan");
+          const muv = tariffs.find((t: any) => t.category === "MUV");
+          const suv = tariffs.find((t: any) => t.category === "SUV");
+          const minibus = tariffs.find((t: any) => t.category === "Minibus");
+
+          return VEHICLE_RATES.map((v) => {
+            let matched = sedan;
+            if (v.id === "ertiga") matched = muv;
+            if (v.id === "innova") matched = muv || suv;
+            if (v.id === "tempo") matched = minibus;
+
+            if (matched) {
+              return {
+                ...v,
+                perKm: matched.extraPerKm || v.perKm,
+                driverAllowance: matched.driverAllowancePerDay || v.driverAllowance,
+                local8hr80km: matched.baseRate80Km || v.local8hr80km,
+              };
+            }
+            return v;
+          });
+        }
+      }
+    } catch (e) {
+      console.error("Error reading stored tariffs", e);
+    }
+    return VEHICLE_RATES;
+  });
+
+  React.useEffect(() => {
+    const handleRatesUpdate = () => {
+      try {
+        const rawTariffs = localStorage.getItem("benaka_tariff_rates");
+        if (rawTariffs) {
+          const tariffs = JSON.parse(rawTariffs);
+          if (Array.isArray(tariffs) && tariffs.length > 0) {
+            const sedan = tariffs.find((t: any) => t.category === "Sedan");
+            const muv = tariffs.find((t: any) => t.category === "MUV");
+            const suv = tariffs.find((t: any) => t.category === "SUV");
+            const minibus = tariffs.find((t: any) => t.category === "Minibus");
+
+            setVehicleRates(
+              VEHICLE_RATES.map((v) => {
+                let matched = sedan;
+                if (v.id === "ertiga") matched = muv;
+                if (v.id === "innova") matched = muv || suv;
+                if (v.id === "tempo") matched = minibus;
+
+                if (matched) {
+                  return {
+                    ...v,
+                    perKm: matched.extraPerKm || v.perKm,
+                    driverAllowance: matched.driverAllowancePerDay || v.driverAllowance,
+                    local8hr80km: matched.baseRate80Km || v.local8hr80km,
+                  };
+                }
+                return v;
+              })
+            );
+          }
+        }
+      } catch (e) {
+        console.error("Error updating live rates", e);
+      }
+    };
+
+    window.addEventListener("storage", handleRatesUpdate);
+    window.addEventListener("benaka_tariffs_updated", handleRatesUpdate);
+    return () => {
+      window.removeEventListener("storage", handleRatesUpdate);
+      window.removeEventListener("benaka_tariffs_updated", handleRatesUpdate);
+    };
+  }, []);
+
   const selectedVehicle = useMemo(
     () =>
-      VEHICLE_RATES.find((v) => v.id === selectedVehicleId) || VEHICLE_RATES[0],
-    [selectedVehicleId],
+      vehicleRates.find((v) => v.id === selectedVehicleId) || vehicleRates[0],
+    [selectedVehicleId, vehicleRates],
   );
 
   // Calculation logic
@@ -252,7 +332,7 @@ export const FareEstimatorWidget: React.FC = () => {
                 2. Select Preferred Vehicle
               </label>
               <div className="grid grid-cols-2 gap-2.5">
-                {VEHICLE_RATES.map((v) => {
+                {vehicleRates.map((v) => {
                   const isSelected = selectedVehicleId === v.id;
                   return (
                     <button
