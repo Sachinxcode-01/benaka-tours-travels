@@ -1,5 +1,5 @@
 import React from "react";
-import { LogOut, ShieldCheck, RefreshCw } from "lucide-react";
+import { LogOut, RefreshCw } from "lucide-react";
 
 interface AdminHeaderProps {
   onLogout: () => void;
@@ -15,8 +15,12 @@ export const AdminHeader: React.FC<AdminHeaderProps> = ({
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand & Title */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#D4AF37]/20 to-amber-500/10 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37]">
-            <ShieldCheck className="w-6 h-6" />
+          <div className="p-1.5 rounded-xl bg-[#0B0D12] border border-[#D4AF37]/40 flex items-center justify-center shadow-md shadow-[#D4AF37]/10">
+            <img
+              src="/assets/brand/benaka_emblem_gold_transparent.png"
+              alt="Benaka Tours & Travels Logo"
+              className="w-8 h-8 object-contain drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]"
+            />
           </div>
           <div>
             <div className="flex items-center gap-2">

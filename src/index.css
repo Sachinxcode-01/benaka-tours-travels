@@ -147,3 +147,16 @@ code {
   outline: none;
 }
 
+.admin-field {
+  background-color: #0B0D12;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.admin-field:focus {
+  border-color: #D4AF37;
+}
+
+

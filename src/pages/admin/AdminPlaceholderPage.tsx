@@ -2,15 +2,19 @@ import React from "react";
 import { Container } from "@shared/ui/container";
 import { Card } from "@shared/ui/card";
 import { Badge } from "@shared/ui/badge";
-import { Shield, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 
 export const AdminPlaceholderPage: React.FC = () => {
   return (
     <div className="py-20">
       <Container size="md">
         <Card className="text-center p-8 space-y-6">
-          <div className="mx-auto w-16 h-16 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-400">
-            <Shield className="h-8 w-8" />
+          <div className="mx-auto p-3 rounded-2xl bg-neutral-950 border border-[#D4AF37]/40 inline-block shadow-xl shadow-[#D4AF37]/10">
+            <img
+              src="/assets/brand/benaka_emblem_gold_transparent.png"
+              alt="Benaka Logo Emblem"
+              className="h-12 w-auto object-contain mx-auto drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]"
+            />
           </div>
 
           <div className="space-y-2">

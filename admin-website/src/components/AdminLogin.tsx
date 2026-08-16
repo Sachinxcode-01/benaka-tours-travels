@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ShieldCheck, Lock, ArrowRight, Sparkles } from "lucide-react";
+import { Lock, ArrowRight, Sparkles } from "lucide-react";
 
 interface AdminLoginProps {
   onLoginSuccess: () => void;
@@ -32,14 +32,20 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#D4AF37]/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="w-full max-w-md bg-[#121620]/90 backdrop-blur-xl border border-[#D4AF37]/30 rounded-3xl p-8 shadow-2xl relative z-10">
-        <div className="text-center space-y-3 mb-8">
-          <div className="mx-auto w-16 h-16 rounded-2xl bg-linear-to-br from-[#D4AF37]/20 to-amber-500/10 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] shadow-lg shadow-[#D4AF37]/5">
-            <ShieldCheck className="w-8 h-8" />
+        <div className="text-center space-y-4 mb-8">
+          <div className="mx-auto p-3 rounded-2xl bg-[#0B0D12]/90 border border-[#D4AF37]/40 inline-block shadow-xl shadow-[#D4AF37]/15">
+            <img
+              src="/assets/brand/benaka_logo_primary_transparent.png"
+              alt="Benaka Tours & Travels Logo"
+              className="h-16 sm:h-20 w-auto max-w-full object-contain mx-auto drop-shadow-[0_4px_12px_rgba(212,175,55,0.4)]"
+            />
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[11px] font-bold text-[#D4AF37] tracking-wider uppercase">
-            <Sparkles className="w-3 h-3" />
-            <span>Standalone Admin Portal</span>
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[11px] font-bold text-[#D4AF37] tracking-wider uppercase">
+              <Sparkles className="w-3 h-3" />
+              <span>Standalone Admin Portal</span>
+            </div>
           </div>
 
           <h1 className="text-2xl font-extrabold text-white tracking-tight">

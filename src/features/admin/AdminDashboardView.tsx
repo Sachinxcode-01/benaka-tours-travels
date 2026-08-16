@@ -114,14 +114,16 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     <div className="min-h-screen bg-[#0B0D12] text-slate-200">
       {/* Header Bar */}
       <header className="bg-[#121620] border-b border-[#D4AF37]/20 py-4 px-6 sticky top-0 z-30 flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <img
-            src="/assets/brand/benaka_emblem_gold_transparent.png"
-            alt="Benaka Fleet Admin"
-            className="h-9 w-auto object-contain shrink-0"
-          />
+        <div className="flex items-center gap-3">
+          <div className="p-1.5 rounded-xl bg-[#0B0D12] border border-[#D4AF37]/30 flex items-center justify-center shadow-md shadow-[#D4AF37]/10">
+            <img
+              src="/assets/brand/benaka_emblem_gold_transparent.png"
+              alt="Benaka Fleet Admin Logo"
+              className="h-9 w-auto object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]"
+            />
+          </div>
           <div className="flex flex-col">
-            <span className="font-accent text-2xl text-[#D4AF37] leading-none">
+            <span className="font-accent text-2xl text-[#D4AF37] leading-none tracking-tight">
               Benaka
             </span>
             <span className="text-[10px] tracking-[0.2em] font-extrabold uppercase text-white mt-0.5">
@@ -294,7 +296,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                                 e.target.value as VehicleStatus,
                               )
                             }
-                            className="bg-[#0B0D12] border border-white/10 rounded-lg px-2 py-1 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
+                            className="admin-field rounded-lg px-2 py-1 text-xs"
                           >
                             <option value="Available">Available</option>
                             <option value="Booked">Booked</option>
@@ -372,7 +374,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                                 e.target.value as InquiryStatus,
                               )
                             }
-                            className="bg-[#0B0D12] border border-white/10 rounded-lg px-2 py-1 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
+                            className="admin-field rounded-lg px-2 py-1 text-xs"
                           >
                             <option value="New">New</option>
                             <option value="Contacted">Contacted</option>
@@ -427,7 +429,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                 onChange={(e) =>
                   setEditingVehicle({ ...editingVehicle, name: e.target.value })
                 }
-                className="w-full px-3 py-2 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                className="w-full px-3 py-2 admin-field rounded-xl text-sm"
               />
             </FormField>
 
@@ -441,7 +443,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                       category: e.target.value as any,
                     })
                   }
-                  className="w-full px-3 py-2 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full px-3 py-2 admin-field rounded-xl text-sm"
                 >
                   <option value="Sedan">Sedan</option>
                   <option value="SUV">SUV</option>
@@ -461,7 +463,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                       seats: parseInt(e.target.value) || 1,
                     })
                   }
-                  className="w-full px-3 py-2 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full px-3 py-2 admin-field rounded-xl text-sm"
                 />
               </FormField>
             </div>
@@ -476,7 +478,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                     image: e.target.value,
                   })
                 }
-                className="w-full px-3 py-2 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                className="w-full px-3 py-2 admin-field rounded-xl text-sm"
               />
             </FormField>
 
@@ -490,7 +492,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                     notes: e.target.value,
                   })
                 }
-                className="w-full px-3 py-2 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                className="w-full px-3 py-2 admin-field rounded-xl text-sm"
               />
             </FormField>
 

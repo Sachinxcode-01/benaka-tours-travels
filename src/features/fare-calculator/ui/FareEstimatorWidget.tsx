@@ -233,11 +233,10 @@ export const FareEstimatorWidget: React.FC = () => {
                       key={t.key}
                       type="button"
                       onClick={() => setTripType(t.key as any)}
-                      className={`relative py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer min-h-11 ${
-                        isActive
+                      className={`relative py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer min-h-11 ${isActive
                           ? "text-black bg-linear-to-r from-[#D4AF37] to-[#F59E0B] shadow-md"
                           : "text-slate-300 hover:text-white hover:bg-white/5"
-                      }`}
+                        }`}
                     >
                       <Icon className="w-3.5 h-3.5 shrink-0" />
                       <span>{t.label}</span>
@@ -260,11 +259,10 @@ export const FareEstimatorWidget: React.FC = () => {
                       key={v.id}
                       type="button"
                       onClick={() => setSelectedVehicleId(v.id)}
-                      className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex items-center gap-3 ${
-                        isSelected
+                      className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex items-center gap-3 ${isSelected
                           ? "bg-[#161C28] border-[#D4AF37] ring-1 ring-[#D4AF37] shadow-lg shadow-amber-500/10"
                           : "bg-[#121620] border-white/10 hover:border-amber-500/30"
-                      }`}
+                        }`}
                     >
                       <img
                         src={v.image}
@@ -339,11 +337,10 @@ export const FareEstimatorWidget: React.FC = () => {
                           key={d}
                           type="button"
                           onClick={() => setDaysCount(d)}
-                          className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                            daysCount === d
+                          className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${daysCount === d
                               ? "bg-amber-400 text-black font-extrabold"
                               : "bg-[#1A1F2C] text-slate-300 hover:text-white border border-white/10"
-                          }`}
+                            }`}
                         >
                           {d}d
                         </button>
@@ -368,11 +365,10 @@ export const FareEstimatorWidget: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setLocalPkg("8h")}
-                      className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer ${
-                        localPkg === "8h"
+                      className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer ${localPkg === "8h"
                           ? "bg-[#161C28] border-[#D4AF37] ring-1 ring-[#D4AF37]"
                           : "bg-[#1A1F2C] border-white/10"
-                      }`}
+                        }`}
                     >
                       <div className="font-bold text-xs text-white">
                         8 Hours / 80 Km
@@ -384,11 +380,10 @@ export const FareEstimatorWidget: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setLocalPkg("12h")}
-                      className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer ${
-                        localPkg === "12h"
+                      className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer ${localPkg === "12h"
                           ? "bg-[#161C28] border-[#D4AF37] ring-1 ring-[#D4AF37]"
                           : "bg-[#1A1F2C] border-white/10"
-                      }`}
+                        }`}
                     >
                       <div className="font-bold text-xs text-white">
                         12 Hours / 120 Km
@@ -418,11 +413,10 @@ export const FareEstimatorWidget: React.FC = () => {
                         key={idx}
                         type="button"
                         onClick={() => setSelectedTempleIndex(idx)}
-                        className={`w-full p-3 rounded-xl border text-left flex items-center justify-between transition-all cursor-pointer ${
-                          selectedTempleIndex === idx
+                        className={`w-full p-3 rounded-xl border text-left flex items-center justify-between transition-all cursor-pointer ${selectedTempleIndex === idx
                             ? "bg-[#161C28] border-[#D4AF37] text-white"
                             : "bg-[#1A1F2C] border-white/10 text-slate-300"
-                        }`}
+                          }`}
                       >
                         <div>
                           <div className="font-bold text-xs">{t.name}</div>
@@ -456,11 +450,10 @@ export const FareEstimatorWidget: React.FC = () => {
                         key={idx}
                         type="button"
                         onClick={() => setSelectedAirportIndex(idx)}
-                        className={`w-full p-3.5 rounded-xl border text-left flex items-center justify-between transition-all cursor-pointer ${
-                          selectedAirportIndex === idx
+                        className={`w-full p-3.5 rounded-xl border text-left flex items-center justify-between transition-all cursor-pointer ${selectedAirportIndex === idx
                             ? "bg-[#161C28] border-[#D4AF37] text-white"
                             : "bg-[#1A1F2C] border-white/10 text-slate-300"
-                        }`}
+                          }`}
                       >
                         <span className="font-bold text-xs">{r.name}</span>
                         <span className="text-xs font-bold text-amber-300">

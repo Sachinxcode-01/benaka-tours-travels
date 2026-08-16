@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Shield, Lock, Mail, AlertCircle } from "lucide-react";
+import { Lock, Mail, AlertCircle } from "lucide-react";
 import { PrimaryButton } from "../../components/ui/PrimaryButton";
 import { FormField } from "../../components/forms/FormField";
 
@@ -35,11 +35,15 @@ export const AdminLoginView: React.FC<AdminLoginViewProps> = ({
   return (
     <div className="min-h-screen bg-[#0B0D12] flex items-center justify-center p-4">
       <div className="w-full max-w-md glass-card rounded-2xl p-8 border border-[#D4AF37]/30 bg-[#121620] space-y-6">
-        <div className="text-center space-y-2">
-          <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center mx-auto text-[#D4AF37]">
-            <Shield className="w-8 h-8" />
+        <div className="text-center space-y-3">
+          <div className="mx-auto p-3 rounded-2xl bg-[#0B0D12] border border-[#D4AF37]/40 inline-block shadow-xl shadow-[#D4AF37]/15">
+            <img
+              src="/assets/brand/benaka_logo_primary_transparent.png"
+              alt="Benaka Tours & Travels Logo"
+              className="h-16 w-auto max-w-full object-contain mx-auto drop-shadow-[0_4px_12px_rgba(212,175,55,0.4)]"
+            />
           </div>
-          <h1 className="text-2xl font-extrabold text-white">
+          <h1 className="text-2xl font-extrabold text-white tracking-tight">
             BENAKA ADMIN PORTAL
           </h1>
           <p className="text-xs text-slate-400">
@@ -63,7 +67,7 @@ export const AdminLoginView: React.FC<AdminLoginViewProps> = ({
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-9 pr-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                className="w-full pl-9 pr-3 py-2.5 admin-field rounded-xl text-sm"
               />
             </div>
           </FormField>
@@ -77,7 +81,7 @@ export const AdminLoginView: React.FC<AdminLoginViewProps> = ({
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-9 pr-3 py-2.5 bg-[#0B0D12] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                className="w-full pl-9 pr-3 py-2.5 admin-field rounded-xl text-sm"
               />
             </div>
           </FormField>
