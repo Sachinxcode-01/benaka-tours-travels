@@ -84,14 +84,14 @@ export const InquiryManagement: React.FC<InquiryManagementProps> = ({
         {/* Live Search & Filter Bar */}
         <div className="flex flex-wrap items-center gap-3">
           {/* Search Field */}
-          <div className="relative min-w-[240px] flex-1 sm:flex-none">
+          <div className="relative min-w-60 flex-1 sm:flex-none">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search name, phone, route..."
-              className="w-full pl-9 pr-8 py-2 bg-[#0B0D12] border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-[#D4AF37]"
+              className="w-full pl-9 pr-8 py-2 admin-field rounded-xl text-xs"
             />
             {searchTerm && (
               <button
