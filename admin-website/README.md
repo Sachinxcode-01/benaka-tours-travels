@@ -44,3 +44,4 @@ npm run dev
 ---
 
 © 2026 **Kedar Tours & Travels**. Panchaxari Nagar, Gadag, Karnataka.
+

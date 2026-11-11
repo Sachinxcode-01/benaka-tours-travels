@@ -14,3 +14,4 @@ The **Kedar Tours & Travels** brand assets are crafted in rich metallic gold (`#
 ---
 
 © 2026 **Kedar Tours & Travels**. Panchaxari Nagar, Gadag, Karnataka.
+
