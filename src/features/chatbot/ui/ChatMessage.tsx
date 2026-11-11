@@ -36,7 +36,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
       >
         {!isUser && (
           <div className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-wider mb-1 flex items-center gap-1.5">
-            <span>BENAKA TRAVEL ASSISTANT</span>
+            <span>KEDAR TRAVEL ASSISTANT</span>
           </div>
         )}
 

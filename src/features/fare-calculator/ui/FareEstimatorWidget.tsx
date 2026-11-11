@@ -11,9 +11,13 @@ import {
   HelpCircle,
   CheckCircle2,
   Navigation,
+  FileText,
 } from "lucide-react";
 import { WHATSAPP_PHONE_NUMBER } from "../../../utils/whatsapp";
 import { BookingWizardModal } from "../../booking/BookingWizardModal";
+import { QuotationReceiptModal } from "../../quotation/ui/QuotationReceiptModal";
+import { generateQuoteId } from "../../quotation/lib/generateQuotePdf";
+import type { QuotationDetails } from "../../quotation/types/quotation";
 
 interface VehicleRate {
   id: string;
@@ -125,7 +129,7 @@ export const FareEstimatorWidget: React.FC = () => {
 
   const [vehicleRates, setVehicleRates] = React.useState<VehicleRate[]>(() => {
     try {
-      const rawTariffs = localStorage.getItem("benaka_tariff_rates");
+      const rawTariffs = localStorage.getItem("kedar_tariff_rates");
       if (rawTariffs) {
         const tariffs = JSON.parse(rawTariffs);
         if (Array.isArray(tariffs) && tariffs.length > 0) {
@@ -161,7 +165,7 @@ export const FareEstimatorWidget: React.FC = () => {
   React.useEffect(() => {
     const handleRatesUpdate = () => {
       try {
-        const rawTariffs = localStorage.getItem("benaka_tariff_rates");
+        const rawTariffs = localStorage.getItem("kedar_tariff_rates");
         if (rawTariffs) {
           const tariffs = JSON.parse(rawTariffs);
           if (Array.isArray(tariffs) && tariffs.length > 0) {
@@ -196,10 +200,10 @@ export const FareEstimatorWidget: React.FC = () => {
     };
 
     window.addEventListener("storage", handleRatesUpdate);
-    window.addEventListener("benaka_tariffs_updated", handleRatesUpdate);
+    window.addEventListener("kedar_tariffs_updated", handleRatesUpdate);
     return () => {
       window.removeEventListener("storage", handleRatesUpdate);
-      window.removeEventListener("benaka_tariffs_updated", handleRatesUpdate);
+      window.removeEventListener("kedar_tariffs_updated", handleRatesUpdate);
     };
   }, []);
 
@@ -255,7 +259,7 @@ export const FareEstimatorWidget: React.FC = () => {
 
   const handleWhatsAppBooking = () => {
     const text =
-      `Hello Benaka Tours & Travels,\n\n` +
+      `Hello Kedar Tours & Travels,\n\n` +
       `I would like to inquiry for estimated fare:\n` +
       `Trip Type: ${tripType.toUpperCase()}\n` +
       `Vehicle: ${selectedVehicle.name}\n` +
@@ -265,6 +269,48 @@ export const FareEstimatorWidget: React.FC = () => {
       `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(text)}`,
       "_blank",
     );
+  };
+
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [estimatorQuotation, setEstimatorQuotation] =
+    useState<QuotationDetails | null>(null);
+
+  const handleExportPdfQuote = () => {
+    const quote: QuotationDetails = {
+      quoteId: generateQuoteId(),
+      generatedAt: new Date().toISOString(),
+      customerName: "Valued Customer",
+      customerPhone: "+91 98807 62623",
+      pickupLocation: "Gadag",
+      destination:
+        tripType === "temple"
+          ? TEMPLE_TOURS[selectedTempleIndex].name
+          : tripType === "airport"
+          ? AIRPORT_ROUTES[selectedAirportIndex].name
+          : `${distanceKm} KM Outstation Trip`,
+      pickupDate: new Date().toISOString().split("T")[0],
+      pickupTime: "08:00 AM",
+      tripType: tripType.toUpperCase(),
+      journeyType: daysCount > 1 ? `Round Trip (${daysCount} Days)` : "One-Way",
+      passengers: selectedVehicle.seats,
+      luggage: 2,
+      acPreference: true,
+      vehicle: {
+        id: selectedVehicle.id,
+        name: selectedVehicle.name,
+        category: selectedVehicle.category,
+        seats: selectedVehicle.seats,
+        fuel: "Petrol / Diesel",
+      },
+      fareBreakdown: {
+        estimatedKm: distanceKm,
+        ratePerKm: selectedVehicle.perKm,
+        driverAllowance: selectedVehicle.driverAllowance,
+        totalEstimatedAmount: fareBreakdown.estimatedTotal,
+      },
+    };
+    setEstimatorQuotation(quote);
+    setIsQuoteModalOpen(true);
   };
 
   return (
@@ -609,6 +655,15 @@ export const FareEstimatorWidget: React.FC = () => {
 
               <button
                 type="button"
+                onClick={handleExportPdfQuote}
+                className="w-full py-3 px-4 rounded-xl border border-[#D4AF37]/50 bg-[#D4AF37]/10 text-[#D4AF37] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#D4AF37]/20 active:scale-95 transition-all cursor-pointer min-h-11"
+              >
+                <FileText className="w-4 h-4" />
+                <span>Export Branded PDF Quote</span>
+              </button>
+
+              <button
+                type="button"
                 onClick={handleWhatsAppBooking}
                 className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md active:scale-95 transition-all cursor-pointer min-h-11"
               >
@@ -623,6 +678,12 @@ export const FareEstimatorWidget: React.FC = () => {
       <BookingWizardModal
         isOpen={isBookingModalOpen}
         onClose={() => setIsBookingModalOpen(false)}
+      />
+
+      <QuotationReceiptModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+        quotation={estimatorQuotation}
       />
     </section>
   );

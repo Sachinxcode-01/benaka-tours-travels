@@ -17,7 +17,7 @@ export function generateWhatsAppInquiryUrl(
 }
 
 export function generateQuickVehicleWhatsAppUrl(vehicleName: string): string {
-  const text = `Hello Benaka Tours & Travels,\n\nI am interested in renting the *${vehicleName}* for a chauffeur-driven trip from Gadag.\n\nPlease let me know current availability and estimated quote.`;
+  const text = `Hello Kedar Tours & Travels,\n\nI am interested in renting the *${vehicleName}* for a chauffeur-driven trip from Gadag.\n\nPlease let me know current availability and estimated quote.`;
   return `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 

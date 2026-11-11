@@ -32,7 +32,7 @@ export const TripPlannerPage: React.FC = () => {
   const handleContact = () => {
     window.open(
       createWhatsAppInquiryUrl(
-        "Hello Benaka Tours & Travels, I need help planning a trip for a large group.",
+        "Hello Kedar Tours & Travels, I need help planning a trip for a large group.",
       ),
       "_blank",
     );

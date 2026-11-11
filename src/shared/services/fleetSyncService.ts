@@ -1,7 +1,7 @@
-export const FLEET_STORAGE_KEY = "benaka_fleet_inventory";
-export const INQUIRIES_STORAGE_KEY = "benaka_customer_inquiries";
-export const FLEET_UPDATED_EVENT = "benaka_fleet_updated";
-export const INQUIRIES_UPDATED_EVENT = "benaka_inquiries_updated";
+export const FLEET_STORAGE_KEY = "kedar_fleet_inventory";
+export const INQUIRIES_STORAGE_KEY = "kedar_customer_inquiries";
+export const FLEET_UPDATED_EVENT = "kedar_fleet_updated";
+export const INQUIRIES_UPDATED_EVENT = "kedar_inquiries_updated";
 
 /**
  * Format vehicle image URLs to ensure paths with spaces are properly URL-encoded

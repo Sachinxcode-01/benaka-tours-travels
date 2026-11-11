@@ -15,7 +15,7 @@ export const ContactPage: React.FC = () => {
           Contact & Location
         </h1>
         <p className="text-neutral-400 text-sm">
-          Get in touch with Benaka Tours & Travels for instant vehicle
+          Get in touch with Kedar Tours & Travels for instant vehicle
           inquiries, outstation quotes, and 24/7 doorstep rental dispatch.
         </p>
       </Container>

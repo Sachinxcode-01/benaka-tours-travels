@@ -18,13 +18,13 @@ import {
 import type { Vehicle, InquiryRecord, TariffRate, AuditLog, VehicleStatus, InquiryStatus, AnalyticsMetric } from "./types";
 import { Car, MessageCircle, DollarSign, Shield, TrendingUp } from "lucide-react";
 
-const FLEET_STORAGE_KEY = "benaka_fleet_inventory";
-const INQUIRIES_STORAGE_KEY = "benaka_customer_inquiries";
-const TARIFFS_STORAGE_KEY = "benaka_tariff_rates";
+const FLEET_STORAGE_KEY = "kedar_fleet_inventory";
+const INQUIRIES_STORAGE_KEY = "kedar_customer_inquiries";
+const TARIFFS_STORAGE_KEY = "kedar_tariff_rates";
 
 export const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
-    return localStorage.getItem("benaka_admin_authenticated") === "true";
+    return localStorage.getItem("kedar_admin_authenticated") === "true";
   });
 
   const [activeTab, setActiveTab] = useState<"analytics" | "fleet" | "inquiries" | "tariffs" | "audit">("analytics");
@@ -89,7 +89,7 @@ export const App: React.FC = () => {
     try {
       localStorage.setItem(FLEET_STORAGE_KEY, JSON.stringify(newFleet));
       window.dispatchEvent(new Event("storage"));
-      window.dispatchEvent(new CustomEvent("benaka_fleet_updated"));
+      window.dispatchEvent(new CustomEvent("kedar_fleet_updated"));
     } catch (e) {
       console.error("Failed to sync fleet state", e);
     }
@@ -100,7 +100,7 @@ export const App: React.FC = () => {
     try {
       localStorage.setItem(INQUIRIES_STORAGE_KEY, JSON.stringify(newInquiries));
       window.dispatchEvent(new Event("storage"));
-      window.dispatchEvent(new CustomEvent("benaka_inquiries_updated"));
+      window.dispatchEvent(new CustomEvent("kedar_inquiries_updated"));
     } catch (e) {
       console.error("Failed to sync inquiries state", e);
     }
@@ -111,7 +111,7 @@ export const App: React.FC = () => {
     try {
       localStorage.setItem(TARIFFS_STORAGE_KEY, JSON.stringify(newTariffs));
       window.dispatchEvent(new Event("storage"));
-      window.dispatchEvent(new CustomEvent("benaka_tariffs_updated"));
+      window.dispatchEvent(new CustomEvent("kedar_tariffs_updated"));
     } catch (e) {
       console.error("Failed to sync tariffs state", e);
     }
@@ -142,26 +142,26 @@ export const App: React.FC = () => {
     };
 
     window.addEventListener("storage", handleStorageChange);
-    window.addEventListener("benaka_inquiries_updated", handleStorageChange);
-    window.addEventListener("benaka_fleet_updated", handleStorageChange);
-    window.addEventListener("benaka_tariffs_updated", handleStorageChange);
+    window.addEventListener("kedar_inquiries_updated", handleStorageChange);
+    window.addEventListener("kedar_fleet_updated", handleStorageChange);
+    window.addEventListener("kedar_tariffs_updated", handleStorageChange);
 
     return () => {
       window.removeEventListener("storage", handleStorageChange);
-      window.removeEventListener("benaka_inquiries_updated", handleStorageChange);
-      window.removeEventListener("benaka_fleet_updated", handleStorageChange);
-      window.removeEventListener("benaka_tariffs_updated", handleStorageChange);
+      window.removeEventListener("kedar_inquiries_updated", handleStorageChange);
+      window.removeEventListener("kedar_fleet_updated", handleStorageChange);
+      window.removeEventListener("kedar_tariffs_updated", handleStorageChange);
     };
   }, []);
 
   const handleLogin = () => {
-    localStorage.setItem("benaka_admin_authenticated", "true");
+    localStorage.setItem("kedar_admin_authenticated", "true");
     setIsAuthenticated(true);
     addAuditLog("LOGIN", "Admin logged in successfully to operations portal.");
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("benaka_admin_authenticated");
+    localStorage.removeItem("kedar_admin_authenticated");
     setIsAuthenticated(false);
   };
 

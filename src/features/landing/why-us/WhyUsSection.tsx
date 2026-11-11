@@ -28,14 +28,14 @@ export interface WhyPillar {
   highlights: string[];
 }
 
-export const WHY_BENAKA_PILLARS: WhyPillar[] = [
+export const WHY_KEDAR_PILLARS: WhyPillar[] = [
   {
     id: "chauffeurs",
     step: 1,
     title: "100% Certified Professional Chauffeurs",
     subtitle: "Safety & Courtesy First",
     description:
-      "Every BENAKA vehicle comes with an experienced driver in uniform. Certified for long-distance highway routes, temple tours, and city transit.",
+      "Every KEDAR vehicle comes with an experienced driver in uniform. Certified for long-distance highway routes, temple tours, and city transit.",
     icon: UserCheck,
     image: "/assets/vehicles/placeholders/swift dszire.jpg",
     highlights: [
@@ -179,7 +179,7 @@ export const WhyUsSection: React.FC = () => {
     };
   }, []);
 
-  const activePillar = WHY_BENAKA_PILLARS[activeStep] || WHY_BENAKA_PILLARS[0];
+  const activePillar = WHY_KEDAR_PILLARS[activeStep] || WHY_KEDAR_PILLARS[0];
   const IconComp = activePillar.icon;
 
   return (
@@ -193,14 +193,14 @@ export const WhyUsSection: React.FC = () => {
         <div className="text-center space-y-3 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-[#D4AF37] border border-amber-500/30 text-xs font-bold uppercase tracking-wider">
             <ShieldCheck className="w-4 h-4" />
-            <span>Why Choose BENAKA</span>
+            <span>Why Choose KEDAR</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
             Gadag's Most Trusted Chauffeur Rental Partner
           </h2>
           <p className="text-sm text-slate-300">
             Discover why hundreds of families, wedding planners, and corporate
-            executives rely on BENAKA since 2019.
+            executives rely on KEDAR since 2019.
           </p>
         </div>
 
@@ -214,10 +214,10 @@ export const WhyUsSection: React.FC = () => {
             {/* Step Progress Bar */}
             <div className="flex items-center justify-between p-3 rounded-xl bg-[#121620] border border-white/10 text-xs">
               <span className="text-[#D4AF37] font-bold">
-                Pillar {activeStep + 1} of {WHY_BENAKA_PILLARS.length}
+                Pillar {activeStep + 1} of {WHY_KEDAR_PILLARS.length}
               </span>
               <div className="flex items-center gap-1">
-                {WHY_BENAKA_PILLARS.map((p, idx) => (
+                {WHY_KEDAR_PILLARS.map((p, idx) => (
                   <span
                     key={p.id}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
@@ -278,7 +278,7 @@ export const WhyUsSection: React.FC = () => {
 
           {/* Right Column: Scroll Story Items (Desktop & Mobile) */}
           <div className="col-span-1 lg:col-span-7 space-y-8">
-            {WHY_BENAKA_PILLARS.map((pillar, idx) => {
+            {WHY_KEDAR_PILLARS.map((pillar, idx) => {
               const PillarIcon = pillar.icon;
               const isActive = activeStep === idx;
 

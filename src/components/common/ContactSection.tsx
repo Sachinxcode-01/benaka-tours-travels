@@ -53,7 +53,7 @@ export const ContactSection: React.FC = () => {
           <GlassCard className="p-8 border border-[#D4AF37]/30 bg-[#121620]/95 flex flex-col justify-between space-y-8">
             <div className="space-y-6">
               <h3 className="text-2xl font-extrabold text-white">
-                BENAKA TOURS AND TRAVELS
+                KEDAR TOURS AND TRAVELS
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
                 Panchaxari Nagar 5th Cross, Gadag, Karnataka, India. We are open
@@ -62,7 +62,7 @@ export const ContactSection: React.FC = () => {
 
               <div className="space-y-4">
                 <a
-                  href="tel:+916362416120"
+                  href="tel:+919880762623"
                   className="flex items-center gap-4 p-4 rounded-xl bg-[#0B0D12] border border-white/10 hover:border-[#D4AF37] transition-all group"
                 >
                   <div className="p-3 rounded-lg bg-[#D4AF37]/10 text-[#D4AF37] group-hover:scale-110 transition-transform">

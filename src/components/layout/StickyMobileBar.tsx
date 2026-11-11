@@ -14,7 +14,7 @@ export const StickyMobileBar: React.FC<StickyMobileBarProps> = ({
       <div className="grid grid-cols-3 gap-2">
         {/* Call CTA */}
         <a
-          href="tel:+916362416120"
+          href="tel:+919880762623"
           className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-[#121620] border border-[#D4AF37]/40 text-[#D4AF37] font-bold text-xs hover:bg-[#1A1F2C]"
         >
           <Phone className="w-4 h-4 mb-0.5" />

@@ -30,7 +30,7 @@ export const TopBar: React.FC = () => {
         {/* Right Side Direct CTAs */}
         <div className="flex items-center gap-4">
           <a
-            href="tel:+916362416120"
+            href="tel:+919880762623"
             className="flex items-center gap-1.5 text-white font-medium hover:text-[#D4AF37] transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />

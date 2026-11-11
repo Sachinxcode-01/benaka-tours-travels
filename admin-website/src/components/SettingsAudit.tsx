@@ -25,7 +25,7 @@ export const SettingsAudit: React.FC<SettingsAuditProps> = ({
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `benaka_fleet_export_${new Date().toISOString().split("T")[0]}.csv`;
+    a.download = `kedar_fleet_export_${new Date().toISOString().split("T")[0]}.csv`;
     a.click();
   };
 
@@ -41,7 +41,7 @@ export const SettingsAudit: React.FC<SettingsAuditProps> = ({
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `benaka_inquiries_export_${new Date().toISOString().split("T")[0]}.csv`;
+    a.download = `kedar_inquiries_export_${new Date().toISOString().split("T")[0]}.csv`;
     a.click();
   };
 

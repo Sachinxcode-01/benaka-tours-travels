@@ -17,7 +17,7 @@ interface BookingSummaryProps {
 
 export const BookingSummary: React.FC<BookingSummaryProps> = ({ summary }) => {
   const waMsg =
-    `Hello Benaka Tours & Travels,\n\n` +
+    `Hello Kedar Tours & Travels,\n\n` +
     `I would like to request a chauffeur-driven vehicle quotation.\n\n` +
     `Name: ${summary.customerName || "Customer"}\n` +
     `Phone: ${summary.customerPhone || "Provided on chat"}\n` +

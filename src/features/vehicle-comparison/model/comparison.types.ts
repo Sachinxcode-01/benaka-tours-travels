@@ -13,4 +13,4 @@ export interface ComparisonResult {
 }
 
 export const MAX_COMPARISON_VEHICLES = 3;
-export const COMPARISON_STORAGE_KEY = "benaka_comparison_vehicles";
+export const COMPARISON_STORAGE_KEY = "kedar_comparison_vehicles";

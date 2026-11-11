@@ -32,13 +32,13 @@ export const Footer: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <img
-                src="/assets/brand/benaka_emblem_gold_transparent.png"
-                alt="Benaka Emblem"
+                src="/assets/brand/kedar_emblem_gold_transparent.png"
+                alt="Kedar Emblem"
                 className="h-12 w-auto object-contain shrink-0"
               />
               <div className="flex flex-col">
                 <span className="font-accent text-3xl text-[#D4AF37] leading-none">
-                  Benaka
+                  Kedar
                 </span>
                 <span className="text-xs tracking-[0.2em] font-extrabold uppercase text-white mt-0.5">
                   Tours & Travels
@@ -175,7 +175,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3 text-sm">
               <Phone className="w-4 h-4 text-[#D4AF37] shrink-0" />
               <a
-                href="tel:+916362416120"
+                href="tel:+919880762623"
                 className="hover:text-white transition-colors"
               >
                 {DISPLAY_PHONE_NUMBER}
@@ -212,7 +212,7 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
           <div className="space-y-1 text-center md:text-left">
             <p>
-              © {new Date().getFullYear()} BENAKA TOURS AND TRAVELS. All rights
+              © {new Date().getFullYear()} KEDAR TOURS AND TRAVELS. All rights
               reserved.
             </p>
             <p className="text-[11px] text-slate-500">

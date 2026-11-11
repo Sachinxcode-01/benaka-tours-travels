@@ -30,13 +30,13 @@ export const HomePage: React.FC = () => {
       {/* 5. Featured Fleet */}
       <FeaturedFleetSection />
 
-      {/* 6. Why Choose Benaka */}
+      {/* 6. Why Choose Kedar */}
       <WhyUsSection />
 
       {/* 7. Popular Destinations */}
       <DestinationsSection />
 
-      {/* 8. Cinematic Benaka Fleet Film Showcase */}
+      {/* 8. Cinematic Kedar Fleet Film Showcase */}
       <CinematicFleetVideoSection />
 
       {/* 9. Customer Reviews */}

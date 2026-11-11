@@ -20,7 +20,7 @@ import { createTelUrl } from "@shared/services/phone.service";
 import { createWhatsAppInquiryUrl } from "@shared/services/whatsapp.service";
 import { getGoogleMapsUrl } from "@shared/services/maps.service";
 
-export const BENAKA_LOCATION = {
+export const KEDAR_LOCATION = {
   longitude: 75.643468,
   latitude: 15.427667,
 };
@@ -103,7 +103,7 @@ export const LocationMap: React.FC = () => {
         {activeTab === "interactive" ? (
           <Map
             ref={mapRef}
-            center={[BENAKA_LOCATION.longitude, BENAKA_LOCATION.latitude]}
+            center={[KEDAR_LOCATION.longitude, KEDAR_LOCATION.latitude]}
             zoom={15}
             pitch={is3D ? 60 : 0}
             styles={
@@ -116,8 +116,8 @@ export const LocationMap: React.FC = () => {
             }
           >
             <MapMarker
-              longitude={BENAKA_LOCATION.longitude}
-              latitude={BENAKA_LOCATION.latitude}
+              longitude={KEDAR_LOCATION.longitude}
+              latitude={KEDAR_LOCATION.latitude}
             >
               <MarkerContent>
                 <div className="w-10 h-10 rounded-full bg-[#D4AF37] border-2 border-[#0B0D12] flex items-center justify-center shadow-lg shadow-amber-500/50 hover:scale-110 transition-transform">
@@ -127,7 +127,7 @@ export const LocationMap: React.FC = () => {
               <MarkerPopup>
                 <div className="p-1 text-center space-y-1 min-w-40">
                   <strong className="text-xs font-bold text-neutral-900 block">
-                    BENAKA TOURS & TRAVELS
+                    KEDAR TOURS & TRAVELS
                   </strong>
                   <p className="text-[11px] text-neutral-600">
                     Panchaxari Nagar 5th Cross, Gadag
@@ -139,7 +139,7 @@ export const LocationMap: React.FC = () => {
         ) : (
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3846.0534363372826!2d75.643468!3d15.427667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDI1JzM5LjYiTiA3NcKwMzgnMzYuNSJF!5e0!3m2!1sen!2sin!4v1786437313749!5m2!1sen!2sin"
-            title="Benaka Tours & Travels Gadag Location"
+            title="Kedar Tours & Travels Gadag Location"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -158,7 +158,7 @@ export const LocationMap: React.FC = () => {
             </div>
             <div>
               <strong className="text-sm font-bold text-white block">
-                BENAKA TOURS & TRAVELS
+                KEDAR TOURS & TRAVELS
               </strong>
               <span className="text-xs text-amber-300 font-semibold">
                 Panchaxari Nagar, Gadag

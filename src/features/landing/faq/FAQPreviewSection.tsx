@@ -124,7 +124,7 @@ export const FAQPreviewSection: React.FC = () => {
 
           <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
             Everything you need to know about booking, vehicles, chauffeurs and
-            travel with Benaka Tours & Travels.
+            travel with Kedar Tours & Travels.
           </p>
         </div>
 
@@ -278,7 +278,7 @@ export const FAQPreviewSection: React.FC = () => {
               Still Have Questions?
             </h3>
             <p className="text-sm text-slate-300">
-              Talk directly with Benaka Tours & Travels. We&apos;re available
+              Talk directly with Kedar Tours & Travels. We&apos;re available
               24/7 for custom trip queries and instant quotes.
             </p>
           </div>

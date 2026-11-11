@@ -17,15 +17,15 @@ export const AdminHeader: React.FC<AdminHeaderProps> = ({
         <div className="flex items-center gap-3">
           <div className="p-1.5 rounded-xl bg-[#0B0D12] border border-[#D4AF37]/40 flex items-center justify-center shadow-md shadow-[#D4AF37]/10">
             <img
-              src="/assets/brand/benaka_emblem_gold_transparent.png"
-              alt="Benaka Tours & Travels Logo"
+              src="/assets/brand/kedar_emblem_gold_transparent.png"
+              alt="Kedar Tours & Travels Logo"
               className="w-8 h-8 object-contain drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]"
             />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <span className="font-extrabold text-xl text-[#D4AF37] tracking-tight">
-                BENAKA
+                KEDAR
               </span>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/30 uppercase">
                 Admin Website

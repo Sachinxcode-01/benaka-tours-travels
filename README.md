@@ -1,10 +1,10 @@
 <div align="center">
 
-  <img src="public/assets/vehicles/placeholders/benekavehicles.png" alt="Benaka Tours & Travels Fleet Banner" width="100%" style="border-radius: 16px; margin-bottom: 20px; border: 1px solid rgba(212, 175, 55, 0.3);" />
+  <img src="public/assets/vehicles/placeholders/benekavehicles.png" alt="Kedar Tours & Travels Fleet Banner" width="100%" style="border-radius: 16px; margin-bottom: 20px; border: 1px solid rgba(212, 175, 55, 0.3);" />
 
-  <img src="public/assets/brand/benaka_logo_primary_transparent.png" alt="Benaka Tours & Travels Logo" height="80" style="margin-bottom: 15px;" />
+  <img src="public/assets/brand/kedar_logo_primary_transparent.png" alt="Kedar Tours & Travels Logo" height="80" style="margin-bottom: 15px;" />
 
-# BENAKA TOURS & TRAVELS
+# KEDAR TOURS & TRAVELS
 
 ### Premier Chauffeur-Driven Vehicle Rental Fleet in Gadag, Karnataka
 
@@ -21,7 +21,7 @@
 
 ## 📌 Executive Summary
 
-**Benaka Tours & Travels** is Gadag's most trusted **100% Chauffeur-Driven** vehicle rental service, operating continuous 24/7 luxury outstation, local, corporate, wedding, and pilgrimage transport across Karnataka, Goa, Maharashtra, Telangana, Andhra Pradesh, and Tamil Nadu since 2019.
+**Kedar Tours & Travels** is Gadag's most trusted **100% Chauffeur-Driven** vehicle rental service, operating continuous 24/7 luxury outstation, local, corporate, wedding, and pilgrimage transport across Karnataka, Goa, Maharashtra, Telangana, Andhra Pradesh, and Tamil Nadu since 2019.
 
 This repository contains the enterprise-grade **React + TypeScript** web platform engineered with **Feature-Sliced Design (FSD)** architecture, smooth **Motion for React** dynamic micro-interactions, **MapLibre GL** live location mapping, and a full automated Vitest test suite.
 
@@ -31,12 +31,12 @@ This repository contains the enterprise-grade **React + TypeScript** web platfor
 
 | Contact Channel          | Details / Link                                                                      | Availability      |
 | :----------------------- | :---------------------------------------------------------------------------------- | :---------------- |
-| 📞 **Direct Phone Call** | [**+91 63624 16120**](tel:+916362416120)                                            | 24 Hours / 7 Days |
-| 💬 **WhatsApp Direct**   | [**+91 63624 16120 (Chat Now)**](https://wa.me/916362416120)                        | Instant Response  |
+| 📞 **Direct Phone Call** | [**+91 98807 62623**](tel:+919880762623)                                            | 24 Hours / 7 Days |
+| 💬 **WhatsApp Direct**   | [**+91 98807 62623 (Chat Now)**](https://wa.me/919880762623)                        | Instant Response  |
 | 📍 **Main Office Hub**   | **Panchaxari Nagar 5th Cross, Gadag, Karnataka 582101, India**                      | Open Daily        |
 | 🗺️ **Google Maps**       | [**View Verified Google Maps Location**](https://maps.app.goo.gl/DNABVnQ9cGwE6T9T7) | Live GPS          |
-| ✉️ **Email Support**     | [**contact@benakatravels.in**](mailto:contact@benakatravels.in)                     | Inquiries         |
-| 🌐 **Official Website**  | [**benakatravels.in**](https://benakatravels.in/)                                   | Live Portal       |
+| ✉️ **Email Support**     | [**sachiii8827@gmail.com**](mailto:sachiii8827@gmail.com)                     | Inquiries         |
+| 🌐 **Official Website**  | [**kedartravels.in**](https://kedartravels.in/)                                   | Live Portal       |
 
 ---
 
@@ -107,6 +107,6 @@ npm run build
 
 <div align="center">
 
-© 2026 **Benaka Tours & Travels**. Panchaxari Nagar, Gadag, Karnataka. All rights reserved.
+© 2026 **Kedar Tours & Travels**. Panchaxari Nagar, Gadag, Karnataka. All rights reserved.
 
 </div>

@@ -112,7 +112,7 @@ export const VehicleDetailsPage: React.FC = () => {
                 {vehicle.name}
               </h1>
               <p className="text-xs text-amber-400 font-semibold uppercase tracking-wider">
-                Gadag Chauffeur Rental Fleet • Benaka Tours & Travels
+                Gadag Chauffeur Rental Fleet • Kedar Tours & Travels
               </p>
               <p className="text-sm text-slate-300 leading-relaxed">
                 Experience maximum comfort, safety, and punctuality. Driven by

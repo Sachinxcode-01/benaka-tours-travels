@@ -5,7 +5,7 @@ import enTranslation from "./en/translation.json";
 import knTranslation from "./kn/translation.json";
 import hiTranslation from "./hi/translation.json";
 
-const LANGUAGE_STORAGE_KEY = "benaka_language";
+const LANGUAGE_STORAGE_KEY = "kedar_language";
 
 const savedLanguage =
   typeof window !== "undefined"

@@ -1,4 +1,4 @@
-# Benaka Tours & Travels — Business Rules & Operational Specifications
+# Kedar Tours & Travels — Business Rules & Operational Specifications
 
 This document records the single source of truth extracted from the business source documents.
 
@@ -21,9 +21,9 @@ This document records the single source of truth extracted from the business sou
    - Tempo Traveller (Minibus, 13 Seats, Available)
    - 25-Seater Bus (Heavy Coach, 25 Seats, **Booked**)
 5. **Verified Contact Info**:
-   - Phone: `+91 63624 16120`
-   - WhatsApp: `+91 63624 16120` (`https://wa.me/916362416120`)
-   - Email: `benakatravelsbusiness@gmail.com`
+   - Phone: `+91 98807 62623`
+   - WhatsApp: `+91 98807 62623` (`https://wa.me/919880762623`)
+   - Email: `sachiii8827@gmail.com`
    - Address: Panchaxari Nagar 5th Cross, Gadag, Karnataka, India
    - Google Maps: `https://maps.app.goo.gl/ZZwZNzWCMptx3mPv9`
    - Operating Hours: 24 Hours / 7 Days a week

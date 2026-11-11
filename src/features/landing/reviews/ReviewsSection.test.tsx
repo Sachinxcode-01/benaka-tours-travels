@@ -11,7 +11,7 @@ describe("ReviewsSection Carousel", () => {
   it("renders verified customer feedback title and first testimonial", () => {
     render(<ReviewsSection />);
     expect(
-      screen.getByText(/What Patrons Say About BENAKA/i),
+      screen.getByText(/What Patrons Say About KEDAR/i),
     ).toBeInTheDocument();
     expect(screen.getByText(TESTIMONIALS_DATA[0].name)).toBeInTheDocument();
   });

@@ -72,7 +72,7 @@ export const Drawer: React.FC<DrawerProps> = ({
             {/* Footer notice */}
             <div className="pt-6 border-t border-white/10 text-xs text-slate-400 text-center">
               <p className="font-semibold text-white">
-                BENAKA TOURS AND TRAVELS
+                KEDAR TOURS AND TRAVELS
               </p>
               <p>Panchaxari Nagar, Gadag • Open 24/7</p>
             </div>

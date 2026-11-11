@@ -50,7 +50,7 @@ export const SavedTripCard: React.FC<SavedTripCardProps> = ({
   onBookAgain,
 }) => {
   const waMsg =
-    `Hello Benaka Tours & Travels 👋\n\n` +
+    `Hello Kedar Tours & Travels 👋\n\n` +
     `I would like to re-book a previous trip.\n\n` +
     `📍 Pickup: ${trip.pickup}\n` +
     `🏁 Destination: ${trip.destination}\n` +

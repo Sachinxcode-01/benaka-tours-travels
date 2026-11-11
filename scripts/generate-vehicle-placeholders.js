@@ -109,7 +109,7 @@ vehicles.forEach((v) => {
   <text x="300" y="270" font-family="Outfit, sans-serif" font-size="24" font-weight="bold" fill="#F1D58A" text-anchor="middle">${v.name}</text>
   <text x="300" y="300" font-family="Outfit, sans-serif" font-size="14" font-weight="600" fill="#94A3B8" text-anchor="middle">${v.category} • ${v.seats} • 100% Chauffeur Included</text>
   <rect x="220" y="325" width="160" height="28" rx="14" fill="#D4AF37" opacity="0.15" stroke="#D4AF37" stroke-width="1"/>
-  <text x="300" y="344" font-family="Outfit, sans-serif" font-size="11" font-weight="bold" fill="#D4AF37" text-anchor="middle">BENAKA RENTAL FLEET</text>
+  <text x="300" y="344" font-family="Outfit, sans-serif" font-size="11" font-weight="bold" fill="#D4AF37" text-anchor="middle">KEDAR RENTAL FLEET</text>
 </svg>`;
 
   fs.writeFileSync(path.join(targetDir, v.file), svg, "utf8");

@@ -128,7 +128,7 @@ describe("BookingWizardModal Integration", () => {
     expect(screen.getByText(/Anand Joshi/i)).toBeInTheDocument();
     expect(
       screen.getByText(
-        /Final pricing will be confirmed by Benaka Tours & Travels/i,
+        /Final pricing will be confirmed by Kedar Tours & Travels/i,
       ),
     ).toBeInTheDocument();
 
@@ -137,7 +137,7 @@ describe("BookingWizardModal Integration", () => {
     });
     expect(whatsappLink).toHaveAttribute(
       "href",
-      expect.stringContaining("https://wa.me/916362416120"),
+      expect.stringContaining("https://wa.me/919880762623"),
     );
   });
 });

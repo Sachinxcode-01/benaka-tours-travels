@@ -16,5 +16,5 @@ export interface SavedTrip {
   additionalNotes?: string;
 }
 
-export const SAVED_TRIPS_STORAGE_KEY = "benaka_saved_trips";
+export const SAVED_TRIPS_STORAGE_KEY = "kedar_saved_trips";
 export const MAX_SAVED_TRIPS = 20;

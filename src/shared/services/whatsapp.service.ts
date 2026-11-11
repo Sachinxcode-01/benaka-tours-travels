@@ -41,7 +41,7 @@ export function generateBookingWhatsAppMessage(
       : "N/A (One-Way)";
 
   const lines: string[] = [
-    "Hello Benaka Tours & Travels 👋",
+    "Hello Kedar Tours & Travels 👋",
     "",
     "I would like to request a chauffeur-driven vehicle quotation.",
     "",

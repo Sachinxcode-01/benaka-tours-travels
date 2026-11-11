@@ -4,7 +4,7 @@ import { IntentService } from "./services/intent.service";
 import { ChatbotService } from "./services/chatbot.service";
 import { INITIAL_CONVERSATION_CONTEXT } from "./model/conversation-context";
 
-describe("Benaka Chatbot & Knowledge Engine", () => {
+describe("Kedar Chatbot & Knowledge Engine", () => {
   it("should retrieve all 12 verified fleet vehicles without duplicating data", () => {
     const vehicles = KnowledgeService.getAllVehicles();
     expect(vehicles).toHaveLength(12);
@@ -41,7 +41,7 @@ describe("Benaka Chatbot & Knowledge Engine", () => {
     });
   });
 
-  it("should suggest contacting Benaka for groups exceeding 25 passengers", () => {
+  it("should suggest contacting Kedar for groups exceeding 25 passengers", () => {
     const { overCapacity } =
       KnowledgeService.recommendVehiclesForPassengers(30);
     expect(overCapacity).toBe(true);
@@ -117,7 +117,7 @@ describe("Benaka Chatbot & Knowledge Engine", () => {
       "What is your phone number?",
       INITIAL_CONVERSATION_CONTEXT,
     );
-    expect(phoneRes.botResponse.text).toContain("+91 63624 16120");
+    expect(phoneRes.botResponse.text).toContain("+91 98807 62623");
   });
 
   it("should retain context like passenger count across messages", () => {

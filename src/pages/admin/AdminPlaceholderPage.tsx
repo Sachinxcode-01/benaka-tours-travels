@@ -11,8 +11,8 @@ export const AdminPlaceholderPage: React.FC = () => {
         <Card className="text-center p-8 space-y-6">
           <div className="mx-auto p-3 rounded-2xl bg-neutral-950 border border-[#D4AF37]/40 inline-block shadow-xl shadow-[#D4AF37]/10">
             <img
-              src="/assets/brand/benaka_emblem_gold_transparent.png"
-              alt="Benaka Logo Emblem"
+              src="/assets/brand/kedar_emblem_gold_transparent.png"
+              alt="Kedar Logo Emblem"
               className="h-12 w-auto object-contain mx-auto drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]"
             />
           </div>
@@ -20,7 +20,7 @@ export const AdminPlaceholderPage: React.FC = () => {
           <div className="space-y-2">
             <Badge variant="gold">ADMINISTRATIVE PORTAL FOUNDATION</Badge>
             <h1 className="text-2xl font-bold text-white">
-              BENAKA ADMIN ACCESS
+              KEDAR ADMIN ACCESS
             </h1>
             <p className="text-sm text-neutral-400 max-w-md mx-auto">
               Secure fleet management and business administration features will

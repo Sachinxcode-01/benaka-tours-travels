@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-Sitemap: https://benakatravels.in/sitemap.xml
+Sitemap: https://kedartravels.in/sitemap.xml

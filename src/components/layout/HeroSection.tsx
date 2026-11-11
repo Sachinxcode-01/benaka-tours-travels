@@ -32,7 +32,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       id="home"
       className="hero relative min-h-[100svh] w-full flex flex-col justify-between pt-8 pb-16 overflow-hidden bg-[#040507]"
     >
-      {/* Real Benaka Vehicle Fleet Background Layer */}
+      {/* Real Kedar Vehicle Fleet Background Layer */}
       <motion.div
         initial={
           shouldReduceMotion
@@ -94,7 +94,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           className="space-y-3"
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
-            Benaka{" "}
+            Kedar{" "}
             <span className="font-accent text-[#D4AF37] font-normal text-5xl sm:text-7xl lg:text-8xl">
               Tours & Travels
             </span>

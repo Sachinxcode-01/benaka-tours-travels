@@ -10,6 +10,7 @@ import {
   Phone,
   MessageCircle,
   CheckCircle,
+  FileText,
 } from "lucide-react";
 import { INITIAL_FLEET } from "../../data/fleet";
 import type { Vehicle, VehicleStatus } from "../../types/fleet";
@@ -17,6 +18,9 @@ import type { InquiryRecord, InquiryStatus } from "../../types/admin";
 import { Modal } from "../../components/common/Modal";
 import { FormField } from "../../components/forms/FormField";
 import { PrimaryButton } from "../../components/ui/PrimaryButton";
+import { QuotationReceiptModal } from "../quotation/ui/QuotationReceiptModal";
+import { generateQuoteId } from "../quotation/lib/generateQuotePdf";
+import type { QuotationDetails } from "../quotation/types/quotation";
 
 interface AdminDashboardViewProps {
   onLogout: () => void;
@@ -110,6 +114,47 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     }
   };
 
+  const [isAdminQuoteModalOpen, setIsAdminQuoteModalOpen] = useState(false);
+  const [adminQuotation, setAdminQuotation] = useState<QuotationDetails | null>(
+    null,
+  );
+
+  const handleAdminGenerateQuote = (inq: InquiryRecord) => {
+    const matchedVehicle =
+      fleetList.find(
+        (v) => v.name.toLowerCase() === inq.vehicleName.toLowerCase(),
+      ) || fleetList[0];
+    const quote: QuotationDetails = {
+      quoteId: generateQuoteId(),
+      generatedAt: new Date().toISOString(),
+      customerName: inq.customerName,
+      customerPhone: inq.customerPhone,
+      pickupLocation: inq.pickupLocation,
+      destination: inq.destination,
+      pickupDate: inq.pickupDate,
+      pickupTime: "08:00 AM",
+      tripType: "OUTSTATION",
+      journeyType: "Round Trip",
+      passengers: matchedVehicle.seats,
+      luggage: 2,
+      acPreference: true,
+      vehicle: {
+        id: matchedVehicle.id,
+        name: matchedVehicle.name,
+        category: matchedVehicle.category,
+        seats: matchedVehicle.seats,
+        fuel: matchedVehicle.fuel,
+      },
+      fareBreakdown: {
+        driverAllowance: 500,
+        estimatedTolls: 350,
+        totalEstimatedAmount: 3850,
+      },
+    };
+    setAdminQuotation(quote);
+    setIsAdminQuoteModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-[#0B0D12] text-slate-200">
       {/* Header Bar */}
@@ -117,14 +162,14 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
         <div className="flex items-center gap-3">
           <div className="p-1.5 rounded-xl bg-[#0B0D12] border border-[#D4AF37]/30 flex items-center justify-center shadow-md shadow-[#D4AF37]/10">
             <img
-              src="/assets/brand/benaka_emblem_gold_transparent.png"
-              alt="Benaka Fleet Admin Logo"
+              src="/assets/brand/kedar_emblem_gold_transparent.png"
+              alt="Kedar Fleet Admin Logo"
               className="h-9 w-auto object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]"
             />
           </div>
           <div className="flex flex-col">
             <span className="font-accent text-2xl text-[#D4AF37] leading-none tracking-tight">
-              Benaka
+              Kedar
             </span>
             <span className="text-[10px] tracking-[0.2em] font-extrabold uppercase text-white mt-0.5">
               Fleet Admin Portal
@@ -385,6 +430,15 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                           </select>
                         </td>
                         <td className="p-4 flex items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={() => handleAdminGenerateQuote(inq)}
+                            className="p-2 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/40 text-[#D4AF37] font-bold text-xs flex items-center gap-1 hover:bg-[#D4AF37]/20 transition-all cursor-pointer"
+                            title="Generate & Download Branded Quote PDF"
+                          >
+                            <FileText className="w-3.5 h-3.5" />
+                            <span>PDF Quote</span>
+                          </button>
                           <a
                             href={`https://wa.me/91${inq.customerPhone.replace(/\D/g, "")}`}
                             target="_blank"
@@ -502,6 +556,12 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           </form>
         </Modal>
       )}
+
+      <QuotationReceiptModal
+        isOpen={isAdminQuoteModalOpen}
+        onClose={() => setIsAdminQuoteModalOpen(false)}
+        quotation={adminQuotation}
+      />
     </div>
   );
 };

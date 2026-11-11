@@ -157,7 +157,7 @@ export const ReviewsSection: React.FC = () => {
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-[#D4AF37] border border-amber-500/30 text-xs font-bold uppercase tracking-wider shadow-sm">
             <ShieldCheck className="w-4 h-4 text-amber-400" />
-            <span>What Patrons Say About BENAKA</span>
+            <span>What Patrons Say About KEDAR</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
@@ -167,7 +167,7 @@ export const ReviewsSection: React.FC = () => {
 
           <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
             Real experiences from families, newlyweds, and corporate clients who
-            travelled with Benaka Tours & Travels.
+            travelled with Kedar Tours & Travels.
           </p>
         </div>
 
@@ -328,7 +328,7 @@ export const ReviewsSection: React.FC = () => {
 
           <div className="space-y-2 max-w-md mx-auto relative z-10">
             <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Ready to Experience Benaka?
+              Ready to Experience Kedar?
             </h3>
             <p className="text-sm text-slate-300">
               Comfortable vehicles. Professional chauffeurs. Reliable journeys.

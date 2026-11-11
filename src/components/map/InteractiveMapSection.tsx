@@ -130,7 +130,7 @@ export const InteractiveMapSection: React.FC = () => {
                   <span>WhatsApp</span>
                 </a>
                 <a
-                  href="tel:+916362416120"
+                  href="tel:+919880762623"
                   className="py-2.5 rounded-xl border border-white/10 bg-[#1A1F2C] text-slate-200 font-bold text-xs flex items-center justify-center gap-1"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
@@ -143,7 +143,7 @@ export const InteractiveMapSection: React.FC = () => {
           {/* Interactive Google Map Embed Frame */}
           <div className="lg:col-span-2 glass-card rounded-2xl overflow-hidden border border-white/10 h-[400px] lg:h-auto min-h-[380px] relative">
             <iframe
-              title="Benaka Tours & Travels Gadag Location Map"
+              title="Kedar Tours & Travels Gadag Location Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.9032641029016!2d75.6264883!3d15.4206583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8f9212ad1fa7d%3A0x1d668c2ee83c4801!2sPanchaxari%20Nagar%2C%20Gadag-Betageri%2C%20Karnataka%20582101!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"

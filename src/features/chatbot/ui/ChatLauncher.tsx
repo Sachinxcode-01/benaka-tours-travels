@@ -4,7 +4,7 @@ import { MessageSquare, X } from "lucide-react";
 import { useChatbotStore } from "../model/chatbot.store";
 import { ChatWindow } from "./ChatWindow";
 
-const STORAGE_KEY = "benaka_chatbot_launcher_position_v2";
+const STORAGE_KEY = "kedar_chatbot_launcher_position_v2";
 const MARGIN = 16;
 const BUTTON_SIZE = 60;
 
@@ -161,7 +161,7 @@ export const ChatLauncher: React.FC = () => {
       >
         <button
           onClick={handleLauncherClick}
-          aria-label="Open Benaka AI Travel Assistant"
+          aria-label="Open Kedar AI Travel Assistant"
           className="relative group p-3.5 sm:p-4 rounded-full bg-linear-to-br from-[#D4AF37] via-amber-500 to-amber-600 text-black shadow-[0_0_25px_rgba(212,175,55,0.4)] border-2 border-amber-300 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-amber-400/50"
         >
           {/* Glowing Ring Animation */}
@@ -189,7 +189,7 @@ export const ChatLauncher: React.FC = () => {
               >
                 <MessageSquare className="w-6 h-6 fill-current" />
                 <span className="hidden md:inline font-extrabold text-xs uppercase tracking-wider pr-1">
-                  Ask Benaka
+                  Ask Kedar
                 </span>
               </motion.div>
             )}

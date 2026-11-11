@@ -17,8 +17,8 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
       <div className="flex items-center gap-2 md:gap-3 min-w-0">
         <div className="relative shrink-0">
           <img
-            src="/assets/brand/benaka_emblem_gold_transparent.png"
-            alt="Benaka Assistant"
+            src="/assets/brand/kedar_emblem_gold_transparent.png"
+            alt="Kedar Assistant"
             className="w-7 h-7 md:w-10 md:h-10 object-contain drop-shadow-md"
           />
           <span className="absolute bottom-0 right-0 w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-emerald-500 border-2 border-[#0B0D12]" />
@@ -26,7 +26,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
 
         <div className="min-w-0">
           <div className="flex items-center gap-1 font-bold text-xs md:text-base text-white leading-tight truncate">
-            <span className="truncate">Benaka Assistant</span>
+            <span className="truncate">Kedar Assistant</span>
             <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5 text-amber-400 shrink-0" />
           </div>
           <div className="flex items-center gap-1.5 text-[10px] md:text-xs text-amber-300/90 font-medium truncate">

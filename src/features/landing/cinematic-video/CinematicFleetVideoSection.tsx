@@ -30,7 +30,7 @@ const FLEET_VIDEOS: FleetVideoItem[] = [
   {
     id: "drone-cinematic",
     src: "/assets/vehicles/placeholders/Drone_filming_vehicle_fleet_comm…_202608140857.mp4",
-    title: "BENAKA FROM ABOVE",
+    title: "KEDAR FROM ABOVE",
     subtitle: "Experience our fleet from a cinematic perspective.",
   },
   {
@@ -42,7 +42,7 @@ const FLEET_VIDEOS: FleetVideoItem[] = [
   {
     id: "fleet-showcase",
     src: "/assets/vehicles/placeholders/Fleet_vehicles_parking_on_lawn_202608140843.mp4",
-    title: "THE BENAKA FLEET",
+    title: "THE KEDAR FLEET",
     subtitle: "Driven by trust. Defined by comfort.",
   },
 ];
@@ -326,7 +326,7 @@ export const CinematicFleetVideoSection: React.FC = () => {
           <div ref={eyebrowRef} className="inline-block">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 text-[#D4AF37] border border-amber-500/30 text-xs font-extrabold uppercase tracking-widest shadow-md">
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>THE BENAKA FLEET</span>
+              <span>THE KEDAR FLEET</span>
             </div>
           </div>
 
@@ -346,7 +346,7 @@ export const CinematicFleetVideoSection: React.FC = () => {
             ref={textRef}
             className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed"
           >
-            Experience the Benaka fleet through cinematic ground and aerial
+            Experience the Kedar fleet through cinematic ground and aerial
             views — professional vehicles, trusted chauffeurs, and journeys
             crafted for comfort.
           </p>
@@ -545,7 +545,7 @@ export const CinematicFleetVideoSection: React.FC = () => {
 
         {/* Final CTA Tagline */}
         <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-amber-400 pt-4">
-          See The Fleet. Plan The Journey. Experience Benaka.
+          See The Fleet. Plan The Journey. Experience Kedar.
         </p>
 
         {/* Action Buttons Row */}

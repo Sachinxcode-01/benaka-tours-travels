@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import type { BookingRequest } from "../../../types/booking";
 
-const DRAFT_KEY = "benaka_booking_inquiry_draft_v1";
+const DRAFT_KEY = "kedar_booking_inquiry_draft_v1";
 
 export function useBookingDraft() {
   const [draft, setDraft] = useState<Partial<BookingRequest> | null>(() => {

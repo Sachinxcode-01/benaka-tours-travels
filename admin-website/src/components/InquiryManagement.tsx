@@ -229,7 +229,7 @@ export const InquiryManagement: React.FC<InquiryManagementProps> = ({
               <div className="pt-3 border-t border-white/5 flex items-center justify-end gap-3">
                 <a
                   href={`https://wa.me/91${inq.customerPhone.replace(/\D/g, "")}?text=${encodeURIComponent(
-                    `Namaste ${inq.customerName}, greeting from Benaka Tours & Travels regarding your inquiry for ${inq.vehicleName}.`
+                    `Namaste ${inq.customerName}, greeting from Kedar Tours & Travels regarding your inquiry for ${inq.vehicleName}.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"

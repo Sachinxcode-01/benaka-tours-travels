@@ -15,6 +15,7 @@ import {
   ChevronRight,
   ChevronLeft,
   RotateCcw,
+  FileText,
 } from "lucide-react";
 import { Modal } from "../../components/common/Modal";
 import { PrimaryButton } from "../../components/ui/PrimaryButton";
@@ -41,6 +42,9 @@ import {
 import { useBookingDraft } from "../booking-inquiry/lib/useBookingDraft";
 import { RouteTimeline } from "../booking-inquiry/ui/RouteTimeline";
 import { VehiclePreviewCard } from "../booking-inquiry/ui/VehiclePreviewCard";
+import { QuotationReceiptModal } from "../quotation/ui/QuotationReceiptModal";
+import { generateQuoteId } from "../quotation/lib/generateQuotePdf";
+import type { QuotationDetails } from "../quotation/types/quotation";
 
 interface BookingWizardModalProps {
   isOpen: boolean;
@@ -187,6 +191,50 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
     setShowDraftBanner(false);
   };
 
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [activeQuotation, setActiveQuotation] = useState<QuotationDetails | null>(
+    null,
+  );
+
+  const handleOpenQuote = () => {
+    const quote: QuotationDetails = {
+      quoteId: generateQuoteId(),
+      generatedAt: new Date().toISOString(),
+      customerName: formData.customerName || "Valued Customer",
+      customerPhone: formData.customerPhone || "Provided on contact",
+      customerEmail: formData.customerEmail,
+      pickupLocation: formData.pickupLocation,
+      destination: formData.destination || "Outstation Trip",
+      pickupAddress: formData.pickupAddress,
+      pickupDate: formData.pickupDate,
+      pickupTime: formData.pickupTime,
+      returnDate: formData.returnDate,
+      tripType: formData.tripType,
+      journeyType: formData.journeyType,
+      passengers: formData.passengers,
+      luggage: formData.luggage,
+      acPreference: formData.acPreference,
+      tripPurpose: formData.tripPurpose,
+      additionalNotes: formData.additionalNotes,
+      vehicle: {
+        id: selectedVehicle.id,
+        name: selectedVehicle.name,
+        category: selectedVehicle.category,
+        seats: selectedVehicle.seats,
+        fuel: selectedVehicle.fuel,
+      },
+      fareBreakdown: {
+        ratePerKm: selectedVehicle.category === "MUV" ? 18 : selectedVehicle.category === "SUV" ? 16 : 14,
+        driverAllowance: 500,
+        estimatedTolls: 350,
+        totalEstimatedAmount:
+          (selectedVehicle.category === "MUV" ? 18 : selectedVehicle.category === "SUV" ? 16 : 14) * 150 + 500 + 350,
+      },
+    };
+    setActiveQuotation(quote);
+    setShowQuoteModal(true);
+  };
+
   const handleNextStep = () => {
     setErrors({});
     if (step === 1) {
@@ -261,7 +309,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
       setIsSubmitting(true);
       setTimeout(() => {
         try {
-          const rawInq = localStorage.getItem("benaka_customer_inquiries");
+          const rawInq = localStorage.getItem("kedar_customer_inquiries");
           const existingInquiries = rawInq ? JSON.parse(rawInq) : [];
           const newInquiry = {
             id: `inq-${Date.now()}`,
@@ -277,9 +325,9 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
             notes: formData.additionalNotes || "",
           };
           const updated = [newInquiry, ...existingInquiries];
-          localStorage.setItem("benaka_customer_inquiries", JSON.stringify(updated));
+          localStorage.setItem("kedar_customer_inquiries", JSON.stringify(updated));
           window.dispatchEvent(new Event("storage"));
-          window.dispatchEvent(new CustomEvent("benaka_inquiries_updated"));
+          window.dispatchEvent(new CustomEvent("kedar_inquiries_updated"));
         } catch (e) {
           console.error("Failed to sync new inquiry to Admin storage", e);
         }
@@ -291,7 +339,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
   };
 
   const handleCopyInquiry = () => {
-    const textOnly = `BENAKA TOURS & TRAVELS INQUIRY\nName: ${formData.customerName}\nPhone: ${formData.customerPhone}\nPickup: ${formData.pickupLocation}\nDestination: ${formData.destination}\nVehicle: ${formData.vehicleName}\nDate: ${formData.pickupDate} at ${formData.pickupTime}\nPassengers: ${formData.passengers}`;
+    const textOnly = `KEDAR TOURS & TRAVELS INQUIRY\nName: ${formData.customerName}\nPhone: ${formData.customerPhone}\nPickup: ${formData.pickupLocation}\nDestination: ${formData.destination}\nVehicle: ${formData.vehicleName}\nDate: ${formData.pickupDate} at ${formData.pickupTime}\nPassengers: ${formData.passengers}`;
     navigator.clipboard.writeText(textOnly);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
@@ -855,7 +903,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                   className="mt-0.5 w-4 h-4 rounded text-[#D4AF37] accent-[#D4AF37] focus:ring-[#D4AF37]"
                 />
                 <span className="text-xs text-slate-300 leading-normal">
-                  I agree to share these trip details with Benaka Tours &
+                  I agree to share these trip details with Kedar Tours &
                   Travels for generating a chauffeur quote. No payment or
                   registration required.
                 </span>
@@ -920,7 +968,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                 Estimated Quote
               </div>
               <p className="text-sm font-semibold text-white">
-                Final pricing will be confirmed by Benaka Tours & Travels.
+                Final pricing will be confirmed by Kedar Tours & Travels.
               </p>
               <div className="text-[11px] text-slate-400">
                 100% Chauffeur-Driven • Tolls & Driver Allowances confirmed
@@ -988,10 +1036,19 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                 <span>Send Quotation Request on WhatsApp</span>
               </a>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <button
+                  type="button"
+                  onClick={handleOpenQuote}
+                  className="py-3 px-4 rounded-xl border border-[#D4AF37]/50 bg-[#D4AF37]/10 text-[#D4AF37] font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-[#D4AF37]/20 transition-all min-h-11 shadow-sm"
+                >
+                  <FileText className="w-4 h-4" />
+                  <span>View PDF Quote</span>
+                </button>
+
                 <a
                   href={`tel:${WHATSAPP_PHONE_NUMBER}`}
-                  className="py-3 px-4 rounded-xl border border-[#D4AF37]/40 bg-[#121620] text-[#D4AF37] font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-11"
+                  className="py-3 px-4 rounded-xl border border-white/10 bg-[#121620] text-slate-200 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-11"
                 >
                   <PhoneCall className="w-4 h-4" />
                   <span>Call {DISPLAY_PHONE_NUMBER}</span>
@@ -1003,7 +1060,7 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
                   className="py-3 px-4 rounded-xl border border-white/10 bg-[#121620] text-slate-200 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C] transition-all min-h-11"
                 >
                   <Copy className="w-4 h-4 text-[#D4AF37]" />
-                  <span>{copied ? "Copied Inquiry!" : "Copy Inquiry"}</span>
+                  <span>{copied ? "Copied!" : "Copy Inquiry"}</span>
                 </button>
               </div>
             </div>
@@ -1030,6 +1087,12 @@ export const BookingWizardModal: React.FC<BookingWizardModalProps> = ({
           </motion.div>
         )}
       </AnimatePresence>
+
+      <QuotationReceiptModal
+        isOpen={showQuoteModal}
+        onClose={() => setShowQuoteModal(false)}
+        quotation={activeQuotation}
+      />
     </Modal>
   );
 };

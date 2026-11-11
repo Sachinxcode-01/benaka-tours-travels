@@ -110,7 +110,7 @@
     },
     "review": {
       "title": "Trip Summary",
-      "fareNote": "Fare will be calculated by Benaka Tours & Travels based on your route, duration, vehicle and travel requirements.",
+      "fareNote": "Fare will be calculated by Kedar Tours & Travels based on your route, duration, vehicle and travel requirements.",
       "editTrip": "Edit Trip"
     },
     "actions": {
@@ -237,7 +237,7 @@
   },
   "footer": {
     "tagline": "Gadag's Premier Chauffeur-Driven Rental Fleet",
-    "rights": "© 2025 Benaka Tours & Travels. All Rights Reserved.",
-    "poweredBy": "Powered by Benaka"
+    "rights": "© 2025 Kedar Tours & Travels. All Rights Reserved.",
+    "poweredBy": "Powered by Kedar"
   }
 }

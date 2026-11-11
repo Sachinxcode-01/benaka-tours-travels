@@ -381,7 +381,7 @@ export const INITIAL_AUDIT_LOGS: AuditLog[] = [
     timestamp: "2026-08-15 22:40:00",
     user: "Admin (Sachin K)",
     action: "SYSTEM_INIT",
-    details: "Initialized Benaka Fleet & Analytics portal with 12 active vehicles.",
+    details: "Initialized Kedar Fleet & Analytics portal with 12 active vehicles.",
   },
   {
     id: "log-2",

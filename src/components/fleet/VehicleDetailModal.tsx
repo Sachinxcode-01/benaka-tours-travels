@@ -161,7 +161,7 @@ export const VehicleDetailModal: React.FC<VehicleDetailModalProps> = ({
           </a>
 
           <a
-            href="tel:+916362416120"
+            href="tel:+919880762623"
             className="py-3 px-4 rounded-xl border border-[#D4AF37]/40 bg-[#121620] text-[#D4AF37] font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#1A1F2C]"
           >
             <PhoneCall className="w-4 h-4" />

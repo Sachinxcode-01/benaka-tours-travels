@@ -27,7 +27,7 @@ export const LocationSection: React.FC = () => {
       <Container size="xl" className="space-y-12">
         <SectionHeading
           badgeText="Find Us in Gadag"
-          title="Start Your Journey From Benaka"
+          title="Start Your Journey From Kedar"
           subtitle="Located at Panchaxari Nagar 5th Cross, Gadag. Open 24/7 for doorstep pickups, outstation dispatch, and instant bookings."
           centered
         />
@@ -45,7 +45,7 @@ export const LocationSection: React.FC = () => {
                 <div className="flex items-center justify-between pb-3 border-b border-white/10">
                   <h3 className="text-xl font-bold text-white flex items-center gap-2">
                     <MapPin className="h-6 w-6 text-amber-400 shrink-0" />
-                    <span>BENAKA TOURS & TRAVELS</span>
+                    <span>KEDAR TOURS & TRAVELS</span>
                   </h3>
                   <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
                     <ShieldCheck className="w-3.5 h-3.5" />

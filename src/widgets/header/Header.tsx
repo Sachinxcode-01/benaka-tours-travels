@@ -184,16 +184,16 @@ export const Header: React.FC = () => {
               }
             }}
             className="flex items-center gap-2.5 group cursor-pointer"
-            aria-label="Benaka Tours and Travels Homepage"
+            aria-label="Kedar Tours and Travels Homepage"
           >
             <img
-              src="/assets/brand/benaka_emblem_gold_transparent.png"
-              alt="Benaka Emblem"
+              src="/assets/brand/kedar_emblem_gold_transparent.png"
+              alt="Kedar Emblem"
               className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 shrink-0"
             />
             <div className="flex flex-col justify-center">
               <span className="font-brand-accent text-2xl sm:text-3xl font-bold text-amber-400 group-hover:text-amber-300 transition-colors leading-none">
-                Benaka
+                Kedar
               </span>
               <span className="text-[10px] sm:text-xs font-extrabold tracking-[0.2em] text-slate-100 uppercase mt-0.5">
                 Tours & Travels
@@ -307,8 +307,8 @@ export const Header: React.FC = () => {
         <div className="flex flex-col space-y-6 pt-2">
           <div className="flex items-center justify-center pb-4 border-b border-neutral-800">
             <img
-              src="/assets/brand/benaka_stacked_gold_transparent.png"
-              alt="Benaka Tours & Travels"
+              src="/assets/brand/kedar_stacked_gold_transparent.png"
+              alt="Kedar Tours & Travels"
               className="h-16 w-auto object-contain"
             />
           </div>
@@ -360,7 +360,7 @@ export const Header: React.FC = () => {
                 fullWidth
                 leftIcon={<Phone className="h-4 w-4" />}
               >
-                Call Directly (+91 63624 16120)
+                Call Directly (+91 98807 62623)
               </Button>
             </a>
             <a

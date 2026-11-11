@@ -30,7 +30,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({
       <div className="relative h-48 sm:h-52 overflow-hidden bg-[#0B0D12]">
         <img
           src={vehicle.image}
-          alt={`Benaka Tours & Travels - ${vehicle.name}`}
+          alt={`Kedar Tours & Travels - ${vehicle.name}`}
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

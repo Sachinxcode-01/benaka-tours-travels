@@ -17,7 +17,7 @@ export const FAQ_DATA: FAQItem[] = [
     id: "faq-2",
     question: "Do you provide a driver with all vehicle rentals?",
     answer:
-      "Yes! Every single vehicle rental at BENAKA TOURS AND TRAVELS is 100% chauffeur-driven by our certified professional drivers.",
+      "Yes! Every single vehicle rental at KEDAR TOURS AND TRAVELS is 100% chauffeur-driven by our certified professional drivers.",
     category: "driver",
   },
   {
@@ -36,7 +36,7 @@ export const FAQ_DATA: FAQItem[] = [
   },
   {
     id: "faq-5",
-    question: "Where is the main office of Benaka Tours & Travels located?",
+    question: "Where is the main office of Kedar Tours & Travels located?",
     answer:
       "Our main hub is located at Panchaxari Nagar 5th Cross, Gadag, Karnataka 582101, India. Doorstep pickup is available anywhere in Gadag and nearby regions.",
     category: "location",
@@ -59,7 +59,7 @@ export const FAQ_DATA: FAQItem[] = [
     id: "faq-8",
     question: "How does the booking process work?",
     answer:
-      "Submit your route, dates, and vehicle preference through our online inquiry wizard, or contact us directly on WhatsApp or Call (+91 63624 16120) to receive an instant custom quotation.",
+      "Submit your route, dates, and vehicle preference through our online inquiry wizard, or contact us directly on WhatsApp or Call (+91 98807 62623) to receive an instant custom quotation.",
     category: "payment",
   },
   {

@@ -18,7 +18,7 @@ export class ResponseBuilder {
     return {
       id: `msg-${Date.now()}`,
       sender: "bot",
-      text: "Hi 👋 Welcome to Benaka Tours & Travels.\n\nI can help you with vehicles, seating capacity, availability, chauffeur service, trip planning, bookings, location and contact information.\n\nHow can I help with your journey?",
+      text: "Hi 👋 Welcome to Kedar Tours & Travels.\n\nI can help you with vehicles, seating capacity, availability, chauffeur service, trip planning, bookings, location and contact information.\n\nHow can I help with your journey?",
       timestamp: Date.now(),
       quickReplies: WELCOME_QUICK_REPLIES,
     };
@@ -28,7 +28,7 @@ export class ResponseBuilder {
     return {
       id: `msg-${Date.now()}`,
       sender: "bot",
-      text: "All Benaka Tours & Travels rentals are 100% chauffeur-driven by our certified, uniformed professional drivers.\n\nSelf-drive vehicles are strictly NOT provided under any circumstances to ensure customer safety, vehicle maintenance standards, and zero customer damage liability.",
+      text: "All Kedar Tours & Travels rentals are 100% chauffeur-driven by our certified, uniformed professional drivers.\n\nSelf-drive vehicles are strictly NOT provided under any circumstances to ensure customer safety, vehicle maintenance standards, and zero customer damage liability.",
       timestamp: Date.now(),
       quickReplies: [
         { id: "qr-c1", label: "🚗 View Fleet", payload: PAYLOAD_VIEW_FLEET },
@@ -44,7 +44,7 @@ export class ResponseBuilder {
           label: "Book Chauffeur Trip on WhatsApp",
           type: "whatsapp",
           url: createWhatsAppInquiryUrl(
-            "Hello Benaka, I would like to inquire about a chauffeur-driven rental.",
+            "Hello Kedar, I would like to inquire about a chauffeur-driven rental.",
           ),
         },
       ],
@@ -56,7 +56,7 @@ export class ResponseBuilder {
     return {
       id: `msg-${Date.now()}`,
       sender: "bot",
-      text: `Benaka Tours & Travels provides trip-specific quotations${vehText} based on destination, distance, duration, vehicle type and travel requirements.\n\nWe do not publish fixed static rates because every journey is customized. Share your trip details and I can prepare a WhatsApp quote request for our team.`,
+      text: `Kedar Tours & Travels provides trip-specific quotations${vehText} based on destination, distance, duration, vehicle type and travel requirements.\n\nWe do not publish fixed static rates because every journey is customized. Share your trip details and I can prepare a WhatsApp quote request for our team.`,
       timestamp: Date.now(),
       quickReplies: [
         {
@@ -77,7 +77,7 @@ export class ResponseBuilder {
           label: "Request Fare Quote on WhatsApp",
           type: "whatsapp",
           url: createWhatsAppInquiryUrl(
-            "Hello Benaka, I would like to request a fare quotation for my trip.",
+            "Hello Kedar, I would like to request a fare quotation for my trip.",
           ),
         },
         {
@@ -163,7 +163,7 @@ export class ResponseBuilder {
           label: `Inquire ${vehicle.name} on WhatsApp`,
           type: "whatsapp",
           url: createWhatsAppInquiryUrl(
-            `Hello Benaka, I would like to book ${vehicle.name} (${vehicle.seats} Seats).`,
+            `Hello Kedar, I would like to book ${vehicle.name} (${vehicle.seats} Seats).`,
           ),
         },
       ],
@@ -236,7 +236,7 @@ export class ResponseBuilder {
           label: "Request WhatsApp Quotation",
           type: "whatsapp",
           url: createWhatsAppInquiryUrl(
-            `Hello Benaka, we are ${passengers} passengers and would like to request a quotation.`,
+            `Hello Kedar, we are ${passengers} passengers and would like to request a quotation.`,
           ),
         },
       ],
@@ -354,7 +354,7 @@ export class ResponseBuilder {
         return {
           id: `msg-${Date.now()}`,
           sender: "bot",
-          text: `📍 **BENAKA TOURS AND TRAVELS Location**:\n\nOur main hub is located at ${info.contact.address}.\n\nDoorstep pickup and drop service is available anywhere in Gadag, Hubballi, Dharwad, and nearby regions.`,
+          text: `📍 **KEDAR TOURS AND TRAVELS Location**:\n\nOur main hub is located at ${info.contact.address}.\n\nDoorstep pickup and drop service is available anywhere in Gadag, Hubballi, Dharwad, and nearby regions.`,
           timestamp: Date.now(),
           actions: [
             {
@@ -378,7 +378,7 @@ export class ResponseBuilder {
         return {
           id: `msg-${Date.now()}`,
           sender: "bot",
-          text: `📞 **Contact Phone Number**:\n\nYou can call Benaka Tours & Travels directly at ${info.contact.phoneDisplay}. Available 24/7 for instant trip booking and assistance.`,
+          text: `📞 **Contact Phone Number**:\n\nYou can call Kedar Tours & Travels directly at ${info.contact.phoneDisplay}. Available 24/7 for instant trip booking and assistance.`,
           timestamp: Date.now(),
           actions: [
             {
@@ -402,7 +402,7 @@ export class ResponseBuilder {
               label: "Open Direct WhatsApp Chat",
               type: "whatsapp",
               url: createWhatsAppInquiryUrl(
-                "Hello Benaka Tours & Travels, I need assistance with a vehicle rental.",
+                "Hello Kedar Tours & Travels, I need assistance with a vehicle rental.",
               ),
             },
           ],
@@ -463,7 +463,7 @@ export class ResponseBuilder {
       `• Driver Policy: 100% Chauffeur-Driven Included`;
 
     const waMsg =
-      `Hello Benaka Tours & Travels,\n\n` +
+      `Hello Kedar Tours & Travels,\n\n` +
       `I would like to request a chauffeur-driven vehicle quotation.\n\n` +
       `Name: ${context.customerName || "Customer"}\n` +
       `Phone: ${context.customerPhone || "Provided on chat"}\n` +
@@ -589,7 +589,7 @@ export class ResponseBuilder {
     return {
       id: `msg-${Date.now()}`,
       sender: "bot",
-      text: "I don't have verified information about that specific query yet, but Benaka Tours & Travels can help you directly.\n\nPlease contact our 24/7 team via WhatsApp or phone call for immediate assistance.",
+      text: "I don't have verified information about that specific query yet, but Kedar Tours & Travels can help you directly.\n\nPlease contact our 24/7 team via WhatsApp or phone call for immediate assistance.",
       timestamp: Date.now(),
       quickReplies: [
         {
@@ -610,7 +610,7 @@ export class ResponseBuilder {
           label: "Chat with Support on WhatsApp",
           type: "whatsapp",
           url: createWhatsAppInquiryUrl(
-            "Hello Benaka, I have a question regarding travel rentals.",
+            "Hello Kedar, I have a question regarding travel rentals.",
           ),
         },
       ],

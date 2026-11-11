@@ -6,7 +6,7 @@ import { VehicleGrid } from "../components/fleet/VehicleGrid";
 import { VehicleDetailModal } from "../components/fleet/VehicleDetailModal";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { ServicesSection } from "../components/common/ServicesSection";
-import { WhyBenakaSection } from "../components/common/WhyBenakaSection";
+import { WhyKedarSection } from "../components/common/WhyKedarSection";
 import { TestimonialsSection } from "../components/common/TestimonialsSection";
 import { FAQSection } from "../components/common/FAQSection";
 import { ContactSection } from "../components/common/ContactSection";
@@ -88,10 +88,10 @@ export const HomePage: React.FC = () => {
       {/* Interactive Fare & Route Estimator Widget */}
       <FareEstimatorWidget />
 
-      {/* Why BENAKA Section */}
-      <WhyBenakaSection />
+      {/* Why KEDAR Section */}
+      <WhyKedarSection />
 
-      {/* Cinematic Benaka Fleet Film Showcase */}
+      {/* Cinematic Kedar Fleet Film Showcase */}
       <CinematicFleetVideoSection />
 
       {/* Testimonials Carousel Section */}

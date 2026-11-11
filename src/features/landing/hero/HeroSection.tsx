@@ -118,7 +118,7 @@ export const HeroSection: React.FC = () => {
       id="home"
       className="hero relative min-h-svh w-full flex flex-col justify-between pt-12 pb-16 overflow-hidden bg-[#040507]"
     >
-      {/* Real Benaka Vehicle Fleet Background Layer */}
+      {/* Real Kedar Vehicle Fleet Background Layer */}
       <div
         ref={bgRef}
         className="hero-background absolute inset-0 z-0 bg-no-repeat bg-cover bg-position-[center_right] max-[1024px]:bg-position-[62%_center] max-[768px]:bg-position-[68%_center] max-[430px]:bg-position-[72%_center] pointer-events-none select-none"

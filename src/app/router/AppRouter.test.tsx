@@ -13,7 +13,7 @@ describe("AppRouter Routing Foundation", () => {
       </MemoryRouter>,
     );
 
-    const elements = screen.getAllByText("BENAKA TOURS AND TRAVELS");
+    const elements = screen.getAllByText("KEDAR TOURS AND TRAVELS");
     expect(elements.length).toBeGreaterThan(0);
     expect(elements[0]).toBeInTheDocument();
   });
@@ -25,7 +25,7 @@ describe("AppRouter Routing Foundation", () => {
       </MemoryRouter>,
     );
 
-    expect(screen.getByText(/BENAKA ADMIN ACCESS/i)).toBeInTheDocument();
+    expect(screen.getByText(/KEDAR ADMIN ACCESS/i)).toBeInTheDocument();
     expect(
       screen.getByText(/Architectural Security Notice/i),
     ).toBeInTheDocument();

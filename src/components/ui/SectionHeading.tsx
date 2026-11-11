@@ -30,7 +30,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
         {title.split(" ").map((word, i) => {
           if (
-            word.toLowerCase() === "benaka" ||
+            word.toLowerCase() === "kedar" ||
             word.toLowerCase() === "fleet" ||
             word.toLowerCase() === "rental"
           ) {

@@ -24,7 +24,7 @@ export const FAQS: FAQItem[] = [
   },
   {
     id: "faq-04",
-    question: "Where is the office of Benaka Tours and Travels?",
+    question: "Where is the office of Kedar Tours and Travels?",
     answer:
       "Our physical office is located at Panchaxari Nagar 5th Cross, Gadag, Karnataka, India.",
     category: "Location",

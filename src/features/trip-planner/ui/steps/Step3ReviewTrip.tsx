@@ -128,7 +128,7 @@ export const Step3ReviewTrip: React.FC<Step3ReviewTripProps> = ({
         <Info className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
         <p className="text-xs text-amber-300/80 leading-relaxed">
           <strong className="text-amber-300">Fare Note:</strong> The fare will
-          be calculated by Benaka Tours & Travels based on your route, distance,
+          be calculated by Kedar Tours & Travels based on your route, distance,
           duration, vehicle and travel requirements. No fare is confirmed at
           this stage.
         </p>

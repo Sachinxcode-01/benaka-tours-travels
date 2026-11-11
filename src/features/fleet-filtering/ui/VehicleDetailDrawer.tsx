@@ -39,7 +39,7 @@ export const VehicleDetailDrawer: React.FC<VehicleDetailDrawerProps> = ({
 
   const handleWhatsAppBooking = () => {
     const text =
-      `Hello Benaka Tours & Travels,\n\n` +
+      `Hello Kedar Tours & Travels,\n\n` +
       `I am interested in renting the ${vehicle.name} (${vehicle.seats} seats) with a chauffeur.\n\n` +
       `Please provide exact fare quotation and availability.`;
     window.open(

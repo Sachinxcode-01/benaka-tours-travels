@@ -16,7 +16,7 @@ export const NotFoundPage: React.FC = () => {
         </p>
         <Link to="/">
           <PrimaryButton icon={<ArrowLeft className="w-4 h-4" />}>
-            Return to Benaka Homepage
+            Return to Kedar Homepage
           </PrimaryButton>
         </Link>
       </div>

@@ -10,7 +10,7 @@ interface AdminLoginViewProps {
 export const AdminLoginView: React.FC<AdminLoginViewProps> = ({
   onLoginSuccess,
 }) => {
-  const [email, setEmail] = useState("admin@benakatravels.in");
+  const [email, setEmail] = useState("admin@kedartravels.in");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -38,13 +38,13 @@ export const AdminLoginView: React.FC<AdminLoginViewProps> = ({
         <div className="text-center space-y-3">
           <div className="mx-auto p-3 rounded-2xl bg-[#0B0D12] border border-[#D4AF37]/40 inline-block shadow-xl shadow-[#D4AF37]/15">
             <img
-              src="/assets/brand/benaka_logo_primary_transparent.png"
-              alt="Benaka Tours & Travels Logo"
+              src="/assets/brand/kedar_logo_primary_transparent.png"
+              alt="Kedar Tours & Travels Logo"
               className="h-16 w-auto max-w-full object-contain mx-auto drop-shadow-[0_4px_12px_rgba(212,175,55,0.4)]"
             />
           </div>
           <h1 className="text-2xl font-extrabold text-white tracking-tight">
-            BENAKA ADMIN PORTAL
+            KEDAR ADMIN PORTAL
           </h1>
           <p className="text-xs text-slate-400">
             Secure Fleet & Inquiry Management Access
@@ -92,7 +92,7 @@ export const AdminLoginView: React.FC<AdminLoginViewProps> = ({
         </form>
 
         <div className="text-center text-[11px] text-slate-400 pt-2 border-t border-white/10">
-          <p>Restricted area for BENAKA TOURS AND TRAVELS management only.</p>
+          <p>Restricted area for KEDAR TOURS AND TRAVELS management only.</p>
         </div>
       </div>
     </div>

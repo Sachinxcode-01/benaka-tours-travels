@@ -67,7 +67,7 @@ export const Step4WhatsApp: React.FC<Step4WhatsAppProps> = ({
   const waUrl = createWhatsAppInquiryUrl(waMessage);
 
   const displayMessage = waMessage.replace(
-    /^Hello Benaka Tours & Travels 👋\n\n/,
+    /^Hello Kedar Tours & Travels 👋\n\n/,
     "",
   );
 
@@ -113,7 +113,7 @@ export const Step4WhatsApp: React.FC<Step4WhatsAppProps> = ({
         </div>
         <h3 className="font-bold text-white text-base">Ready to Send</h3>
         <p className="text-slate-400 text-xs mt-1">
-          Your trip enquiry has been formatted. Send it to Benaka via WhatsApp
+          Your trip enquiry has been formatted. Send it to Kedar via WhatsApp
           or call us directly.
         </p>
       </div>
@@ -164,7 +164,7 @@ export const Step4WhatsApp: React.FC<Step4WhatsAppProps> = ({
           className="w-full py-3 px-4 rounded-xl bg-[#1A1F2C] border border-white/15 text-white font-bold text-sm flex items-center justify-center gap-2 hover:border-[#D4AF37]/50 hover:text-[#D4AF37] active:scale-95 transition-all"
         >
           <Phone className="w-4 h-4" />
-          Call Benaka Now
+          Call Kedar Now
         </a>
       </div>
 

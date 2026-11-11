@@ -17,10 +17,10 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
 
     setTimeout(() => {
       // Default admin PIN for demonstration: 1234 or admin
-      if (pin === "1234" || pin.toLowerCase() === "admin" || pin === "benaka") {
+      if (pin === "1234" || pin.toLowerCase() === "admin" || pin === "kedar") {
         onLoginSuccess();
       } else {
-        setError("Invalid Administrative Passcode. (Try '1234' or 'benaka')");
+        setError("Invalid Administrative Passcode. (Try '1234' or 'kedar')");
       }
       setLoading(false);
     }, 400);
@@ -35,8 +35,8 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
         <div className="text-center space-y-4 mb-8">
           <div className="mx-auto p-3 rounded-2xl bg-[#0B0D12]/90 border border-[#D4AF37]/40 inline-block shadow-xl shadow-[#D4AF37]/15">
             <img
-              src="/assets/brand/benaka_logo_primary_transparent.png"
-              alt="Benaka Tours & Travels Logo"
+              src="/assets/brand/kedar_logo_primary_transparent.png"
+              alt="Kedar Tours & Travels Logo"
               className="h-16 sm:h-20 w-auto max-w-full object-contain mx-auto drop-shadow-[0_4px_12px_rgba(212,175,55,0.4)]"
             />
           </div>
@@ -49,7 +49,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
           </div>
 
           <h1 className="text-2xl font-extrabold text-white tracking-tight">
-            Benaka Operations Console
+            Kedar Operations Console
           </h1>
           <p className="text-xs text-slate-400">
             Secure administrative interface for fleet management and bookings.
@@ -73,7 +73,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
               <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
             </div>
             <p className="text-[11px] text-slate-500 mt-1.5">
-              Default demo code: <code className="text-[#D4AF37]">1234</code> or <code className="text-[#D4AF37]">benaka</code>
+              Default demo code: <code className="text-[#D4AF37]">1234</code> or <code className="text-[#D4AF37]">kedar</code>
             </p>
           </div>
 
@@ -95,7 +95,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
 
         <div className="mt-8 pt-6 border-t border-white/10 text-center">
           <p className="text-[11px] text-slate-500">
-            Benaka Tours & Travels • Standalone Admin Console v1.0
+            Kedar Tours & Travels • Standalone Admin Console v1.0
           </p>
         </div>
       </div>

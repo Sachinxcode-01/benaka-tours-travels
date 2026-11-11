@@ -138,16 +138,16 @@ export const Navbar: React.FC = () => {
               }
             }}
             className="flex items-center gap-2.5 group cursor-pointer"
-            aria-label="Benaka Tours and Travels Homepage"
+            aria-label="Kedar Tours and Travels Homepage"
           >
             <img
-              src="/assets/brand/benaka_emblem_gold_transparent.png"
-              alt="Benaka Emblem"
+              src="/assets/brand/kedar_emblem_gold_transparent.png"
+              alt="Kedar Emblem"
               className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 shrink-0"
             />
             <div className="flex flex-col justify-center">
               <span className="font-accent text-2xl md:text-3xl text-[#D4AF37] leading-none group-hover:text-amber-400 transition-colors">
-                Benaka
+                Kedar
               </span>
               <span className="text-[10px] sm:text-xs tracking-[0.2em] font-extrabold uppercase text-white group-hover:text-[#D4AF37] transition-colors mt-0.5">
                 Tours & Travels
